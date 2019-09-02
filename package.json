@@ -1,0 +1,54 @@
+{
+  "name": "llis-landing",
+  "version": "1.0.0",
+  "description": "Github personal webpage",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build",
+      "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xihongshide/llis-landing-react.git"
+  },
+  "keywords": [
+    "React",
+    "Github-Pages",
+    "Personal",
+    "Webpage"
+  ],
+  "author": "LLI the Mad Lego Builder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xihongshide/llis-landing-react/issues"
+  },
+  "homepage": "https://github.com/xihongshide/llis-landing-react",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.1.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
