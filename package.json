@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "Github personal webpage",
   "private": true,
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build",
-      "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,10 @@
     "gh-pages": "^2.1.1"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
     "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.1.1"
   },

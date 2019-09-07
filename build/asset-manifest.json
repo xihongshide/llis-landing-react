@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/xihongshide/llis-landing-react/static/css/main.2cce8147.chunk.css",
-    "main.js": "/xihongshide/llis-landing-react/static/js/main.b3d3831a.chunk.js",
-    "main.js.map": "/xihongshide/llis-landing-react/static/js/main.b3d3831a.chunk.js.map",
+    "main.css": "/xihongshide/llis-landing-react/static/css/main.5e23ed28.chunk.css",
+    "main.js": "/xihongshide/llis-landing-react/static/js/main.35dbc320.chunk.js",
+    "main.js.map": "/xihongshide/llis-landing-react/static/js/main.35dbc320.chunk.js.map",
     "runtime~main.js": "/xihongshide/llis-landing-react/static/js/runtime~main.cdeb1ed5.js",
     "runtime~main.js.map": "/xihongshide/llis-landing-react/static/js/runtime~main.cdeb1ed5.js.map",
-    "static/js/2.30933d28.chunk.js": "/xihongshide/llis-landing-react/static/js/2.30933d28.chunk.js",
-    "static/js/2.30933d28.chunk.js.map": "/xihongshide/llis-landing-react/static/js/2.30933d28.chunk.js.map",
+    "static/js/2.24b8a15f.chunk.js": "/xihongshide/llis-landing-react/static/js/2.24b8a15f.chunk.js",
+    "static/js/2.24b8a15f.chunk.js.map": "/xihongshide/llis-landing-react/static/js/2.24b8a15f.chunk.js.map",
     "index.html": "/xihongshide/llis-landing-react/index.html",
-    "precache-manifest.cbc2c989d00c0cfa34237e2915858680.js": "/xihongshide/llis-landing-react/precache-manifest.cbc2c989d00c0cfa34237e2915858680.js",
+    "precache-manifest.c29a7284396fb914365a3ddefd0d2b35.js": "/xihongshide/llis-landing-react/precache-manifest.c29a7284396fb914365a3ddefd0d2b35.js",
     "service-worker.js": "/xihongshide/llis-landing-react/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/xihongshide/llis-landing-react/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/xihongshide/llis-landing-react/static/media/logo.5d5d9eef.svg"
+    "static/css/main.5e23ed28.chunk.css.map": "/xihongshide/llis-landing-react/static/css/main.5e23ed28.chunk.css.map"
   }
 }
