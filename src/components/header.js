@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
+
 import { VelocityTransitionGroup } from 'velocity-react';
 
 class Header extends Component {
@@ -25,19 +27,21 @@ class Header extends Component {
                 <Navbar bg="light" expand="lg">
                     <VelocityTransitionGroup enter={{animation: "slideDown"}} leave={{animation: "slideUp"}}>
                         <Navbar.Brand className="nav-logo">
-                            <span>L</span>
-                            <span>L</span>
-                            <span>I</span>
+                            <Link to="/">
+                                <span>L</span>
+                                <span>L</span>
+                                <span>I</span>
+                            </Link>
                         </Navbar.Brand>
                     </VelocityTransitionGroup>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#" onClick={handlePanelChange} data-index="0">Home</Nav.Link>
-                            <Nav.Link href="#" onClick={handlePanelChange} data-index="1">About</Nav.Link>
-                            <Nav.Link href="#" onClick={handlePanelChange} data-index="2">Skills</Nav.Link>
-                            <Nav.Link href="#" onClick={handlePanelChange} data-index="3">Blog</Nav.Link>
-                            <Nav.Link href="#" onClick={handlePanelChange} data-index="4">Contact</Nav.Link>
+                            <Link to="/">Home</Link>
+                            <Link to="/about">About</Link>
+                            <Link to="/skills">Skills</Link>
+                            <Link to="/contact">Contact</Link>
+                            <Link to="/blog">Blog</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 //wheel components
 import Carousel from 'react-bootstrap/Carousel';
+
+import { Switch, Route } from "react-router-dom";
 
 //custome components
 import Home from './home.js';
@@ -16,46 +17,27 @@ class Content extends Component {
 
         console.log("Content props:");
         console.log(props);
-        this.state = {
-            "activePanel": this.props.panelIndex
-        };
     }
 
     render() {
-        let panelIndex = this.props.panelIndex;
-
         return (
-            <div className="content">
-                <Carousel
-                    activeIndex={panelIndex}
-                    slide="false"
-                    keyboard="false"
-                    controls="true"
-                    fade="true"
-                    indicators="true"
-                    onSelect={console.log("onchange panel")}
-                >
-                    <Carousel.Item>
-                        <Home/>
-                    </Carousel.Item>
-
-                    <Carousel.Item>
-                        <About/>
-                    </Carousel.Item>
-
-                    <Carousel.Item>
-                        <Skills/>
-                    </Carousel.Item>
-
-                    <Carousel.Item>
-                        <Blog/>
-                    </Carousel.Item>
-                    
-                    <Carousel.Item>
-                        <Contact/>
-                    </Carousel.Item>
-                </Carousel>
-            </div>
+            <Switch>
+                <Route path="/about">
+                    <About />
+                </Route>
+                <Route path="/skills">
+                    <Skills />
+                </Route>
+                <Route path="/contact">
+                    <Contact />
+                </Route>
+                <Route path="/blog">
+                    <Blog />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
         );
     }
 }

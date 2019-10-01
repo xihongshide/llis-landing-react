@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './assets/css/App.css';
+import { BrowserRouter as Router} from "react-router-dom";
 
 import Header from './components/header.js';
 import Content from './components/content.js';
@@ -30,9 +31,11 @@ class App extends React.Component {
 
         return (
             <div className="App">
-                  <Header switchPanels={onSwitchPanels}/>
-                  <Content panelIndex={panelIndex} switchPanels={onSwitchPanels}/>
-                  <Footer />
+                <Router>
+                      <Header switchPanels={onSwitchPanels}/>
+                      <Content panelIndex={panelIndex} switchPanels={onSwitchPanels}/>
+                      <Footer />
+                </Router>
             </div>
         );
     }
