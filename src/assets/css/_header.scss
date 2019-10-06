@@ -1,5 +1,8 @@
 .navbar {
     z-index: 1050;
+    padding: 0 15px;
+    width: 100%;
+    background: transparent !important;
 
     .nav-logo {
     	font-family: 'Anton', sans-serif;
@@ -7,10 +10,11 @@
     	perspective-origin: 200px 40px;
 
         a {
-            color: $text-color-grey;
+            color: $text-color;
+            font-weight: 900;
 
             &:hover {
-                color: $text-color-grey;
+                color: $main-grey;
             }
         }
 
@@ -20,39 +24,69 @@
         	font-size: 32px;
         	user-select: none;
         	line-height: .8;
+            -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            transform: translateY(-5px);
+            opacity: 1;
+
+            margin: 0 -1px;
         }
 
         span:nth-child(1) {
-        	animation: ani-letter 1s ease-in-out infinite;
+            animation: aniLetter 3s infinite ease;
             animation-delay: 1s;
         }
 
         span:nth-child(2) {
-            animation: ani-letter 1s ease-out infinite;
-            animation-delay: 1s;
+            animation: aniLetter 3s infinite ease;
+            animation-delay: 2s;
         }
 
         span:nth-child(3) {
-        	animation: ani-letter 1s ease-out infinite;
-            animation-delay: 1s;
+            animation: aniLetter 3s infinite ease;
+            animation-delay: 3s;
         }
     }
-}
 
-/*********
-Css animations goes below
-**********/
-@keyframes ani-letter {
-    0% {
-       transform: translate(0)
-   }
-   33% {
-       transform: translate(2px, 1px)
-   }
-   66% {
-       transform: translate(-1px, -1px)
-   }
-   to {
-       transform: translate(0)
-   }
+    .navbar-nav {
+        text-align: right;
+        display: inline-block;
+        width: 100%;
+
+        span {
+            padding: 0 4px;
+            font-weight: 900;
+            color: $main-white;
+        }
+
+        a {
+            color: $main-white;
+            display: inline-block;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.9rem;
+
+            @for $i from 1 through 5 {
+                &:nth-of-type(#{$i}) {
+                    &:hover{
+                        opacity: 0.8;
+                        color: nth($colors, $i);
+                        border-bottom: 2px solid nth($colors, $i);
+                    }
+                }
+            }
+
+            &.selected {
+                opacity: 0.8;
+                color: $main-white;
+                border-bottom: 2px solid $main-white;
+
+                &:hover{
+                    color: $main-white !important;
+                    border-bottom: 2px solid $main-white !important;
+                }
+            }
+        }
+    }
 }

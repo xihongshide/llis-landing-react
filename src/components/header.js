@@ -1,47 +1,38 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { VelocityTransitionGroup } from 'velocity-react';
 
 class Header extends Component {
     constructor(props){
         super(props);
-
-        console.log("Header props:");
-        console.log(props);
-
-        this.handlePanelChange = this.handlePanelChange.bind(this);
-    }
-
-    handlePanelChange(e) {
-        this.props.switchPanels(e.target.getAttribute("data-index"));
     }
 
     render() {
-        let handlePanelChange = this.handlePanelChange;
-
         return (
             <div className="header">
                 <Navbar bg="light" expand="lg">
-                    <VelocityTransitionGroup enter={{animation: "slideDown"}} leave={{animation: "slideUp"}}>
-                        <Navbar.Brand className="nav-logo">
-                            <Link to="/">
-                                <span>L</span>
-                                <span>L</span>
-                                <span>I</span>
-                            </Link>
-                        </Navbar.Brand>
-                    </VelocityTransitionGroup>
+                    <Navbar.Brand className="nav-logo">
+                        <NavLink to="/">
+                            <span>L</span>
+                            <span>L</span>
+                            <span>I</span>
+                        </NavLink>
+                    </Navbar.Brand>
+
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Link to="/">Home</Link>
-                            <Link to="/about">About</Link>
-                            <Link to="/skills">Skills</Link>
-                            <Link to="/contact">Contact</Link>
-                            <Link to="/blog">Blog</Link>
+                            <div>
+                                <NavLink exact to="/" activeClassName="selected" className="home">Home</NavLink>
+                                <span>/</span><NavLink to="/about" activeClassName="selected" className="about">About</NavLink>
+                                <span>/</span><NavLink to="/skills" activeClassName="selected" className="skills">Skills</NavLink>
+                                <span>/</span><NavLink to="/contact" activeClassName="selected" className="contact">Contact</NavLink>
+                                <span>/</span><NavLink to="/blog" activeClassName="selected" className="blog">Blog</NavLink>
+                            </div>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

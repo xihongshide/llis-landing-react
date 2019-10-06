@@ -1,0 +1,21 @@
+.content.home {
+    $bg-color: themeColor('bg', 'home');
+    $text-color: themeColor('text', 'home');
+    
+    .carousel-caption {
+        h3 {
+            font-weight: 700;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        button {
+            @include button;
+        }
+    }
+}

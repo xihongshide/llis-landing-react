@@ -1,0 +1,112 @@
+footer {
+    .footer-container {
+        position: relative;
+        min-height: 40px;
+
+        svg {
+            width: 16px;
+        }
+    }
+
+    .start-game-icon,
+    .info-icon {
+        @include centererVertical;
+        opacity: 0.8;
+        z-index: 10;
+
+        button {
+            background: transparent;
+            border: none;
+            opacity: 0.8;
+            cursor: pointer;
+            outline: none !important;
+            color: $main-white;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .start-game-icon{
+        left: 5px;
+    }
+
+    .info-icon {
+        right: 5px;
+    }
+
+    .info-wrapper {
+        width: 100%;
+        padding: 0 5px;
+        text-align: right;
+        position: relative;
+        background-image: linear-gradient( to bottom, rgba(0, 0, 0, .2), rgba(0, 0, 0, .3));
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 0 5px 0 0;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                line-height: 40px;
+                margin: 0;
+                width: 36px;
+
+                a {
+                    color: $main-white;
+                    cursor: pointer;
+                    opacity: 0.8;
+
+                    &:hover {
+                        opacity: 1;
+
+                        svg {
+                            font-size: 1.1em;
+                            color: $main-white;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    a svg {
+                        opacity: 0.4;
+                        color: $main-white;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            @include centererVertical;
+            left: 10px;
+            font-size: 12px;
+            display: inline-block;
+            color: $main-white;
+            font-weight: 700;
+
+            span {
+                padding-right: 20px
+            }
+
+            svg {
+                color: inherit;
+                padding: 0 2px;
+            }
+
+            svg:first-of-type {
+                path {
+                    fill: #fe5c5c;
+                    animation: heartAnim 0.9s linear 0.8s infinite alternate;
+                }
+            }
+        }
+    }
+}

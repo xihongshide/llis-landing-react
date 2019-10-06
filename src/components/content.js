@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 //wheel components
-import Carousel from 'react-bootstrap/Carousel';
-
 import { Switch, Route } from "react-router-dom";
 
 //custome components
@@ -14,9 +12,6 @@ import Contact from './contact.js';
 class Content extends Component {
     constructor(props) {
         super(props);
-
-        console.log("Content props:");
-        console.log(props);
     }
 
     render() {
