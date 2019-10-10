@@ -19,12 +19,15 @@ a {
 
 body {
     background: #fff;
+    width: 100%;
+    overflow: auto;
+    display: block;
 }
 
 .App {
     text-align: center;
-    height: 100vh;
     background: $main-bg;
+    overflow: auto;
 
     .header {
         position: absolute;
@@ -38,8 +41,8 @@ body {
 
     .content {
         padding: 0;
-        height: 100vh;
         padding-top: 7vh;
+        min-height: 100vh;
 
         @each $page in $pages{
             &.#{$page} {

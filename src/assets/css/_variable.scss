@@ -43,6 +43,11 @@ $theme-colors: (
   @return map-get($map, $variant);
 }
 
+
+/* Responsive Design */
+$tablet-breakpoint: 992px;
+$mobile_breakpoint: 767px;
+
 /***********************
 Css Mixin Start
 ************************/
@@ -80,7 +85,7 @@ Css Mixin Start
     }
 }
 /*
-Css Mixin Goes End
+Css Mixin End
 */
 
 /***********************

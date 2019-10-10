@@ -10,10 +10,6 @@ import Blog from './blog.js';
 import Contact from './contact.js';
 
 class Content extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <Switch>

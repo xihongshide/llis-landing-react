@@ -6752,11 +6752,12 @@ a.text-dark:focus, a.text-dark:hover {
 /* Text Color Variables */
 /* Color Variables */
 /* Lists */
+/* Responsive Design */
 /***********************
 Css Mixin Start
 ************************/
 /*
-Css Mixin Goes End
+Css Mixin End
 */
 /***********************
 Css keyframes Start
@@ -6848,6 +6849,8 @@ Css keyframes End
   padding: 0 15px;
   width: 100%;
   background: transparent !important; }
+  .navbar .navbar-toggler {
+    border: none; }
   .navbar .nav-logo {
     font-family: 'Anton', sans-serif;
     -webkit-perspective: 1000px;
@@ -6868,11 +6871,8 @@ Css keyframes End
       -ms-user-select: none;
       user-select: none;
       line-height: .8;
-      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-      -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
-      transform: translateY(-5px);
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 90%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 90%);
       opacity: 1;
       margin: 0 -1px; }
     .navbar .nav-logo span:nth-child(1) {
@@ -6894,44 +6894,61 @@ Css keyframes End
     text-align: right;
     display: inline-block;
     width: 100%; }
-    .navbar .navbar-nav span {
-      padding: 0 4px;
-      font-weight: 900;
-      color: #ffffff; }
-    .navbar .navbar-nav a {
-      color: #ffffff;
-      display: inline-block;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 0.9rem; }
-      .navbar .navbar-nav a:nth-of-type(1):hover {
-        opacity: 0.8;
-        color: #e1b16a;
-        border-bottom: 2px solid #e1b16a; }
-      .navbar .navbar-nav a:nth-of-type(2):hover {
-        opacity: 0.8;
-        color: #78a5a3;
-        border-bottom: 2px solid #78a5a3; }
-      .navbar .navbar-nav a:nth-of-type(3):hover {
-        opacity: 0.8;
-        color: #444c5c;
-        border-bottom: 2px solid #444c5c; }
-      .navbar .navbar-nav a:nth-of-type(4):hover {
-        opacity: 0.8;
-        color: #ce5a57;
-        border-bottom: 2px solid #ce5a57; }
-      .navbar .navbar-nav a:nth-of-type(5):hover {
-        opacity: 0.8;
-        color: #000a17;
-        border-bottom: 2px solid #000a17; }
-      .navbar .navbar-nav a.selected {
-        opacity: 0.8;
-        color: #ffffff;
-        border-bottom: 2px solid #ffffff; }
-        .navbar .navbar-nav a.selected:hover {
-          color: #ffffff !important;
-          border-bottom: 2px solid #ffffff !important; }
+    .navbar .navbar-nav ul {
+      list-style: none;
+      padding-left: 0; }
+      .navbar .navbar-nav ul li {
+        list-style: none;
+        display: inline-block; }
+        .navbar .navbar-nav ul li span {
+          padding: 0 4px;
+          font-weight: 900;
+          color: #ffffff; }
+        .navbar .navbar-nav ul li a {
+          color: #ffffff;
+          display: inline-block;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 0.9rem; }
+          .navbar .navbar-nav ul li a.selected {
+            opacity: 0.8;
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff; }
+            .navbar .navbar-nav ul li a.selected:hover {
+              color: #ffffff !important;
+              border-bottom: 2px solid #ffffff !important; }
+        .navbar .navbar-nav ul li:nth-of-type(1) a:hover {
+          opacity: 0.8;
+          color: #e1b16a;
+          border-bottom: 2px solid #e1b16a; }
+        .navbar .navbar-nav ul li:nth-of-type(2) a:hover {
+          opacity: 0.8;
+          color: #78a5a3;
+          border-bottom: 2px solid #78a5a3; }
+        .navbar .navbar-nav ul li:nth-of-type(3) a:hover {
+          opacity: 0.8;
+          color: #444c5c;
+          border-bottom: 2px solid #444c5c; }
+        .navbar .navbar-nav ul li:nth-of-type(4) a:hover {
+          opacity: 0.8;
+          color: #ce5a57;
+          border-bottom: 2px solid #ce5a57; }
+        .navbar .navbar-nav ul li:nth-of-type(5) a:hover {
+          opacity: 0.8;
+          color: #000a17;
+          border-bottom: 2px solid #000a17; }
+  @media screen and (max-width: 992px) {
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.3) !important;
+      text-align: right; }
+      .navbar .navbar-nav {
+        text-align: left; }
+        .navbar .navbar-nav ul li {
+          width: 100%;
+          display: block; }
+          .navbar .navbar-nav ul li span {
+            display: none; } }
 
 footer .footer-container {
   position: relative;
@@ -7095,12 +7112,15 @@ a {
   transition: all 0.12s linear; }
 
 body {
-  background: #fff; }
+  background: #fff;
+  width: 100%;
+  overflow: auto;
+  display: block; }
 
 .App {
   text-align: center;
-  height: 100vh;
-  background: #f7f6f4; }
+  background: #f7f6f4;
+  overflow: auto; }
   .App .header {
     position: absolute;
     top: 0;
@@ -7111,8 +7131,8 @@ body {
     padding: 0; }
   .App .content {
     padding: 0;
-    height: 100vh;
-    padding-top: 7vh; }
+    padding-top: 7vh;
+    min-height: 100vh; }
     .App .content.home {
       background-color: #e1b16a;
       color: #ffffff; }

@@ -11,13 +11,13 @@ function FooterInfo(props) {
         <div>
             <ul>
                 <li>
-                    <a href="https://github.com/xihongshide/MY.git" target="_blank"><FontAwesomeIcon icon={ faGithub } /></a>
+                    <a href="https://github.com/xihongshide/MY.git" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100008402794110" target="_blank"><FontAwesomeIcon icon={ faFacebook } /></a>
+                    <a href="https://www.facebook.com/profile.php?id=100008402794110" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faFacebook } /></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/leon-liang-li" target="_blank"><FontAwesomeIcon icon={ faLinkedinIn } /></a>
+                    <a href="https://www.linkedin.com/in/leon-liang-li" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faLinkedinIn } /></a>
                 </li>
                 <li>
                     <a href="mailto:liangli.0311@gmail.com" target="_top"><FontAwesomeIcon icon={ faPaperPlane } /></a>
@@ -46,12 +46,12 @@ class Footer extends Component {
 
     render() {
         const animation = this.state.animated;
-
+        
         return (
             <footer className="footer">
                 <div className="footer-container">
                     <div className="start-game-icon">
-                        <VelocityComponent animation={ !this.state.animated ? 'transition.slideLeftIn' : 'transition.slideLeftOut' }>
+                        <VelocityComponent animation={ !animation ? 'transition.slideLeftIn' : 'transition.slideLeftOut' }>
                             <button onClick={ this.toggleInfo }>
                                 <FontAwesomeIcon icon={ faChessKnight } />
                             </button>
