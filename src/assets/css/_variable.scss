@@ -7,26 +7,29 @@ $text-color: #444c5c;
 $main-bg: #f7f6f4;
 $main-grey: #d8d5c4;
 $main-green: #78a5a3;
-$main-yellow: #e1b16a;
+$main-yellow-light: #e1b16a;
+$main-yellow: #ffc300;
 $main-blue: #444c5c;
+$main-dark:rgb(51, 51, 51);
 $main-red: #ce5a57;
 $main-white: #ffffff;
 $main-black: #000a17;
 $main-overlay:rgba(0, 0, 0, .3);
 
 /* Lists */
-$colors: $main-yellow $main-green $main-blue $main-red $main-black;
+$colors: $main-yellow $main-green $main-blue $main-red $main-dark;
+$rainbowColors: $main-yellow $main-grey $main-blue $main-red $main-dark $main-red $main-blue $main-grey $main-yellow;
 $fourColors: $main-yellow $main-green $main-blue $main-red;
 $pages: "home" "about" "skills" "contact" "blog";
 
 //Themes For Every Route
 $theme-colors: (
     'bg': (
-        'home': $main-yellow,
+        'home': $main-dark,
         'about': $main-green,
         'skills': $main-blue,
         'contact': $main-red,
-        'blog': $main-black,
+        'blog': $main-yellow,
     ),
 
     'text': (
@@ -39,10 +42,9 @@ $theme-colors: (
 );
 
 @function themeColor($key, $variant) {
-  $map: map-get($theme-colors, $key);
-  @return map-get($map, $variant);
+    $map: map-get($theme-colors, $key);
+    @return map-get($map, $variant);
 }
-
 
 /* Responsive Design */
 $tablet-breakpoint: 992px;
@@ -70,20 +72,162 @@ Css Mixin Start
     transform: translateY(-50%);
 }
 
-@mixin button {
-    font-size: 1rem;
-    height: 2rem;
-    font-weight: 700;
-    border-radius: 3px;
-    border: 2px solid $main-blue;
-    color: $main-blue;
-    cursor: pointer;
+@mixin mainLink {
+    backface-visibility: hidden;
+    position: relative;
+    transition: 0.5s color ease;
+    text-decoration: none;
 
-    &:hover {
-        background-color: $main-blue;
-        color: #fff;
+    &:before,
+    &:after {
+        content: "";
+        transition: 0.5s all ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        width: 0;
+        height: 0.18em;
+    }
+
+    &:after {
+        bottom: -0.2em
+    }
+
+    &:before {
+        top: -0.2em;
     }
 }
+
+@mixin link_brl {
+    @include mainLink;
+
+    &:after {
+        left: 0;
+    }
+
+     &:hover{
+       &:after {
+            width: 100%;
+        }
+    }
+}
+
+@mixin link_mrl {
+    @include mainLink;
+
+    &:before {
+        left: 50%;
+        top: 46%;
+        transform: translateY(-50%);
+        transform: translateX(-50%);
+    }
+
+     &:hover{
+       &:before {
+            width: 110%;
+        }
+    }
+}
+
+@mixin link_blr {
+    @include mainLink;
+
+    &:after {
+        right: 0;
+    }
+
+    &:hover{
+       &:after {
+            width: 100%;
+        }
+    }
+}
+
+@mixin link_bc {
+    @include mainLink;
+
+    &:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &:hover{
+       &:after {
+            width: 100%;
+        }
+    }
+}
+
+@mixin link_tb {
+    @include mainLink;
+
+    &:after {
+        left: 0;
+        width: 100%;
+        height: 0.2em;
+    }
+
+    &:before {
+        right: 0;
+        width: 100%;
+        height: 0.2em;
+    }
+
+    &:hover{
+       &:after,
+       &:before {
+            width: 0;
+        }
+    }
+}
+
+@mixin mainButton {
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    background: transparent;
+    overflow: visible;
+    height: 2em;
+    transition: all 0.8s linear;
+
+    button {
+        @include link_tb;
+        overflow: visible;
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        box-sizing: border-box;
+        transition: 0.25s all ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        width: 0.15em;
+        height: calc(100% - 0.2em);
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+        bottom: 0.2em;
+    }
+
+    &:hover {
+        transform: scale(0.9);
+        opacity: 0.9;
+
+        &:before,
+        &:after {
+             height: 0;
+        }
+    }
+}
+
 /*
 Css Mixin End
 */
@@ -150,3 +294,13 @@ Css keyframes Start
 /*
 Css keyframes End
 */
+
+0%, 5%, 45%, 50% {
+    height: 10px;
+    top: -5px;
+}
+
+22.5%, 27.5% {
+    height: 30px;
+    top: -15px;
+}

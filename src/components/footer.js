@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChessKnight, faInfoCircle, faChevronDown, faHeart, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faFacebook, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
-
 import { VelocityComponent } from 'velocity-react';
 
 function FooterInfo(props) {
@@ -46,7 +45,7 @@ class Footer extends Component {
 
     render() {
         const animation = this.state.animated;
-        
+
         return (
             <footer className="footer">
                 <div className="footer-container">

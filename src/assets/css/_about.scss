@@ -1,0 +1,502 @@
+.about {
+    $bg-color: themeColor('bg', 'home');
+    $text-color: themeColor('text', 'home');
+    $text-color-alter: $main-yellow;
+
+    position: relative;
+
+    .about-btn {
+        @include mainButton;
+        width: max-content;
+        margin: 0 auto;
+
+        &:before,
+        &:after {
+            background-color: $text-color-alter;
+        }
+
+        button {
+            color: $text-color-alter;
+            font-size: 1rem;
+            font-weight: 700;
+            height: 2em;
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 3px 10px;
+            margin: 0;
+            cursor: pointer;
+
+            &:before,
+            &:after {
+                background-color: $text-color-alter;
+            }
+        }
+    }
+
+    .container {
+        .col-container {
+            width: 100%;
+            height: 100%;
+            @include centerer;
+        }
+    }
+
+    .about-col-container {
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .about-cols {
+        position: relative;
+        width: (100%/3);
+        display: inline-block;
+        text-align: center;
+        height: 93vh;
+        opacity: 0;
+
+        .about-col {
+            text-align: center;
+            @include centerer;
+
+            button {
+                display: none;
+                opacity: 0;
+                font-size: 1px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .about-col.hobby-col {
+            .hobby-heart {
+                margin: 0 auto;
+                height: 110px;
+                width: 138px;
+
+                &:hover {
+                    .hobby-heart-container div {
+                    }
+                }
+
+                .hobby-heart-container {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 36px;
+
+                    div {
+                        position: absolute;
+                        top: -5px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .heart-piece-4 {
+                height: 94px;
+                animation: piece-4 8s infinite ease;
+            }
+            .heart-piece-3,
+            .heart-piece-5 {
+                height: 90px;
+                animation: piece-3 8s infinite ease;
+            }
+
+            .heart-piece-2,
+            .heart-piece-6 {
+                height: 80px;
+                animation: piece-2 8s infinite ease;
+            }
+
+            .heart-piece-1,
+            .heart-piece-7 {
+                height: 60px;
+                animation: piece-1 8s infinite ease;
+            }
+
+            .heart-piece-0,
+            .heart-piece-8 {
+                height: 30px;
+                animation: piece-0 8s infinite ease;
+            }
+
+            @for $i from 0 through 8 {
+                .heart-piece-#{$i} {
+                    $n: $i + 1;
+                    left: 16px * $i;
+                    animation-delay: 0.15s * $i;
+                    background: nth($rainbowColors, $n);
+                }
+            }
+        }
+
+        .about-col.work-col {
+            .code-view-container {
+                position: relative;
+            }
+
+            .code-view {
+                @include centerer;
+                width: 200x;
+                height: 270px;
+                background: $main-blue;
+
+                span {
+                    left: 2px;
+                    animation-duration: 10s;
+                }
+
+                &::before {
+                    content: "work.js";
+                    font-family: verdana;
+                    color: $main-white;
+                    display: block;
+                    width: 201px;
+                    font-size: 12px;
+                    line-height: 24px;
+                    padding-left: 5px;
+                    font-weight: 700;
+                    background: $main-overlay;
+                    text-align: left;
+                }
+
+                .line-1 {
+                    position: absolute;
+                    width: 30px;
+                    height: 7px;
+                    background: $main-red;
+                    margin: 30px 21px;
+                    animation: l1 20s linear infinite;
+                }
+
+                .line-2 {
+                    position: absolute;
+                    width: 50px;
+                    height: 7px;
+                    background: $main-white;
+                    margin: 40px 21px;
+                    animation: l2 20s linear infinite;
+                }
+
+                .line-3 {
+                    position: absolute;
+                    width: 21px;
+                    height: 7px;
+                    background: $main-yellow;
+                    margin: 50px 21px;
+                    animation: l3 20s linear infinite;
+                }
+
+                .line-4 {
+                    position: absolute;
+                    width: 70px;
+                    height: 7px;
+                    background: $main-white;
+                    margin: 83px 19px;
+                    animation: l4 20s linear infinite;
+                }
+                .line-4::before {
+                    content: "";
+                    display: block;
+                    width: 70px;
+                    height: 7px;
+                    background: $main-grey;
+                    margin: 0px 90px;
+                    animation: l4 20s linear infinite;
+                }
+
+                .line-5 {
+                    position: absolute;
+                    width: 40px;
+                    height: 7px;
+                    background: $main-red;
+                    margin: 121px 21px;
+                    animation: l5 20s linear infinite;
+                }
+
+                .line-5::before {
+                    content: "";
+                    display: block;
+                    width: 40px;
+                    height: 7px;
+                    background: $main-yellow;
+                    margin: 0px 60px;
+                    animation: l5 20s linear infinite;
+                }
+
+                .line-5::after {
+                    content: "";
+                    display: block;
+                    width: 40px;
+                    height: 7px;
+                    background: $main-green;
+                    margin: -7px 121px;
+                    animation: l5 20s linear infinite;
+                }
+
+                .line-6 {
+                    position: absolute;
+                    width: 70px;
+                    height: 7px;
+                    background: $main-grey;
+                    margin: 152px 21px;
+                    animation: l6 20s linear infinite;
+                }
+
+                .line-6::before {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 7px;
+                    background: $main-white;
+                    margin: 0px 80px;
+                    animation: l66 20s linear infinite;
+                }
+
+                .line-7 {
+                    position: absolute;
+                    width: 162px;
+                    height: 7px;
+                    background: $main-red;
+                    margin: 212px 21px;
+                    animation: l7 20s linear infinite;
+                }
+            }
+        }
+    }
+
+    //panel expended style
+    .about-expended {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 10em;
+        z-index: 1000
+    }
+}
+
+/* Heart Ani start */
+@keyframes piece-4 {
+    0% {
+        height: 10px;
+    }
+
+    10%, 90% {
+        height: 94px;
+        top: -23px;
+    }
+}
+
+@keyframes piece-3 {
+    0% {
+        height: 10px;
+        top: -5px;
+    }
+
+    10%, 90% {
+        height: 90px;
+        top: -31px;
+    }
+}
+
+@keyframes piece-2 {
+    0% {
+        height: 10px;
+        top: -5px;
+    }
+
+    10%, 90% {
+        height: 80px;
+        top: -37px;
+    }
+}
+
+@keyframes piece-1 {
+    0% {
+        height: 10px;
+        top: -5px;
+    }
+    10%, 90% {
+        height: 60px;
+        top: -31px;
+    }
+}
+
+@keyframes piece-0 {
+    0% {
+        height: 10px;
+        top: -5px;
+    }
+
+    10%, 90% {
+        height: 30px;
+        top: -15px;
+    }
+}
+/* Heart Ani End */
+
+/* Code View Ani Start*/
+@keyframes l1 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 6% {
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    7%, 20% {
+        opacity: 1;
+        width: 30px;
+        height: 7px;
+    }
+}
+
+@keyframes l2 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 7%{
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    8%, 20% {
+        opacity: 1;
+        width: 50px;
+        height: 7px;
+    }
+}
+
+@keyframes l3 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 8%{
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    9%, 20% {
+        opacity: 1;
+        width: 21px;
+        height: 7px;
+    }
+}
+
+@-moz-keyframes l4 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 9% {
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    5%, 20% {
+        opacity: 1;
+        width: 70px;
+        height: 7px;
+    }
+}
+@keyframes l4 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 9%{
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    10%, 20% {
+        opacity: 1;
+        width: 70px;
+        height: 7px;
+    }
+}
+
+@keyframes l5 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 10% {
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    12%, 20% {
+        opacity: 1;
+        width: 40px;
+        height: 7px;
+    }
+}
+@keyframes l6 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 12% {
+        opacity: 0;
+        width: 0px;
+        height: 7px;
+    }
+
+    14%, 20% {
+        opacity: 1;
+        width: 70px;
+        height: 7px;
+    }
+}
+
+@keyframes l66 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 14% {
+        opacity: 0;
+        width: 0px;
+        height: 7px;
+    }
+
+    16%, 20% {
+        opacity: 1;
+        width: 30px;
+        height: 7px;
+    }
+}
+@keyframes l7 {
+    0% {
+        opacity: 0;
+    }
+
+    5%, 16% {
+        opacity: 0;
+        width: 0;
+        height: 7;
+    }
+
+    17%, 20% {
+        opacity: 1;
+        width: 132px;
+        height: 7px;
+    }
+}
+/* Code View Ani End*/

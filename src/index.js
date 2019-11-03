@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 require('velocity-animate');
 require('velocity-animate/velocity.ui');
+
+window.$ = window.jQuery = require('jquery');
+require('blast-text/jquery.blast');
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

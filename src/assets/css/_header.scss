@@ -77,25 +77,35 @@
                     text-transform: uppercase;
                     text-decoration: none;
                     font-size: 0.9rem;
+                    @include link_mrl;
 
                     &.selected {
                         opacity: 0.8;
                         color: $main-white;
-                        border-bottom: 2px solid $main-white;
 
                         &:hover{
                             color: $main-white !important;
-                            border-bottom: 2px solid $main-white !important;
+                        }
+
+                        &:before {
+                            width: 100%;
+                            background: $main-white !important;
                         }
                     }
                 }
 
                 @for $i from 1 through 5 {
                     &:nth-of-type(#{$i}) {
-                        a:hover{
-                            opacity: 0.8;
-                            color: nth($colors, $i);
-                            border-bottom: 2px solid nth($colors, $i);
+                        a {
+                            &:before {
+                                background: nth($colors, $i);
+                                height: 0.18em;
+                            }
+
+                            &:hover{
+                                opacity: 0.8;
+                                color: nth($colors, $i);
+                            }
                         }
                     }
                 }
