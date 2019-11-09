@@ -56,10 +56,13 @@ footer {
                 margin: 0;
                 width: 36px;
 
-                a {
+                a, button {
                     color: $main-white;
                     cursor: pointer;
                     opacity: 0.8;
+                    background: transparent;
+                    border: none;
+                    outline: none;
 
                     &:hover {
                         opacity: 1;

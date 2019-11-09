@@ -22,7 +22,7 @@ function FooterInfo(props) {
                     <a href="mailto:liangli.0311@gmail.com" target="_top"><FontAwesomeIcon icon={ faPaperPlane } /></a>
                 </li>
                 <li>
-                    <a onClick={ props.toggleInfo }><FontAwesomeIcon icon={ faChevronDown } /></a>
+                    <button onClick={ props.toggleInfo }><FontAwesomeIcon icon={ faChevronDown } /></button>
                 </li>
             </ul>
 

@@ -28,8 +28,8 @@ $theme-colors: (
         'home': $main-dark,
         'about': $main-green,
         'skills': $main-blue,
-        'contact': $main-red,
-        'blog': $main-yellow,
+        'contact': $main-yellow,
+        'blog': $main-red,
     ),
 
     'text': (
@@ -228,6 +228,53 @@ Css Mixin Start
     }
 }
 
+@mixin closeIcon($color) {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 4px dashed $color;
+    border-radius: 50%;
+    position:relative;
+    cursor:pointer;
+    margin:10px 20px;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:after ,
+    &:before {
+        width: 24px;
+        height: 4px;
+        background-color: $color;
+        content: "";
+        position: absolute;
+        transform-origin: 0 0;
+        border-radius: 1px;
+        transition: all 0.3s linear;
+    }
+
+    &:after{
+        transform: rotate(-45deg) translate(-50%, -50%);
+    }
+
+    &:before{
+        transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    &:hover {
+        border: 6px solid $color;
+        &:after ,
+        &:before {
+            height: 5px;
+        }
+
+        &:after {
+            transform: rotate(60deg) translate(-50%, -50%);
+        }
+        &:before {
+            transform: rotate(-30deg) translate(-50%, -50%);
+        }
+    }
+}
 /*
 Css Mixin End
 */
@@ -294,13 +341,3 @@ Css keyframes Start
 /*
 Css keyframes End
 */
-
-0%, 5%, 45%, 50% {
-    height: 10px;
-    top: -5px;
-}
-
-22.5%, 27.5% {
-    height: 30px;
-    top: -15px;
-}

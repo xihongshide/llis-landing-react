@@ -1,45 +1,14 @@
 .about {
+    position: relative;
+
     $bg-color: themeColor('bg', 'home');
     $text-color: themeColor('text', 'home');
     $text-color-alter: $main-yellow;
 
-    position: relative;
-
-    .about-btn {
-        @include mainButton;
-        width: max-content;
-        margin: 0 auto;
-
-        &:before,
-        &:after {
-            background-color: $text-color-alter;
-        }
-
-        button {
-            color: $text-color-alter;
-            font-size: 1rem;
-            font-weight: 700;
-            height: 2em;
-            border: none;
-            background: transparent;
-            outline: none;
-            padding: 3px 10px;
-            margin: 0;
-            cursor: pointer;
-
-            &:before,
-            &:after {
-                background-color: $text-color-alter;
-            }
-        }
-    }
-
-    .container {
-        .col-container {
-            width: 100%;
-            height: 100%;
-            @include centerer;
-        }
+    .col-container {
+        width: 100%;
+        height: 100%;
+        @include centerer;
     }
 
     .about-col-container {
@@ -57,14 +26,47 @@
 
         .about-col {
             text-align: center;
-            @include centerer;
+            cursor: pointer;
+            width: 100%;
+            height: 300px;
 
             button {
-                display: none;
-                opacity: 0;
-                font-size: 1px;
+                @include centerer;
                 width: 100%;
-                height: 100%;
+                height: 300px;
+                opacity: 0;
+                font-size: 3em;
+                cursor: pointer;
+                background: transparent;
+                outline: none;
+                text-transform: uppercase;
+                border: none;
+                pointer-events: none;
+                color: $main-white;
+                transform: translate(-50%, 0%);
+                border-radius: 3px solid  $main-white;
+            }
+
+            .about-icon {
+                @include centerer();
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                button {
+                    pointer-events: all;
+                    opacity: 1;
+                    transition: all 1s ease;
+                    transform: translate(-50%, -50%);
+                }
+
+                .about-icon {
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: all 1s ease;
+                    transform: translate(-50%, -150%);
+                }
             }
         }
 
@@ -104,19 +106,16 @@
                 height: 90px;
                 animation: piece-3 8s infinite ease;
             }
-
             .heart-piece-2,
             .heart-piece-6 {
                 height: 80px;
                 animation: piece-2 8s infinite ease;
             }
-
             .heart-piece-1,
             .heart-piece-7 {
                 height: 60px;
                 animation: piece-1 8s infinite ease;
             }
-
             .heart-piece-0,
             .heart-piece-8 {
                 height: 30px;
@@ -134,10 +133,6 @@
         }
 
         .about-col.work-col {
-            .code-view-container {
-                position: relative;
-            }
-
             .code-view {
                 @include centerer;
                 width: 200x;
@@ -146,7 +141,7 @@
 
                 span {
                     left: 2px;
-                    animation-duration: 10s;
+                    animation-duration: 8s;
                 }
 
                 &::before {
@@ -198,6 +193,7 @@
                     margin: 83px 19px;
                     animation: l4 20s linear infinite;
                 }
+
                 .line-4::before {
                     content: "";
                     display: block;
@@ -266,18 +262,37 @@
                 }
             }
         }
+
+        .about-col.journey-col {
+            img {
+                width: 100x;
+                height: 170px;
+            }
+        }
     }
 
-    //panel expended style
-    .about-expended {
-        position: fixed;
-        top: 0;
-        right: 0;
+    //panel expanded style
+    .about-expanded {
+        position: relative;
+        overflow: hidden;
         width: 100%;
         height: 100%;
-        font-size: 10em;
-        z-index: 1000
     }
+
+    .about-close {
+        position: absolute;
+        z-index: 100;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+
+        button {
+            @include closeIcon($main-white);
+        }
+    }
+
+    @import './partial/_timeline.scss';
 }
 
 /* Heart Ani start */
@@ -482,6 +497,7 @@
         height: 7px;
     }
 }
+
 @keyframes l7 {
     0% {
         opacity: 0;

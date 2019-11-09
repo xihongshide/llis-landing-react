@@ -58,4 +58,4 @@ const velocityTransitions = [
     "transition.perspectiveRight"
 ];
 
-export {handleScroll, capitalize, randomArrElement, velocityTransitions};
+export { handleScroll, capitalize, randomArrElement, velocityTransitions };

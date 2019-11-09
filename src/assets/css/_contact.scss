@@ -1,0 +1,156 @@
+.contact {
+    $primary: $main-white;
+    $secondary: $main-dark;
+    $accent: $main-blue;
+
+    .container {
+        margin: 0 auto;
+        padding-top: 2rem;
+    }
+
+    .contact-info {
+        text-align: left;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 0.85rem;
+        }
+
+        a {
+            font-size: 0.85rem;
+            text-decoration: underline;
+            color: $main-white;
+
+            &:hover,
+            &:visited,
+            &:focus {
+                opacity: 0.8;
+                color: $main-white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .card {
+        background: transparent;
+        border: none;
+        text-align: left;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .form {
+            padding: 0;
+        }
+
+        .submit-btn {
+            @include mainButton;
+        }
+
+        @mixin input {
+            display: block;
+            width: 100%;
+            border: 2px solid $main-white;
+            padding: 1ch;
+            border-radius: 3px;
+            transition: 150ms ease;
+            outline: none;
+            font-size: 1rem;
+            font-family: inherit;
+            background: transparent;
+            color: $main-white;
+        }
+
+        @mixin input-focus {
+            border-color: $main-white;
+        }
+
+        @mixin label {
+            position: absolute;
+            top: 1ch;
+            left: 1ch;
+            padding: 0 .5ch;
+            pointer-events: none;
+            transition: 150ms ease;
+            color: $main-white;
+            background: transparent;
+        }
+
+        @mixin label-focus {
+            position: absolute;
+            top: 0;
+            font-size: 0.9em;
+            color: $main-white;
+            font-weight: bold;
+            transform: translateY(-50%);
+            font-weight: 600;
+        }
+
+        @mixin has-error {
+            label,
+            input {
+                color: $main-red !important;
+            }
+
+            input {
+                border: 2px solid $main-red !important;
+            }
+
+            p {
+                color: $main-red;
+            }
+        }
+
+        .text-input {
+            position: relative;
+            margin-bottom: 1rem;
+
+            label {
+                @include label;
+            }
+            label.label-focus {
+                @include label-focus;
+            }
+            input {
+                @include input;
+            }
+            input.input-focus {
+                @include input-focus;
+            }
+
+            &.hasError {
+                @include has-error;
+            }
+        }
+
+        .text-area {
+            position: relative;
+            margin-bottom: 1rem;
+
+            label {
+                @include label;
+            }
+
+            label.label-focus {
+                @include label-focus;
+            }
+
+            textarea {
+                @include input;
+                height: 8em;
+            }
+
+            textarea.input-focus {
+                @include input-focus;
+            }
+
+            &.hasError {
+                @include has-error;
+            }
+        }
+    }
+}
