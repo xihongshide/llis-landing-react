@@ -1,8 +1,7 @@
 .about {
     position: relative;
-
-    $bg-color: themeColor('bg', 'home');
-    $text-color: themeColor('text', 'home');
+    $bg-color: themeColor('bg', 'about');
+    $text-color: themeColor('text', 'about');
     $text-color-alter: $main-yellow;
 
     .col-container {
@@ -23,19 +22,25 @@
         text-align: center;
         height: 93vh;
         opacity: 0;
+        padding-top: 200px;
 
         .about-col {
+            height: 100%;
+            margin: 0;
             text-align: center;
             cursor: pointer;
+            height: 280px;
             width: 100%;
-            height: 300px;
+            position: relative;
 
             button {
-                @include centerer;
+                position: absolute;
+                display: block;
                 width: 100%;
-                height: 300px;
+                height: 100%;
+                vertical-align: bottom;
                 opacity: 0;
-                font-size: 3em;
+                font-weight: 900;
                 cursor: pointer;
                 background: transparent;
                 outline: none;
@@ -43,12 +48,24 @@
                 border: none;
                 pointer-events: none;
                 color: $main-white;
-                transform: translate(-50%, 0%);
+                @include centerer;
                 border-radius: 3px solid  $main-white;
+                z-index: 20;
+
+                span {
+                    position: absolute;
+                    display: block;
+                    @include centerer;
+                    font-size: 1em;
+                    transform: translate(-50%, 150%);
+                }
             }
 
             .about-icon {
-                @include centerer();
+                position: relative;
+                display: block;
+                min-height: 130px;
+                z-index: 10;
             }
 
             &:hover,
@@ -58,215 +75,113 @@
                     pointer-events: all;
                     opacity: 1;
                     transition: all 1s ease;
-                    transform: translate(-50%, -50%);
+
+                    span {
+                        transform: translate(-50%, 10%);
+                        opacity: 1;
+                        font-size: 3em;
+                        transition: transform 1s ease-in-out, opacity 1s ease-out, font-size 1s ease-out;
+                    }
                 }
 
                 .about-icon {
                     pointer-events: none;
-                    opacity: 0;
+                    opacity: 1;
                     transition: all 1s ease;
-                    transform: translate(-50%, -150%);
+                    transform: scale(0.8);
                 }
             }
         }
 
         .about-col.hobby-col {
-            .hobby-heart {
-                margin: 0 auto;
-                height: 110px;
-                width: 138px;
-
-                &:hover {
-                    .hobby-heart-container div {
-                    }
-                }
-
-                .hobby-heart-container {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 36px;
-
-                    div {
-                        position: absolute;
-                        top: -5px;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 5px;
-                    }
-                }
-            }
-
-            .heart-piece-4 {
-                height: 94px;
-                animation: piece-4 8s infinite ease;
-            }
-            .heart-piece-3,
-            .heart-piece-5 {
-                height: 90px;
-                animation: piece-3 8s infinite ease;
-            }
-            .heart-piece-2,
-            .heart-piece-6 {
-                height: 80px;
-                animation: piece-2 8s infinite ease;
-            }
-            .heart-piece-1,
-            .heart-piece-7 {
-                height: 60px;
-                animation: piece-1 8s infinite ease;
-            }
-            .heart-piece-0,
-            .heart-piece-8 {
-                height: 30px;
-                animation: piece-0 8s infinite ease;
-            }
-
-            @for $i from 0 through 8 {
-                .heart-piece-#{$i} {
-                    $n: $i + 1;
-                    left: 16px * $i;
-                    animation-delay: 0.15s * $i;
-                    background: nth($rainbowColors, $n);
-                }
-            }
+            @import './partial/_aniHeart.scss';
         }
 
         .about-col.work-col {
-            .code-view {
-                @include centerer;
-                width: 200x;
-                height: 270px;
+            .work-icon-wapper {
+                position: relative;
+                text-align: center;
+            }
+
+            .top {
+                display: block;
+            	width: 60px;
+            	height: 40px;
+                margin: 0 auto;
+            	border-top: 8px solid $main-red;
+                border-right: 8px solid $main-red;
+                border-left: 8px solid $main-red;
+                border-bottom: 0;
+            	border-radius: 20px 20px 0 0;
+            }
+
+        	.bottom {
+                display: block;
+                width: 180px;
+                height: 110px;
+                margin: 0 auto;
+                border: 20px solid $main-blue;
+                border-radius: 20px;
                 background: $main-blue;
+                transition: transform 0.8s linear;
+            }
 
-                span {
-                    left: 2px;
-                    animation-duration: 8s;
-                }
-
-                &::before {
-                    content: "work.js";
-                    font-family: verdana;
-                    color: $main-white;
-                    display: block;
-                    width: 201px;
-                    font-size: 12px;
-                    line-height: 24px;
-                    padding-left: 5px;
-                    font-weight: 700;
-                    background: $main-overlay;
-                    text-align: left;
-                }
-
-                .line-1 {
-                    position: absolute;
-                    width: 30px;
-                    height: 7px;
-                    background: $main-red;
-                    margin: 30px 21px;
-                    animation: l1 20s linear infinite;
-                }
-
-                .line-2 {
-                    position: absolute;
-                    width: 50px;
-                    height: 7px;
-                    background: $main-white;
-                    margin: 40px 21px;
-                    animation: l2 20s linear infinite;
-                }
-
-                .line-3 {
-                    position: absolute;
-                    width: 21px;
-                    height: 7px;
-                    background: $main-yellow;
-                    margin: 50px 21px;
-                    animation: l3 20s linear infinite;
-                }
-
-                .line-4 {
-                    position: absolute;
-                    width: 70px;
-                    height: 7px;
-                    background: $main-white;
-                    margin: 83px 19px;
-                    animation: l4 20s linear infinite;
-                }
-
-                .line-4::before {
-                    content: "";
-                    display: block;
-                    width: 70px;
-                    height: 7px;
-                    background: $main-grey;
-                    margin: 0px 90px;
-                    animation: l4 20s linear infinite;
-                }
-
-                .line-5 {
-                    position: absolute;
-                    width: 40px;
-                    height: 7px;
-                    background: $main-red;
-                    margin: 121px 21px;
-                    animation: l5 20s linear infinite;
-                }
-
-                .line-5::before {
-                    content: "";
-                    display: block;
-                    width: 40px;
-                    height: 7px;
-                    background: $main-yellow;
-                    margin: 0px 60px;
-                    animation: l5 20s linear infinite;
-                }
-
-                .line-5::after {
-                    content: "";
-                    display: block;
-                    width: 40px;
-                    height: 7px;
-                    background: $main-green;
-                    margin: -7px 121px;
-                    animation: l5 20s linear infinite;
-                }
-
-                .line-6 {
-                    position: absolute;
-                    width: 70px;
-                    height: 7px;
-                    background: $main-grey;
-                    margin: 152px 21px;
-                    animation: l6 20s linear infinite;
-                }
-
-                .line-6::before {
-                    content: "";
-                    display: block;
-                    width: 30px;
-                    height: 7px;
-                    background: $main-white;
-                    margin: 0px 80px;
-                    animation: l66 20s linear infinite;
-                }
-
-                .line-7 {
-                    position: absolute;
-                    width: 162px;
-                    height: 7px;
-                    background: $main-red;
-                    margin: 212px 21px;
-                    animation: l7 20s linear infinite;
+            &:hover,
+            &:focus,
+            &:active {
+                .bottom {
+                    transform: rotate(180deg);
                 }
             }
         }
 
         .about-col.journey-col {
-            img {
-                width: 100x;
-                height: 170px;
+            .pin {
+            	width: 100px;
+            	height: 100px;
+            	border-radius: 50% 50% 50% 0;
+            	background: $main-red;
+            	transform: rotate(-45deg);
+            	margin: 0 auto;
+            	animation-name: shake;
+            	animation-fill-mode: both;
+            	animation-duration: 1s;
+                z-index: 20;
+
+                &:after {
+                	content: '';
+                    @include centerer;
+                	width: 30px;
+                	height: 30px;
+                	background: $bg-color;
+                	border-radius: 50%;
+                }
+            }
+
+            .pulse {
+            	background: rgba(0,0,0,0.2);
+            	border-radius: 50%;
+            	height: 30px;
+            	width: 30px;
+                margin: 10px auto 0;
+            	transform: rotateX(55deg);
+            	z-index: -10;
+                position: relative;
+
+                &::after {
+                	content: "";
+                	border-radius: 50%;
+                    position: absolute;
+                	height: 80px;
+                	width: 80px;
+                    top: -25px;
+                    left: -25px;
+                	animation: pulsate 2s ease-out;
+                	animation-iteration-count: infinite;
+                	opacity: 0;
+                	box-shadow: 0 0 1px 3px $main-blue;
+                	animation-delay: 2.1s;
+                }
             }
         }
     }
@@ -293,226 +208,20 @@
     }
 
     @import './partial/_timeline.scss';
-}
 
-/* Heart Ani start */
-@keyframes piece-4 {
-    0% {
-        height: 10px;
-    }
+    @keyframes pulsate {
+        0% {
+            transform: scale(0.1, 0.1);
+            opacity: 0;
+        }
 
-    10%, 90% {
-        height: 94px;
-        top: -23px;
-    }
-}
+        50% {
+            opacity: 1;
+        }
 
-@keyframes piece-3 {
-    0% {
-        height: 10px;
-        top: -5px;
-    }
-
-    10%, 90% {
-        height: 90px;
-        top: -31px;
+        100% {
+            transform: scale(1.2, 1.2);
+            opacity: 0;
+        }
     }
 }
-
-@keyframes piece-2 {
-    0% {
-        height: 10px;
-        top: -5px;
-    }
-
-    10%, 90% {
-        height: 80px;
-        top: -37px;
-    }
-}
-
-@keyframes piece-1 {
-    0% {
-        height: 10px;
-        top: -5px;
-    }
-    10%, 90% {
-        height: 60px;
-        top: -31px;
-    }
-}
-
-@keyframes piece-0 {
-    0% {
-        height: 10px;
-        top: -5px;
-    }
-
-    10%, 90% {
-        height: 30px;
-        top: -15px;
-    }
-}
-/* Heart Ani End */
-
-/* Code View Ani Start*/
-@keyframes l1 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 6% {
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    7%, 20% {
-        opacity: 1;
-        width: 30px;
-        height: 7px;
-    }
-}
-
-@keyframes l2 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 7%{
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    8%, 20% {
-        opacity: 1;
-        width: 50px;
-        height: 7px;
-    }
-}
-
-@keyframes l3 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 8%{
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    9%, 20% {
-        opacity: 1;
-        width: 21px;
-        height: 7px;
-    }
-}
-
-@-moz-keyframes l4 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 9% {
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    5%, 20% {
-        opacity: 1;
-        width: 70px;
-        height: 7px;
-    }
-}
-@keyframes l4 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 9%{
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    10%, 20% {
-        opacity: 1;
-        width: 70px;
-        height: 7px;
-    }
-}
-
-@keyframes l5 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 10% {
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    12%, 20% {
-        opacity: 1;
-        width: 40px;
-        height: 7px;
-    }
-}
-@keyframes l6 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 12% {
-        opacity: 0;
-        width: 0px;
-        height: 7px;
-    }
-
-    14%, 20% {
-        opacity: 1;
-        width: 70px;
-        height: 7px;
-    }
-}
-
-@keyframes l66 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 14% {
-        opacity: 0;
-        width: 0px;
-        height: 7px;
-    }
-
-    16%, 20% {
-        opacity: 1;
-        width: 30px;
-        height: 7px;
-    }
-}
-
-@keyframes l7 {
-    0% {
-        opacity: 0;
-    }
-
-    5%, 16% {
-        opacity: 0;
-        width: 0;
-        height: 7;
-    }
-
-    17%, 20% {
-        opacity: 1;
-        width: 132px;
-        height: 7px;
-    }
-}
-/* Code View Ani End*/

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import Velocity from 'velocity-animate';
-import capitalize from '../utility.js';
 import $ from "jquery";
-import journeySvg from '../assets/svgs/destination.svg';
 
 //Partial Components
 import Timeline from './partialComponents/aboutTimeline.js';
-
-const workAniElements = ['1', '2', '3', '4', '5', '6', '7'];
-const hobbyHeartElements = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+import AniHeart from './partialComponents/aniHeart.js';
+import CodeView from './partialComponents/codeView.js';
 
 //Unexpanded  Component
 const AboutHobby = (props) => <div className="hobby-col about-col">{props.children}</div>;
@@ -16,9 +13,10 @@ const AboutWork = (props) => <div className="work-col about-col">{props.children
 const AboutJourney = (props) => <div className="journey-col about-col">{props.children}</div>;
 
 //expanded Components
+const AboutHobbyExpand = (props) => <div className="about-expanded">hobby</div>;
+const AboutWorkExpand = (props) => <div className="about-expanded">work</div>;
 const AboutJourneyExpand = (props) => <div className="about-expanded"><Timeline /></div>;
-const AboutWorkExpand = (props) => <div className="about-expanded"><Timeline /></div>;
-const AboutHobbyExpand = (props) => <div className="about-expanded"><Timeline /></div>;
+
 
 class AboutUnexpand extends Component {
     componentDidMount(){
@@ -31,33 +29,27 @@ class AboutUnexpand extends Component {
        return (
            <div className="col-container">
                <div className={`about-hobby about-cols`} ref="ani1">
-                   <AboutHobby name="hobby" expandHandler={this.props.expandHandler}>
-                       <button onClick={this.props.expandHandler} id="1">Love</button>
-                       <div className="hobby-heart about-icon">
-                           <div className="hobby-heart-container">
-                               {hobbyHeartElements.map((value, index) => {
-                                   return <div key={`heart_piece_${index}`} className={`heart-piece-${index}`}></div>;
-                               })}
-                           </div>
-                       </div>
+                   <AboutHobby name="hobby">
+                       <AniHeart onClick={this.props.expandHandler} />
+                       <button onClick={this.props.expandHandler} data-id="1"><span>Love</span></button>
                    </AboutHobby>
                </div>
                <div className={`about-work about-cols`} ref="ani2">
-                   <AboutWork name="work" expandHandler={this.props.expandHandler}>
-                       <button onClick={this.props.expandHandler} id="2">Work</button>
-                       <div className="code-view-container about-icon">
-                           <div className="code-view">
-                               {workAniElements.map((value, index) => {
-                                   return <span key={`line_${index+1}`} className={`line-${index+1}`}></span>;
-                               })}
-                           </div>
+                   <AboutWork name="work">
+                       <div className="work-icon-wapper about-icon">
+                           <span className="top"></span>
+                           <span className="bottom"></span>
                        </div>
+                       <button onClick={this.props.expandHandler} data-id="2"><span>Work</span></button>
                    </AboutWork>
                </div>
                <div className={`about-journey about-cols`} ref="ani3">
-                   <AboutJourney name="journey" expandHandler={this.props.expandHandler}>
-                       <button  onClick={this.props.expandHandler} id="3">Journey</button>
-                       <div className="about-icon"><img src={journeySvg}/></div>
+                   <AboutJourney name="journey">
+                       <div className="about-icon">
+                           <div className="pin"></div>
+                           <div className='pulse'></div>
+                       </div>
+                       <button  onClick={this.props.expandHandler} data-id="3"><span>Journey</span></button>
                    </AboutJourney>
                </div>
           </div>
@@ -67,7 +59,8 @@ class AboutUnexpand extends Component {
 
 class AboutExpand extends Component {
     componentDidMount() {
-        Velocity(this.refs.panelBox, "transition.expandIn", { display: "block", duration: 800, delay: 100});
+        Velocity(this.refs.panelBox, "transition.expandIn", { display: "block", duration: 200, delay: 100});
+        Velocity(this.refs.aboutBackBtn, "transition.slideRightBigIn", { display: "block", duration: 300, delay: 800});
     }
 
     render() {
@@ -77,12 +70,12 @@ class AboutExpand extends Component {
            <AboutJourneyExpand />,
        ];
 
-       const correctPanel = panels[this.props.panelIndex];
+       const correctPanel = panels[this.props.panelIndex-1];
 
        return (
            <div className="panel-box velocity-animate" ref="panelBox">
                {correctPanel}
-               <div className="about-close"><button onClick={this.props.unexpandHandler}></button></div>
+               <div className="about-close velocity-animate" ref="aboutBackBtn"><button onClick={this.props.unexpandHandler}></button></div>
            </div>
        );
    }
@@ -100,7 +93,7 @@ class About extends Component {
     }
 
     expanded(e) {
-        this.setState({panelIndex: Number(e.target.id)});
+        this.setState({panelIndex: Number($(e.target).attr("data-id"))});
     }
 
     unexpanded(){
