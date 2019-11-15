@@ -4,8 +4,8 @@ import $ from "jquery";
 
 //Partial Components
 import Timeline from './partialComponents/aboutTimeline.js';
+import Work from './partialComponents/work.js';
 import AniHeart from './partialComponents/aniHeart.js';
-import CodeView from './partialComponents/codeView.js';
 
 //Unexpanded  Component
 const AboutHobby = (props) => <div className="hobby-col about-col">{props.children}</div>;
@@ -14,7 +14,7 @@ const AboutJourney = (props) => <div className="journey-col about-col">{props.ch
 
 //expanded Components
 const AboutHobbyExpand = (props) => <div className="about-expanded">hobby</div>;
-const AboutWorkExpand = (props) => <div className="about-expanded">work</div>;
+const AboutWorkExpand = (props) => <div className="about-expanded"><Work /></div>;
 const AboutJourneyExpand = (props) => <div className="about-expanded"><Timeline /></div>;
 
 
@@ -60,25 +60,33 @@ class AboutUnexpand extends Component {
 class AboutExpand extends Component {
     componentDidMount() {
         Velocity(this.refs.panelBox, "transition.expandIn", { display: "block", duration: 200, delay: 100});
-        Velocity(this.refs.aboutBackBtn, "transition.slideRightBigIn", { display: "block", duration: 300, delay: 800});
+        Velocity($(".about-close"), "transition.slideRightBigIn", { display: "block", duration: 300, delay: 800});
     }
 
     render() {
-       const panels = [
+
+        const panels = [
            <AboutHobbyExpand />,
            <AboutWorkExpand />,
            <AboutJourneyExpand />,
-       ];
+        ];
 
-       const correctPanel = panels[this.props.panelIndex-1];
+        const correctPanel = panels[this.props.panelIndex-1];
 
-       return (
-           <div className="panel-box velocity-animate" ref="panelBox">
-               {correctPanel}
-               <div className="about-close velocity-animate" ref="aboutBackBtn"><button onClick={this.props.unexpandHandler}></button></div>
-           </div>
-       );
-   }
+        return (
+            <div className="panel-box velocity-animate" ref="panelBox">
+                {correctPanel}
+                <div className="about-close velocity-animate">
+                    <button onClick={this.props.unexpandHandler}>
+                        <span className="line tLine"></span>
+                        <span className="line mLine"></span>
+                        <span className="label">Back</span>
+                        <span className="line bLine"></span>
+                    </button>
+                </div>
+            </div>
+        );
+    }
 }
 
 class About extends Component {
@@ -105,12 +113,10 @@ class About extends Component {
 
         return (
             <div className="about content">
-                <div className="container">
-                    { !panelIndex ?
-                        <AboutUnexpand expandHandler={this.expanded}/>:
-                        <AboutExpand panelIndex={panelIndex} unexpandHandler={this.unexpanded} />
-                    }
-                </div>
+                { !panelIndex ?
+                    <AboutUnexpand expandHandler={this.expanded}/>:
+                    <AboutExpand panelIndex={panelIndex} unexpandHandler={this.unexpanded} />
+                }
             </div>
         );
     }

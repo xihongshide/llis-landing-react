@@ -13,11 +13,11 @@ function validateNameMessage(res) {
     }
 
     if (res.value.length < 3) {
-        if (res.name == "message") {
+        if (res.name === "message") {
             errors.push("Please enter a valid " + res.name + " at lease 20 characters");
         }
 
-        if (res.name == "name") {
+        if (res.name === "name") {
             errors.push("Please enter a valid " + res.name + " between 3 to 32 characters.");
         }
     }
@@ -37,7 +37,7 @@ function validateEmail(res) {
     return errors;
 }
 
-class Contact extends React.Component {
+class Contact extends Component {
     constructor() {
         super();
         this.state = {
@@ -90,7 +90,7 @@ class Contact extends React.Component {
         let errorMessage = "";
         state.value = e.target.value;
 
-        if(name == "email") {
+        if(name === "email") {
             errorMessage = validateEmail(this.state[name]);
         } else {
             errorMessage = validateNameMessage(this.state[name]);

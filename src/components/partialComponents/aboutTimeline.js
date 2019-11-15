@@ -108,7 +108,7 @@ const TimelineItem = (props) => (
     </div>
 );
 
-class Timeline extends React.Component {
+class Timeline extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -132,21 +132,24 @@ class Timeline extends React.Component {
 
     render() {
         return (
-            <div className="timeline-outter-container" onScroll={this.onscrollHandler}>
-		<ScrollIndicator>
-		    <div className="scroll-indicator">
-			{this.state.scrollState != "on-top"? <Arrows direction="arrows-top" />:""}
-			<div className="mouse"></div>
-			{this.state.scrollState != "on-bot"? <Arrows direction="arrows-bot" />:""}
-		    </div>
-		</ScrollIndicator>
-		<div className={`${this.state.scrollState} scroll-content`}>
-		    <div className="timeline-innner-container">
-			{timelineData.map((data, idx) => (
-				<TimelineItem data={data} key={idx} />
-			))}
-		    </div>
-		</div>
+            <div className="timeline-main-container container">
+                <ScrollIndicator>
+                    <div className="scroll-indicator">
+                    {this.state.scrollState !== "on-top"? <Arrows direction="arrows-top" />:""}
+                    <div className="mouse"></div>
+                    {this.state.scrollState !== "on-bot"? <Arrows direction="arrows-bot" />:""}
+                    </div>
+                </ScrollIndicator>
+
+                <div className="timeline-outter-container" onScroll={this.onscrollHandler}>
+            		<div className={`${this.state.scrollState} scroll-content`}>
+            		    <div className="timeline-innner-container">
+            			{timelineData.map((data, idx) => (
+            				<TimelineItem data={data} key={idx} />
+            			))}
+            		    </div>
+            		</div>
+                </div>
             </div>
         );
     }

@@ -1,0 +1,33 @@
+.about-work-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .work-left,
+    .work-right{
+        display: inline-block;
+        width: 50%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .work-left {
+        background: #4A6884;
+    }
+
+    .work-right{
+        background: #3A98D4;
+    }
+
+    .work-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        i {
+            font-size: 4em;
+            color: #fff;
+        }
+    }
+}

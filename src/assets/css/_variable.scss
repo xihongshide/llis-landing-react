@@ -228,22 +228,21 @@ Css Mixin Start
     }
 }
 
-@mixin closeIcon($color) {
-    width: 50px;
-    height: 50px;
+@mixin closeIcon($color, $size, $thickness) {
+    width: $size;
+    height: $size;
     background: transparent;
-    border: 4px dashed $color;
+    border: $thickness dashed $color;
     border-radius: 50%;
     position:relative;
     cursor:pointer;
-    margin:10px 20px;
     outline: none;
     transition: all 0.3s ease;
 
     &:after ,
     &:before {
-        width: 24px;
-        height: 4px;
+        width: $size/2;
+        height: $thickness + 1px;
         background-color: $color;
         content: "";
         position: absolute;
@@ -261,10 +260,10 @@ Css Mixin Start
     }
 
     &:hover {
-        border: 6px solid $color;
+        border: $thickness+1px solid $color;
         &:after ,
         &:before {
-            height: 5px;
+            height: $thickness + 2px;
         }
 
         &:after {
@@ -272,6 +271,87 @@ Css Mixin Start
         }
         &:before {
             transform: rotate(-30deg) translate(-50%, -50%);
+        }
+    }
+}
+
+@mixin backBtn($color, $width, $height, $thickness) {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    color: $color;
+    position: relative;
+    text-align: center;
+    padding: 0;
+
+    span.line {
+        bottom: auto;
+        right: auto;
+        top: auto;
+        left: auto;
+        background-color: $color;
+        border-radius: 10px;
+        width: 100%;
+        left: 0px;
+        height: $thickness;
+        display: block;
+        position: absolute;
+        transition: width 0.2s ease 0.1s, left 0.2s ease, transform 0.2s ease 0.3s, background-color 0.2s ease;
+    }
+
+    span.tLine {
+        top: 0px;
+    }
+
+    span.mLine {
+        top: calc(50% - #{$thickness}/2);
+        opacity: 0;
+    }
+
+    span.bLine {
+        bottom: 0px;
+    }
+
+    span.label {
+        line-height: $height;
+        width: 100%;
+        transition: all 0.4s ease;
+        font-size: 1em;
+        vertical-align: middle;
+        display: block;
+        text-transform:uppercase;
+    }
+
+    &:hover {
+        span.label {
+            transform: scale(1, -1) translateX(5px);
+        }
+
+        span.line {
+            height: $thickness;
+            background-color: $color;
+        }
+
+        span.tLine {
+            width: 18px;
+            transform: rotate(-30deg);
+            left: -($width - 5px);
+            top: 29%;
+        }
+
+        span.mLine {
+            left: -($width - 9px);
+            opacity: 1;
+            width: 26px;
+        }
+
+        span.bLine {
+            width: 18px;
+            transform: rotate(30deg);
+            left: -($width - 5px);
+            bottom: 28%;
         }
     }
 }
@@ -285,30 +365,33 @@ Css keyframes Start
 
 // Header Logo Ani
 @keyframes aniLetter {
-    0% {
-        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    0%, 75% {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+        color: $main-white;
+    }
+
+    80% {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 60%);
         color: $main-grey;
     }
-    25% {
-        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+
+    85% {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 70%);
         color: $main-yellow;
     }
-    50% {
-        -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+
+    90% {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
         color: $main-green;
     }
-    75% {
-        -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
-        clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 15%);
+
+    95% {
+        clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 90%);
         color: $main-red;
     }
 
     100% {
-        -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
-        clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+        clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
         color: $main-blue;
     }
 }
