@@ -7971,6 +7971,78 @@ footer .info-wrapper {
       .about .about-work-container .work-content i {
         font-size: 4em;
         color: #fff; }
+  .about .about-hobby-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; }
+    .about .about-hobby-container .hobby-slides {
+      z-index: 20; }
+    .about .about-hobby-container .hobby-slide {
+      z-index: 20;
+      display: inline-block;
+      width: 25%;
+      overflow: hidden;
+      height: 100vh;
+      position: relative; }
+      .about .about-hobby-container .hobby-slide:nth-child(1) {
+        background: #ffc300; }
+      .about .about-hobby-container .hobby-slide:nth-child(2) {
+        background: #9c76a2; }
+      .about .about-hobby-container .hobby-slide:nth-child(3) {
+        background: #ce5a57; }
+      .about .about-hobby-container .hobby-slide:nth-child(4) {
+        background: #444c5c; }
+      .about .about-hobby-container .hobby-slide .hobby-slide-content {
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 45%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: inherit;
+        padding: 0 25px;
+        cursor: pointer;
+        max-width: 320px;
+        pointer-events: auto; }
+        .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled {
+          pointer-events: none; }
+          .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled svg {
+            opacity: 0;
+            display: absolute;
+            -webkit-transition: all 0.8s;
+            -o-transition: all 0.8s;
+            transition: all 0.8s;
+            -webkit-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+            transform: translateY(-200px);
+            -webkit-transition-delay: 0.3;
+            -o-transition-delay: 0.3;
+            transition-delay: 0.3; }
+        .about .about-hobby-container .hobby-slide .hobby-slide-content svg {
+          height: 5em;
+          width: 5em;
+          color: #fff;
+          -webkit-transition: all 0.6s;
+          -o-transition: all 0.6s;
+          transition: all 0.6s;
+          -webkit-transform: translateY(20px);
+          -ms-transform: translateY(20px);
+          transform: translateY(20px);
+          -webkit-transition-delay: 0.3s;
+          -o-transition-delay: 0.3s;
+          transition-delay: 0.3s; }
+        .about .about-hobby-container .hobby-slide .hobby-slide-content h1 {
+          color: #fff;
+          font-size: 2em;
+          font-weight: 700;
+          margin: 15px 0;
+          display: none; }
+        .about .about-hobby-container .hobby-slide .hobby-slide-content p {
+          color: #fff;
+          font-size: 1em;
+          display: none; }
 
 @-webkit-keyframes pulsate {
   0% {

@@ -1,0 +1,80 @@
+@mixin skew {
+    transform: skew(-11deg);
+}
+
+$slides-colors: $main-yellow $main-purple $main-red $main-blue;
+
+
+.about-hobby-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    .hobby-slides {
+        z-index: 20;
+    }
+
+    .hobby-slide {
+        z-index: 20;
+        display: inline-block;
+        width: 25%;
+        overflow: hidden;
+        height: 100vh;
+        position: relative;
+
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+                background: nth($slides-colors, $i);
+            }
+        }
+
+        .hobby-slide-content {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            color: inherit;
+            padding: 0 25px;
+            cursor: pointer;
+            max-width: 320px;
+            pointer-events: auto;
+
+            &.disabled {
+                pointer-events: none;
+
+                svg {
+                    opacity: 0;
+                    display: absolute;
+                    transition: all 0.8s;
+                    transform: translateY(-200px);
+                    transition-delay: 0.3;
+                }
+            }
+
+            svg {
+                height: 5em;
+                width: 5em;
+                color: #fff;
+                transition: all 0.6s;
+                transform: translateY(20px);
+                transition-delay: 0.3s;
+            }
+
+            h1 {
+                color: #fff;
+                font-size: 2em;
+                font-weight: 700;
+                margin: 15px 0;
+                display: none;
+            }
+
+            p {
+                color: #fff;
+                font-size: 1em;
+                display: none;
+            }
+        }
+    }
+}

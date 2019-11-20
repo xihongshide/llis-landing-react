@@ -3,8 +3,10 @@ import Velocity from 'velocity-animate';
 import $ from "jquery";
 
 //Partial Components
-import Timeline from './partialComponents/aboutTimeline.js';
+import Timeline from './partialComponents/timeline.js';
 import Work from './partialComponents/work.js';
+import HobbySlides from './partialComponents/hobbySlides.js';
+
 import AniHeart from './partialComponents/aniHeart.js';
 
 //Unexpanded  Component
@@ -13,9 +15,9 @@ const AboutWork = (props) => <div className="work-col about-col">{props.children
 const AboutJourney = (props) => <div className="journey-col about-col">{props.children}</div>;
 
 //expanded Components
-const AboutHobbyExpand = (props) => <div className="about-expanded">hobby</div>;
-const AboutWorkExpand = (props) => <div className="about-expanded"><Work /></div>;
-const AboutJourneyExpand = (props) => <div className="about-expanded"><Timeline /></div>;
+const AboutHobbyExpand = (props) => <HobbySlides />;
+const AboutWorkExpand = (props) => <Work />;
+const AboutJourneyExpand = (props) => <Timeline />;
 
 
 class AboutUnexpand extends Component {
@@ -59,7 +61,6 @@ class AboutUnexpand extends Component {
 
 class AboutExpand extends Component {
     componentDidMount() {
-        Velocity(this.refs.panelBox, "transition.expandIn", { display: "block", duration: 200, delay: 100});
         Velocity($(".about-close"), "transition.slideRightBigIn", { display: "block", duration: 300, delay: 800});
     }
 
@@ -74,8 +75,10 @@ class AboutExpand extends Component {
         const correctPanel = panels[this.props.panelIndex-1];
 
         return (
-            <div className="panel-box velocity-animate" ref="panelBox">
-                {correctPanel}
+            <div className="panel-box">
+                <div className="about-expanded">
+                    {correctPanel}
+                </div>
                 <div className="about-close velocity-animate">
                     <button onClick={this.props.unexpandHandler}>
                         <span className="line tLine"></span>
