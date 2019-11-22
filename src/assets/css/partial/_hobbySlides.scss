@@ -39,7 +39,6 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
             padding: 0 25px;
             cursor: pointer;
             max-width: 320px;
-            pointer-events: auto;
 
             &.disabled {
                 pointer-events: none;
@@ -67,13 +66,11 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
                 font-size: 2em;
                 font-weight: 700;
                 margin: 15px 0;
-                display: none;
             }
 
             p {
                 color: #fff;
                 font-size: 1em;
-                display: none;
             }
         }
     }

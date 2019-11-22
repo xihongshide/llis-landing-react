@@ -6960,11 +6960,11 @@ Css keyframes End
               width: 100%;
               background: #ffffff !important; }
         .navbar .navbar-nav ul li:nth-of-type(1) a:before {
-          background: #ffc300;
+          background: #333333;
           height: 0.18em; }
         .navbar .navbar-nav ul li:nth-of-type(1) a:hover {
           opacity: 0.8;
-          color: #ffc300; }
+          color: #333333; }
         .navbar .navbar-nav ul li:nth-of-type(2) a:before {
           background: #78a5a3;
           height: 0.18em; }
@@ -6978,17 +6978,17 @@ Css keyframes End
           opacity: 0.8;
           color: #444c5c; }
         .navbar .navbar-nav ul li:nth-of-type(4) a:before {
-          background: #ce5a57;
+          background: #ffc300;
           height: 0.18em; }
         .navbar .navbar-nav ul li:nth-of-type(4) a:hover {
           opacity: 0.8;
-          color: #ce5a57; }
+          color: #ffc300; }
         .navbar .navbar-nav ul li:nth-of-type(5) a:before {
-          background: #333333;
+          background: #ce5a57;
           height: 0.18em; }
         .navbar .navbar-nav ul li:nth-of-type(5) a:hover {
           opacity: 0.8;
-          color: #333333; }
+          color: #ce5a57; }
   @media screen and (max-width: 992px) {
     .navbar {
       text-align: right; }
@@ -8004,8 +8004,7 @@ footer .info-wrapper {
         color: inherit;
         padding: 0 25px;
         cursor: pointer;
-        max-width: 320px;
-        pointer-events: auto; }
+        max-width: 320px; }
         .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled {
           pointer-events: none; }
           .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled svg {
@@ -8037,12 +8036,10 @@ footer .info-wrapper {
           color: #fff;
           font-size: 2em;
           font-weight: 700;
-          margin: 15px 0;
-          display: none; }
+          margin: 15px 0; }
         .about .about-hobby-container .hobby-slide .hobby-slide-content p {
           color: #fff;
-          font-size: 1em;
-          display: none; }
+          font-size: 1em; }
 
 @-webkit-keyframes pulsate {
   0% {
