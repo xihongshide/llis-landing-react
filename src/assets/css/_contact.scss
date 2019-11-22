@@ -5,7 +5,7 @@
 
     .container {
         margin: 0 auto;
-        padding-top: 2rem;
+        padding-top: 6em;
     }
 
     .contact-info {
@@ -41,6 +41,7 @@
 
         h1 {
             font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .form {
@@ -48,7 +49,62 @@
         }
 
         .submit-btn {
-            @include mainButton;
+            outline:none;
+            text-align: center;
+            width: 130px;
+            line-height: 40px;
+            border-radius:40px;
+            background: #fff;
+            border: 2px solid $main-white;
+            color: $main-white;
+            letter-spacing:1px;
+            background: transparent;
+            text-shadow:0;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-weight: 700;
+
+            &:hover {
+                color: $main-yellow;
+                background: $main-white;
+            }
+
+            &:active {
+                letter-spacing: 2px ;
+            }
+
+            &:after {
+                content:"SUBMIT";
+            }
+
+            &.on-click {
+                width: 40px;
+                border-color: $main-white;
+                border-width:3px;
+                font-size:0;
+                border-left-color: $main-green;
+                animation: rotating 2s 0.25s linear infinite;
+
+                &:after {
+                    content:"";
+                }
+
+                &:hover {
+                    color: $main-green;
+                    background: $main-white;
+                }
+            }
+
+            &.validate {
+                font-size:13px;
+                color: $main-white;
+                background: $main-green;
+
+                &:after {
+                    font-family:'FontAwesome';
+                    content:"\f00c";
+                }
+            }
         }
 
         @mixin input {
@@ -63,10 +119,14 @@
             font-family: inherit;
             background: transparent;
             color: $main-white;
+            opacity: 0.7;
+            transition: all 0.3s linear;
         }
 
         @mixin input-focus {
-            border-color: $main-white;
+            border: 2.5px solid $main-white;
+            font-weight: 500;
+            opacity: 1;
         }
 
         @mixin label {
@@ -78,12 +138,14 @@
             transition: 150ms ease;
             color: $main-white;
             background: transparent;
+            transition: all 0.3s linear;
         }
 
         @mixin label-focus {
             position: absolute;
-            top: 0;
+            top: -0.6em;
             font-size: 0.9em;
+            font-weight: 500;
             color: $main-white;
             font-weight: bold;
             transform: translateY(-50%);
@@ -92,11 +154,13 @@
 
         @mixin has-error {
             label,
-            input {
+            input,
+            textarea {
                 color: $main-red !important;
             }
 
-            input {
+            input,
+            textarea {
                 border: 2px solid $main-red !important;
             }
 
@@ -107,7 +171,7 @@
 
         .text-input {
             position: relative;
-            margin-bottom: 1rem;
+            margin-bottom: 2em;
 
             label {
                 @include label;
@@ -122,7 +186,7 @@
                 @include input-focus;
             }
 
-            &.hasError {
+            &.has-error {
                 @include has-error;
             }
         }
@@ -148,7 +212,7 @@
                 @include input-focus;
             }
 
-            &.hasError {
+            &.has-error {
                 @include has-error;
             }
         }

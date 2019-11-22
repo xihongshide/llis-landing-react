@@ -8067,7 +8067,7 @@ footer .info-wrapper {
 
 .contact .container {
   margin: 0 auto;
-  padding-top: 2rem; }
+  padding-top: 6em; }
 
 .contact .contact-info {
   text-align: left; }
@@ -8089,81 +8089,57 @@ footer .info-wrapper {
   border: none;
   text-align: left; }
   .contact .card h1 {
-    font-size: 2rem; }
+    font-size: 2rem;
+    margin-bottom: 20px; }
   .contact .card .form {
     padding: 0; }
   .contact .card .submit-btn {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    font-size: 20px;
+    outline: none;
+    text-align: center;
+    width: 130px;
+    line-height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    letter-spacing: 1px;
     background: transparent;
-    overflow: visible;
-    height: 2em;
-    -webkit-transition: all 0.8s linear;
-    -o-transition: all 0.8s linear;
-    transition: all 0.8s linear; }
-    .contact .card .submit-btn button {
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      position: relative;
-      -webkit-transition: 0.5s color ease;
-      -o-transition: 0.5s color ease;
-      transition: 0.5s color ease;
-      text-decoration: none;
-      overflow: visible; }
-      .contact .card .submit-btn button:before, .contact .card .submit-btn button:after {
-        content: "";
-        -webkit-transition: 0.5s all ease;
-        -o-transition: 0.5s all ease;
-        transition: 0.5s all ease;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        position: absolute;
-        width: 0;
-        height: 0.18em; }
-      .contact .card .submit-btn button:after {
-        bottom: -0.2em; }
-      .contact .card .submit-btn button:before {
-        top: -0.2em; }
-      .contact .card .submit-btn button:after {
-        left: 0;
-        width: 100%;
-        height: 0.2em; }
-      .contact .card .submit-btn button:before {
-        right: 0;
-        width: 100%;
-        height: 0.2em; }
-      .contact .card .submit-btn button:hover:after, .contact .card .submit-btn button:hover:before {
-        width: 0; }
-    .contact .card .submit-btn:before, .contact .card .submit-btn:after {
-      content: "";
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      -webkit-transition: 0.25s all ease;
-      -o-transition: 0.25s all ease;
-      transition: 0.25s all ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      position: absolute;
-      width: 0.15em;
-      height: calc(100% - 0.2em); }
-    .contact .card .submit-btn:before {
-      left: 0; }
-    .contact .card .submit-btn:after {
-      right: 0;
-      bottom: 0.2em; }
+    text-shadow: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    font-weight: 700; }
     .contact .card .submit-btn:hover {
-      -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
-      transform: scale(0.9);
-      opacity: 0.9; }
-      .contact .card .submit-btn:hover:before, .contact .card .submit-btn:hover:after {
-        height: 0; }
+      color: #ffc300;
+      background: #ffffff; }
+    .contact .card .submit-btn:active {
+      letter-spacing: 2px; }
+    .contact .card .submit-btn:after {
+      content: "SUBMIT"; }
+    .contact .card .submit-btn.on-click {
+      width: 40px;
+      border-color: #ffffff;
+      border-width: 3px;
+      font-size: 0;
+      border-left-color: #78a5a3;
+      -webkit-animation: rotating 2s 0.25s linear infinite;
+      animation: rotating 2s 0.25s linear infinite; }
+      .contact .card .submit-btn.on-click:after {
+        content: ""; }
+      .contact .card .submit-btn.on-click:hover {
+        color: #78a5a3;
+        background: #ffffff; }
+    .contact .card .submit-btn.validate {
+      font-size: 13px;
+      color: #ffffff;
+      background: #78a5a3; }
+      .contact .card .submit-btn.validate:after {
+        font-family: 'FontAwesome';
+        content: "\f00c"; }
   .contact .card .text-input {
     position: relative;
-    margin-bottom: 1rem; }
+    margin-bottom: 2em; }
     .contact .card .text-input label {
       position: absolute;
       top: 1ch;
@@ -8174,11 +8150,15 @@ footer .info-wrapper {
       -o-transition: 150ms ease;
       transition: 150ms ease;
       color: #ffffff;
-      background: transparent; }
+      background: transparent;
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
     .contact .card .text-input label.label-focus {
       position: absolute;
-      top: 0;
+      top: -0.6em;
       font-size: 0.9em;
+      font-weight: 500;
       color: #ffffff;
       font-weight: bold;
       -webkit-transform: translateY(-50%);
@@ -8198,15 +8178,23 @@ footer .info-wrapper {
       font-size: 1rem;
       font-family: inherit;
       background: transparent;
-      color: #ffffff; }
+      color: #ffffff;
+      opacity: 0.7;
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
     .contact .card .text-input input.input-focus {
-      border-color: #ffffff; }
-    .contact .card .text-input.hasError label,
-    .contact .card .text-input.hasError input {
+      border: 2.5px solid #ffffff;
+      font-weight: 500;
+      opacity: 1; }
+    .contact .card .text-input.has-error label,
+    .contact .card .text-input.has-error input,
+    .contact .card .text-input.has-error textarea {
       color: #ce5a57 !important; }
-    .contact .card .text-input.hasError input {
+    .contact .card .text-input.has-error input,
+    .contact .card .text-input.has-error textarea {
       border: 2px solid #ce5a57 !important; }
-    .contact .card .text-input.hasError p {
+    .contact .card .text-input.has-error p {
       color: #ce5a57; }
   .contact .card .text-area {
     position: relative;
@@ -8221,11 +8209,15 @@ footer .info-wrapper {
       -o-transition: 150ms ease;
       transition: 150ms ease;
       color: #ffffff;
-      background: transparent; }
+      background: transparent;
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
     .contact .card .text-area label.label-focus {
       position: absolute;
-      top: 0;
+      top: -0.6em;
       font-size: 0.9em;
+      font-weight: 500;
       color: #ffffff;
       font-weight: bold;
       -webkit-transform: translateY(-50%);
@@ -8246,15 +8238,23 @@ footer .info-wrapper {
       font-family: inherit;
       background: transparent;
       color: #ffffff;
+      opacity: 0.7;
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear;
       height: 8em; }
     .contact .card .text-area textarea.input-focus {
-      border-color: #ffffff; }
-    .contact .card .text-area.hasError label,
-    .contact .card .text-area.hasError input {
+      border: 2.5px solid #ffffff;
+      font-weight: 500;
+      opacity: 1; }
+    .contact .card .text-area.has-error label,
+    .contact .card .text-area.has-error input,
+    .contact .card .text-area.has-error textarea {
       color: #ce5a57 !important; }
-    .contact .card .text-area.hasError input {
+    .contact .card .text-area.has-error input,
+    .contact .card .text-area.has-error textarea {
       border: 2px solid #ce5a57 !important; }
-    .contact .card .text-area.hasError p {
+    .contact .card .text-area.has-error p {
       color: #ce5a57; }
 
 * {

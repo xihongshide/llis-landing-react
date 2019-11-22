@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from "jquery";
 
 /** ContactForm Component */
 
@@ -53,7 +54,7 @@ class Contact extends Component {
                 label: "Email",
                 value: "",
                 focus: false,
-                errorMessage: false
+                errorMessage: ""
             },
             message: {
                 name: "message",
@@ -96,8 +97,10 @@ class Contact extends Component {
             errorMessage = validateNameMessage(this.state[name]);
         }
 
+        console.log(errorMessage[0]);
+
         if(errorMessage) {
-           state.errorMessage =  errorMessage;
+           state.errorMessage =  errorMessage[0];
         }
 
         this.setState({ [name]: state });
@@ -105,6 +108,17 @@ class Contact extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log($(e.target));
+
+        $(e.target).addClass('on-click', 250);
+
+        setTimeout(()=>{
+            $(e.target).removeClass( "onclic" );
+            $(e.target).addClass( "validate", 450, setTimeout(()=>{
+                $( "#button" ).removeClass( "validate" );}, 1250 )
+            );
+        }, 2250);
+
         const subject = "Mail From" + this.state.name.value,
               email = this.state.email.value,
               message = this.state.message.value;
@@ -112,6 +126,7 @@ class Contact extends Component {
 
     render() {
         const { name, email, message } = this.state;
+        let validated = name.value && !name.errorMessage && email.value && !email.errorMessage && message.value && !message.errorMessage;
 
         return (
             <div className="contact content">
@@ -149,7 +164,7 @@ class Contact extends Component {
                                 onChange={this.handleChange}
                             />
 
-                            <Submit>Submit</Submit>
+                        {validated? <Submit>Submit</Submit>:""}
                         </Form>
                     </Card>
                 </div>
@@ -159,16 +174,12 @@ class Contact extends Component {
 }
 
 /** Components */
-const Card = props => (
-    <div className="card col-sm-7">
-        {props.children}
-    </div>
-);
+const Card = props => <div className="card col-sm-7">{props.children}</div>;
 
 const Form = props => <form className="form" onSubmit={props.onSubmit}>{props.children}</form>;
 
 const TextInput = props => (
-    <div className={props.message? "text-input hasError" : "text-input"}>
+    <div className={props.errorMessage? "text-input has-error" : "text-input"}>
         <label
             className={props.focus || props.value !== "" ? "label-focus" : ""}
             htmlFor={props.name}
@@ -185,13 +196,12 @@ const TextInput = props => (
             onFocus={props.onFocus}
             onBlur={props.onBlur}
         />
-
         {props.errorMessage? <p>{props.errorMessage}</p>:""}
     </div>
 );
 
 const TextArea = props => (
-    <div className="text-area">
+    <div className={props.errorMessage? "text-area has-error" : "text-area"}>
         <label
             className={props.focus || props.value !== "" ? "label-focus" : ""}
             htmlFor={props.name}
@@ -207,11 +217,11 @@ const TextArea = props => (
             onFocus={props.onFocus}
             onBlur={props.onBlur}
         />
+        {props.errorMessage? <p>{props.errorMessage}</p>:""}
     </div>
 );
 
 const Submit = props => <input className="submit-btn" type="submit" value="Submit" />;
-
 const ContactInfo = props => <div className="contact-info col-sm-4">{props.children}</div>;
 
 export default Contact;
