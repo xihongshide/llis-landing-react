@@ -8,9 +8,9 @@ const timelineData = [
         text: '<experience-1>',
         title: '<title 1>',
         category: {
-	    tag: 'month day year',
-	    color: tagColor[0]
-	},
+    	    tag: 'month day year',
+    	    color: tagColor[0]
+    	},
         link: {
             url: 'https://github.com/florinpop17/app-ideas',
             text: 'Check it out on GitHub'
@@ -21,9 +21,9 @@ const timelineData = [
         text: '<experience-2>',
         title: '<title 2>',
         category: {
-	    tag: 'month day year',
-	    color: tagColor[1]
-	},
+	           tag: 'month day year',
+	       color: tagColor[1]
+    	},
         link: {
             url: 'https://github.com/florinpop17/app-ideas',
             text: 'Check it out on GitHub'
@@ -34,9 +34,9 @@ const timelineData = [
         text: '<experience-2>',
         title: '<title 2>',
         category: {
-	    tag: 'month day year',
-	    color: tagColor[2]
-	},
+    	    tag: 'month day year',
+    	    color: tagColor[2]
+    	},
         link: {
             url: 'https://github.com/florinpop17/app-ideas',
             text: 'Check it out on GitHub'
@@ -47,9 +47,9 @@ const timelineData = [
         text: '<experience-3>',
         title: '<title 3>',
         category: {
-	    tag: 'month day year',
-	    color: tagColor[3]
-	},
+    	    tag: 'month day year',
+    	    color: tagColor[3]
+    	},
         link: {
             url: 'https://github.com/florinpop17/app-ideas',
             text: 'Check it out on GitHub'
@@ -60,9 +60,9 @@ const timelineData = [
         text: '<experience-4>',
         title: '<title 4>',
         category: {
-	    tag: 'month day year',
-	    color: tagColor[4]
-	},
+    	    tag: 'month day year',
+    	    color: tagColor[4]
+    	},
         link: {
             url: 'https://github.com/florinpop17/app-ideas',
             text: 'Check it out on GitHub'

@@ -2,32 +2,53 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
 
-    .work-left,
-    .work-right{
-        display: inline-block;
-        width: 50%;
-        height: 100vh;
+    .work-barin {
+        margin: 0 auto;
+        max-width: 300px;
+        width: 100%;
         position: relative;
+
+        svg {
+            width: 100%;
+            z-index: 10
+        }
     }
 
-    .work-left {
-        background: #4A6884;
+    .brain-left,
+    .brain-right {
+        border: none;
+        outline: none;
+        background: transparent;
+        height: 100%;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        width: 140px;
+        height: 75%;
+        z-index: 20;
     }
 
-    .work-right{
-        background: #3A98D4;
+    .brain-left{
+        left: 0;
     }
 
-    .work-content {
+    .brain-right {
+        right: 0
+    }
+
+    #barin-close {
+        @include centererHorizontal;
+        top: 20%;
+    }
+
+    .about-work-content {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-
-        i {
-            font-size: 4em;
-            color: #fff;
-        }
     }
 }

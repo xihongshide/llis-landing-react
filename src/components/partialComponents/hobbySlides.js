@@ -7,35 +7,35 @@ import { faRunning, faBasketballBall, faCoffee, faCode } from '@fortawesome/free
 let lock = false;
 const hobbyContent = [
     {
-      'id': 1,
-      'name': "run",
-      'title': 'Running\'s life',
-      'icon': <FontAwesomeIcon icon={faRunning} />,
-      'description': 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+      id: 1,
+      name: "run",
+      title: 'Running\'s life',
+      icon: <FontAwesomeIcon icon={faRunning} />,
+      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
     },
 
     {
-      'id': 2,
-      'name': "Basketball",
-      'title': 'Ball\'s life',
-      'icon': <FontAwesomeIcon icon={faBasketballBall} />,
-      'description': 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+      id: 2,
+      name: "Basketball",
+      title: 'Ball\'s life',
+      icon: <FontAwesomeIcon icon={faBasketballBall} />,
+      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
     },
 
     {
-      'id': 3,
-      'name': "coffee",
-      'title': 'coffee\'s life',
-      'icon': <FontAwesomeIcon icon={faCoffee} />,
-      'description': 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+      id: 3,
+      name: "coffee",
+      title: 'coffee\'s life',
+      icon: <FontAwesomeIcon icon={faCoffee} />,
+      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
     },
 
     {
-      'id': 4,
-      'name': "code",
-      'title': 'code\'s life',
-      'icon': <FontAwesomeIcon icon={faCode} />,
-      'description': 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+      id: 4,
+      name: "code",
+      title: 'code\'s life',
+      icon: <FontAwesomeIcon icon={faCode} />,
+      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
     }
 ];
 

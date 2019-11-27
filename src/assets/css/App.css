@@ -7950,27 +7950,48 @@ footer .info-wrapper {
   .about .about-work-container {
     width: 100%;
     padding: 0;
-    margin: 0; }
-    .about .about-work-container .work-left,
-    .about .about-work-container .work-right {
-      display: inline-block;
-      width: 50%;
-      height: 100vh;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    padding-top: 80px; }
+    .about .about-work-container .work-barin {
+      margin: 0 auto;
+      max-width: 300px;
+      width: 100%;
       position: relative; }
-    .about .about-work-container .work-left {
-      background: #4A6884; }
-    .about .about-work-container .work-right {
-      background: #3A98D4; }
-    .about .about-work-container .work-content {
+      .about .about-work-container .work-barin svg {
+        width: 100%;
+        z-index: 10; }
+    .about .about-work-container .brain-left,
+    .about .about-work-container .brain-right {
+      border: none;
+      outline: none;
+      background: transparent;
+      height: 100%;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      width: 140px;
+      height: 75%;
+      z-index: 20; }
+    .about .about-work-container .brain-left {
+      left: 0; }
+    .about .about-work-container .brain-right {
+      right: 0; }
+    .about .about-work-container #barin-close {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      top: 20%; }
+    .about .about-work-container .about-work-content {
       position: absolute;
       left: 50%;
       top: 50%;
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
-      .about .about-work-container .work-content i {
-        font-size: 4em;
-        color: #fff; }
   .about .about-hobby-container {
     width: 100%;
     padding: 0;

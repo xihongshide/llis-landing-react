@@ -30,13 +30,13 @@ class AboutUnexpand extends Component {
     render() {
        return (
            <div className="col-container">
-               <div className={`about-hobby about-cols`} ref="ani1">
+               <div className="about-hobby about-cols" ref="ani1">
                    <AboutHobby name="hobby">
                        <AniHeart onClick={this.props.expandHandler} />
                        <button onClick={this.props.expandHandler} data-id="1"><span>Love</span></button>
                    </AboutHobby>
                </div>
-               <div className={`about-work about-cols`} ref="ani2">
+               <div className="about-work about-cols" ref="ani2">
                    <AboutWork name="work">
                        <div className="work-icon-wapper about-icon">
                            <span className="top"></span>
@@ -45,7 +45,7 @@ class AboutUnexpand extends Component {
                        <button onClick={this.props.expandHandler} data-id="2"><span>Work</span></button>
                    </AboutWork>
                </div>
-               <div className={`about-journey about-cols`} ref="ani3">
+               <div className="about-journey about-cols" ref="ani3">
                    <AboutJourney name="journey">
                        <div className="about-icon">
                            <div className="pin"></div>

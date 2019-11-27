@@ -1,74 +1,88 @@
 import React, { Component } from 'react';
 import Velocity from 'velocity-animate';
 import $ from "jquery";
+import Brain from './brain.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChalkboardTeacher, faCode } from '@fortawesome/free-solid-svg-icons';
+
+const WorkContent = [
+    {
+        name: 'programmer',
+        title: 'Mad Programmer',
+        description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
+        icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
+	    color: '#fff',
+    },
+
+    {
+        name: 'teacher',
+        title: 'IELTS Teacher',
+        description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
+        icon: <FontAwesomeIcon icon={faCode} />,
+        color: '#fff',
+}
+];
+
+class Content extends Component {
+    componentDidMount(){
+        Velocity($('.about-work-content h1'), "transition.shrinkIn", { display: "block", duration: 500, delay: 50});
+        Velocity($('.about-work-content p'), "transition.shrinkIn", { display: "block", duration: 500, delay: 150});
+    }
+
+    render() {
+        let workContent = WorkContent[this.props.contentIndex];
+        console.log(this.props.contentIndex);
+        return (
+            <div className={`${workContent.name} about-work-content`}>
+                {workContent.icon}
+                <h1 className="velocity-animate">{workContent.title}</h1>
+                <p className="velocity-animate">{workContent.description}</p>
+            </div>
+        );
+    }
+}
 
 class Work extends Component {
     constructor(props) {
         super(props);
 
-        this.expand = this.expand.bind(this);
-        this.unexpand = this.unexpand.bind(this);
+        this.state = {
+            isOpen: false,
+            contentIndex: null,
+        };
+
+        this.openBrain = this.openBrain.bind(this);
+        this.closeBrain = this.closeBrain.bind(this);
     }
 
-    expand(e) {
-        let expandElement = $(e.target).parents(".work_slider");
-
-        Velocity($(expandElement).siblings(".work_slider"), {
-            width: 0,
-        }, {
-            duration: 600,
-            easing: [ 0.17, 0.67, 0.83, 0.67 ],
-            delay: 400,
-            opacity: 0,
-            complete: () => $(this).hide(),
-        });
-
-        Velocity($(expandElement), {
-            width: '100%',
-        }, {
-            duration: 600,
-            easing: [0.17, 0.67, 0.83, 0.67],
-            delay: 400,
+    openBrain(e) {
+        console.log(e.target);
+        this.setState({
+            contentIndex: e.target.getAttribute('value'),
+            isOpen: true,
         });
     }
 
-    unexpand(e) {
-        let expandElement = $(e.target).parents(".work_slider");
-
-        $(expandElement).siblings(".work_slider").show(()=>{Velocity($(this), {
-                width: '50%',
-            }, {
-                duration: 600,
-                easing: [ 0.17, 0.67, 0.83, 0.67 ],
-                delay: 400,
-                opacity: 1,
-            });
-        });
-
-        Velocity($(expandElement), {
-            width: '50%',
-        }, {
-            duration: 600,
-            easing: [0.17, 0.67, 0.83, 0.67],
-            delay: 400,
+    closeBrain(e) {
+        this.setState({
+            contentIndex: null,
+            isOpen: false,
         });
     }
 
     render() {
         return (
             <div className="about-work-container">
-                <div className="work-left work_slider">
-                    <div className="work-content">
-                        <button onClick={this.expand}>
-                            <i className="fas fa-chalkboard-teacher"></i>
+                <div className="work-barin">
+                    {this.state.isOpen? <Content contentIndex={this.state.contentIndex} />:""}
+                    <div className="brain">
+                        <Brain />
+                        <button id="barin-left-btn" className="col-xs-6 brain-left" value="0" onClick={this.openBrain}>
+                        </button>
+                        <button id="barin-right-btn" className="col-xs-6 brain-right" value="1" onClick={this.openBrain}>
                         </button>
                     </div>
-                </div>
-
-                <div className="work-right work_slider">
-                    <div className="work-content">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
+                    <button id="barin-close" onClick={this.closeBrain}>close</button>
                 </div>
             </div>
         );
