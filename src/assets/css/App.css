@@ -8088,7 +8088,7 @@ footer .info-wrapper {
 
 .contact .container {
   margin: 0 auto;
-  padding-top: 6em; }
+  padding-top: 4em; }
 
 .contact .contact-info {
   text-align: left; }
@@ -8127,21 +8127,31 @@ footer .info-wrapper {
     background: transparent;
     text-shadow: 0;
     cursor: pointer;
-    -webkit-transition: all 0.25s ease;
-    -o-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    font-weight: 700; }
+    -webkit-transition: all 0.45s ease;
+    -o-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 15px; }
+    .contact .card .submit-btn .icon {
+      display: none; }
     .contact .card .submit-btn:hover {
       color: #ffc300;
       background: #ffffff; }
     .contact .card .submit-btn:active {
-      letter-spacing: 2px; }
+      letter-spacing: 3px;
+      -webkit-transition: all 0.85s ease;
+      -o-transition: all 0.85s ease;
+      transition: all 0.85s ease;
+      color: #ffc300;
+      background: #ffffff; }
     .contact .card .submit-btn:after {
-      content: "SUBMIT"; }
+      content: "Sent";
+      font-size: 18px; }
     .contact .card .submit-btn.on-click {
-      width: 40px;
-      border-color: #ffffff;
-      border-width: 3px;
+      width: 49px;
+      border: 3px solid #ffffff;
       font-size: 0;
       border-left-color: #78a5a3;
       -webkit-animation: rotating 2s 0.25s linear infinite;
@@ -8152,12 +8162,12 @@ footer .info-wrapper {
         color: #78a5a3;
         background: #ffffff; }
     .contact .card .submit-btn.validate {
-      font-size: 13px;
-      color: #ffffff;
-      background: #78a5a3; }
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffc300;
+      background: #ffffff; }
       .contact .card .submit-btn.validate:after {
-        font-family: 'FontAwesome';
-        content: "\f00c"; }
+        content: "Sent"; }
   .contact .card .text-input {
     position: relative;
     margin-bottom: 2em; }
@@ -8277,6 +8287,22 @@ footer .info-wrapper {
       border: 2px solid #ce5a57 !important; }
     .contact .card .text-area.has-error p {
       color: #ce5a57; }
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 * {
   font-family: 'Lato', sans-serif;

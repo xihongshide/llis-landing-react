@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 import emailjs from 'emailjs-com';
-console.log(emailjs);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import Recaptcha from 'react-recaptcha';
 
 /** ContactForm Component */
 
@@ -65,12 +67,15 @@ class Contact extends Component {
                 focus: false,
                 errorMessage: ""
             },
+
+            recaptcha: false
         };
 
         this.handleFocus = this.handleFocus.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.recaptchaVerifyCallback = this.recaptchaVerifyCallback.bind(this);
     }
 
     handleFocus(e) {
@@ -91,12 +96,12 @@ class Contact extends Component {
         const name = e.target.name;
         const state = Object.assign({}, this.state[name]);
         let errorMessage = "";
-        state.value = e.target.value;
+        state.value = $(e.target).val();
 
         if(name === "email") {
-            errorMessage = validateEmail(this.state[name]);
+            errorMessage = validateEmail(state);
         } else {
-            errorMessage = validateNameMessage(this.state[name]);
+            errorMessage = validateNameMessage(state);
         }
 
         if(errorMessage) {
@@ -108,15 +113,9 @@ class Contact extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        $(e.target).addClass('on-click', 250);
-
-        setTimeout(()=>{
-            $(e.target).removeClass( "onclic" );
-            $(e.target).addClass( "validate", 450, setTimeout(()=>{
-                $( "#button" ).removeClass( "validate" );}, 1250 )
-            );
-        }, 2250);
+        let form = $(e.target);
+        let button = $(e.target).find(".submit-btn");
+        setTimeout(()=>{$(button).addClass('on-click');}, 450);
 
         let contactFromData= {
             service_id: 'llislanding',
@@ -130,15 +129,25 @@ class Contact extends Component {
 
         emailjs.send(contactFromData.service_id, contactFromData.template_id, contactFromData.template_params, 'user_F8QEhEnKQp2iFas9nJ735')
             .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
+                setTimeout(()=>{
+                    $(button).removeClass("on-click");
+                    $(button).val("Sent!").addClass( "validate", 1050, setTimeout(()=>{
+                        $(button).removeClass("validate").val("Send");
+                    }, 1050 ));
+                }, 1050);
             }, function(err) {
-                console.log('FAILED...', err);
+                $(button).append("<p>Sry... Plase refresh page and try again. <p>");
             });
     }
 
+    // specifying verify callback function
+    recaptchaVerifyCallback(response) {
+        this.setState({recaptcha: true});
+    }
+
     render() {
-        const { name, email, message } = this.state;
-        let validated = name.value && !name.errorMessage && email.value && !email.errorMessage && message.value && !message.errorMessage;
+        const { name, email, message, recaptcha} = this.state;
+        let validated = name.value && !name.errorMessage && email.value && !email.errorMessage && message.value && !message.errorMessage && recaptcha;
 
         return (
             <div className="contact content">
@@ -176,6 +185,13 @@ class Contact extends Component {
                                 onChange={this.handleChange}
                             />
 
+                            <Recaptcha
+                                sitekey="6Leaz8QUAAAAADTXF0k9MxdYIBEZsrAMwq1aJDHG"
+                                render="explicit"
+                                verifyCallback={this.recaptchaVerifyCallback}
+                                onloadCallback={this.recaptchaCallback}
+                            />
+
                         {validated? <Submit>Submit</Submit>:""}
                         </Form>
                     </Card>
@@ -204,7 +220,6 @@ const TextInput = props => (
             name={props.name}
             value={props.value}
             onChange={props.onChange}
-            onInput={props.onInput}
             onFocus={props.onFocus}
             onBlur={props.onBlur}
         />
@@ -225,7 +240,6 @@ const TextArea = props => (
             name={props.name}
             value={props.value}
             onChange={props.onChange}
-            onInput={props.onInput}
             onFocus={props.onFocus}
             onBlur={props.onBlur}
         />
@@ -233,7 +247,7 @@ const TextArea = props => (
     </div>
 );
 
-const Submit = props => <input className="submit-btn" type="submit" value="Submit" />;
+const Submit = props => <input className="submit-btn" type="submit" value="Send" />;
 const ContactInfo = props => <div className="contact-info col-sm-4">{props.children}</div>;
 
 export default Contact;
