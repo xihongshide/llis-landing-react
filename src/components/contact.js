@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import $ from "jquery";
+import emailjs from 'emailjs-com';
+console.log(emailjs);
 
 /** ContactForm Component */
 
@@ -97,8 +99,6 @@ class Contact extends Component {
             errorMessage = validateNameMessage(this.state[name]);
         }
 
-        console.log(errorMessage[0]);
-
         if(errorMessage) {
            state.errorMessage =  errorMessage[0];
         }
@@ -108,7 +108,6 @@ class Contact extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log($(e.target));
 
         $(e.target).addClass('on-click', 250);
 
@@ -119,9 +118,22 @@ class Contact extends Component {
             );
         }, 2250);
 
-        const subject = "Mail From" + this.state.name.value,
-              email = this.state.email.value,
-              message = this.state.message.value;
+        let contactFromData= {
+            service_id: 'llislanding',
+            template_id: 'llis_landing',
+            template_params: {
+                name: this.state.name.value,
+                email: this.state.email.value,
+                message: this.state.message.value
+            }
+        };
+
+        emailjs.send(contactFromData.service_id, contactFromData.template_id, contactFromData.template_params, 'user_F8QEhEnKQp2iFas9nJ735')
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(err) {
+                console.log('FAILED...', err);
+            });
     }
 
     render() {

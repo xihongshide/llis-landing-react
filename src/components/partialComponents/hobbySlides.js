@@ -4,7 +4,6 @@ import Velocity from 'velocity-animate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRunning, faBasketballBall, faCoffee, faCode } from '@fortawesome/free-solid-svg-icons';
 
-let lock = false;
 const hobbyContent = [
     {
       id: 1,
@@ -58,7 +57,7 @@ class HobbyContent extends React.Component {
     }
 }
 
-class HobbySlides extends React.Component {
+class HobbySlides extends Component {
 
     constructor(props) {
         super(props);
