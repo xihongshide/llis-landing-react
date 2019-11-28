@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChessKnight, faInfoCircle, faChevronDown, faHeart, faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faFacebook, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import {faChessKnight, faInfoCircle, faHeart, faCoffee, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import { VelocityComponent } from 'velocity-react';
 
-function FooterInfo(props) {
-    return(
-        <div>
-            <ul>
-                <li>
-                    <a href="https://github.com/xihongshide/MY.git" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=100008402794110" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faFacebook } /></a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/leon-liang-li" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faLinkedinIn } /></a>
-                </li>
-                <li>
-                    <a href="mailto:liangli.0311@gmail.com" target="_top"><FontAwesomeIcon icon={ faPaperPlane } /></a>
-                </li>
-                <li>
-                    <button onClick={ props.toggleInfo }><FontAwesomeIcon icon={ faChevronDown } /></button>
-                </li>
-            </ul>
+//Partial Components
+import SocialNetworkList from './partialComponents/socialNetworkList.js';
 
-            <p><span>&copy; 2019</span> Made by LLI with <FontAwesomeIcon icon={ faHeart } /> and <FontAwesomeIcon icon={ faCoffee } /></p>
-        </div>
-    );
-}
+const FooterInfo = (props) => (
+    <div>
+        <SocialNetworkList />
+        <button onClick={ props.toggleInfo }><FontAwesomeIcon icon={ faChevronDown } /></button>
+        <p><span>&copy; 2019</span> Made by LLI with <FontAwesomeIcon icon={ faHeart } /> and <FontAwesomeIcon icon={ faCoffee } /></p>
+    </div>
+);
 
 class Footer extends Component {
     constructor(props) {

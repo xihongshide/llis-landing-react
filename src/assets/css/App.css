@@ -5253,7 +5253,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .align-self-auto {
   -ms-flex-item-align: auto !important;
-  -ms-grid-row-align: auto !important;
   align-self: auto !important; }
 
 .align-self-start {
@@ -5266,7 +5265,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .align-self-center {
   -ms-flex-item-align: center !important;
-  -ms-grid-row-align: center !important;
   align-self: center !important; }
 
 .align-self-baseline {
@@ -5275,7 +5273,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .align-self-stretch {
   -ms-flex-item-align: stretch !important;
-  -ms-grid-row-align: stretch !important;
   align-self: stretch !important; }
 
 @media (min-width: 576px) {
@@ -5367,7 +5364,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-sm-auto {
     -ms-flex-item-align: auto !important;
-    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-sm-start {
     -ms-flex-item-align: start !important;
@@ -5377,14 +5373,12 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-sm-center {
     -ms-flex-item-align: center !important;
-    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-sm-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-sm-stretch {
     -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 768px) {
@@ -5476,7 +5470,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-md-auto {
     -ms-flex-item-align: auto !important;
-    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-md-start {
     -ms-flex-item-align: start !important;
@@ -5486,14 +5479,12 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-md-center {
     -ms-flex-item-align: center !important;
-    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-md-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-md-stretch {
     -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 992px) {
@@ -5585,7 +5576,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-lg-auto {
     -ms-flex-item-align: auto !important;
-    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-lg-start {
     -ms-flex-item-align: start !important;
@@ -5595,14 +5585,12 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-lg-center {
     -ms-flex-item-align: center !important;
-    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-lg-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-lg-stretch {
     -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 1200px) {
@@ -5694,7 +5682,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-xl-auto {
     -ms-flex-item-align: auto !important;
-    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-xl-start {
     -ms-flex-item-align: start !important;
@@ -5704,14 +5691,12 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-xl-center {
     -ms-flex-item-align: center !important;
-    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-xl-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-xl-stretch {
     -ms-flex-item-align: stretch !important;
-    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 .float-left {
@@ -7038,6 +7023,10 @@ footer .info-icon {
 
 footer .info-wrapper {
   width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   padding: 0 5px;
   text-align: right;
   position: relative;
@@ -7048,30 +7037,44 @@ footer .info-wrapper {
   footer .info-wrapper ul {
     padding-left: 0;
     list-style: none;
-    margin: 0 5px 0 0; }
+    margin: 0 5px 0 0;
+    display: inline-block; }
     footer .info-wrapper ul li {
       list-style: none;
       display: inline-block;
       line-height: 40px;
       margin: 0;
       width: 36px; }
-      footer .info-wrapper ul li a, footer .info-wrapper ul li button {
+      footer .info-wrapper ul li a {
         color: #ffffff;
         cursor: pointer;
-        opacity: 0.8;
+        opacity: 0.7;
         background: transparent;
         border: none;
         outline: none; }
-        footer .info-wrapper ul li a:hover, footer .info-wrapper ul li button:hover {
+        footer .info-wrapper ul li a:hover {
           opacity: 1; }
-          footer .info-wrapper ul li a:hover svg, footer .info-wrapper ul li button:hover svg {
+          footer .info-wrapper ul li a:hover svg {
             font-size: 1.1em;
             color: #ffffff; }
-      footer .info-wrapper ul li:last-child a svg {
-        opacity: 0.4;
+  footer .info-wrapper button {
+    display: inline-block;
+    background: none;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    background: transparent;
+    width: 40px; }
+    footer .info-wrapper button svg {
+      opacity: 0.4;
+      color: #ffffff; }
+    footer .info-wrapper button:hover {
+      opacity: 1; }
+      footer .info-wrapper button:hover svg {
+        font-size: 1.1em;
+        opacity: 1;
         color: #ffffff; }
-        footer .info-wrapper ul li:last-child a svg:hover {
-          opacity: 1; }
   footer .info-wrapper p {
     position: absolute;
     top: 50%;
@@ -7183,7 +7186,7 @@ footer .info-wrapper {
       background-color: #e1b16a; }
 
 .home .carousel {
-  padding-top: 20vh; }
+  padding: 25vh 0; }
   .home .carousel .carousel-caption {
     position: relative;
     right: auto;
@@ -7249,7 +7252,7 @@ footer .info-wrapper {
     text-align: center;
     height: 93vh;
     opacity: 0;
-    padding-top: 200px; }
+    padding-top: 35vh; }
     .about .about-cols .about-col {
       height: 100%;
       margin: 0;
@@ -7602,7 +7605,6 @@ footer .info-wrapper {
         bottom: auto;
         right: auto;
         top: auto;
-        left: auto;
         background-color: #ffffff;
         border-radius: 10px;
         width: 100%;
@@ -8088,14 +8090,22 @@ footer .info-wrapper {
 
 .contact .container {
   margin: 0 auto;
-  padding-top: 4em; }
+  padding: 20vh 0 10vh; }
 
 .contact .contact-info {
   text-align: left; }
   .contact .contact-info h1 {
-    font-size: 2rem; }
+    font-size: 2rem;
+    width: 100%; }
   .contact .contact-info p {
-    font-size: 0.85rem; }
+    font-size: 0.9rem;
+    width: 100%; }
+    .contact .contact-info p:last-of-type {
+      font-size: 0.8rem;
+      margin-top: 15px; }
+    .contact .contact-info p svg {
+      font-size: 1rem;
+      margin-right: 20px; }
   .contact .contact-info a {
     font-size: 0.85rem;
     text-decoration: underline;
@@ -8104,6 +8114,76 @@ footer .info-wrapper {
       opacity: 0.8;
       color: #ffffff;
       text-decoration: none; }
+  .contact .contact-info ul {
+    width: 100%;
+    background: transparent;
+    padding-left: 0;
+    margin-top: 45px;
+    list-style: none;
+    text-align: left;
+    position: relative; }
+    .contact .contact-info ul:before, .contact .contact-info ul:after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      opacity: 0.5;
+      position: relative;
+      background: #ffffff;
+      display: block; }
+    .contact .contact-info ul li {
+      display: inline-block;
+      padding: 20px 0;
+      width: 16.6666666%;
+      position: relative; }
+      .contact .contact-info ul li:nth-of-type(1) a:hover {
+        color: #3b5998; }
+      .contact .contact-info ul li:nth-of-type(2) a:hover {
+        color: #333333; }
+      .contact .contact-info ul li:nth-of-type(3) a:hover {
+        color: #007bb5; }
+      .contact .contact-info ul li:nth-of-type(4) a:hover {
+        color: #c32aa3; }
+      .contact .contact-info ul li:nth-of-type(5) a:hover {
+        color: #ea4335; }
+      .contact .contact-info ul li:nth-of-type(6) a:hover {
+        color: #09b83e; }
+      .contact .contact-info ul li:nth-of-type(6):hover:after {
+        position: absolute;
+        content: "TUOLAJI_90";
+        top: 10px;
+        line-height: 10px;
+        vertical-align: top;
+        height: 10px;
+        background: none;
+        font-size: 12px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        color: #fff;
+        font-weight: 600;
+        -webkit-transition: all 0.4s cubic-bezier(0.5, 0, 1, 0.8);
+        -o-transition: all 0.4s cubic-bezier(0.5, 0, 1, 0.8);
+        transition: all 0.4s cubic-bezier(0.5, 0, 1, 0.8);
+        -webkit-animation: slideUp 0.8s cubic-bezier(0.5, 0, 1, 0.8);
+        -o-animation: slideUp 0.8s cubic-bezier(0.5, 0, 1, 0.8);
+        animation: slideUp 0.8s cubic-bezier(0.5, 0, 1, 0.8); }
+    .contact .contact-info ul a {
+      color: #fff;
+      font-size: 40px;
+      -webkit-transition: all 0.4s cubic-bezier(0.5, 0, 1, 0.8);
+      -o-transition: all 0.4s cubic-bezier(0.5, 0, 1, 0.8);
+      transition: all 0.4s cubic-bezier(0.5, 0, 1, 0.8);
+      position: relative;
+      display: inline-block; }
+      .contact .contact-info ul a:hover {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg); }
+      .contact .contact-info ul a:active {
+        -webkit-transform: rotate(360deg) scale(1.1);
+        -ms-transform: rotate(360deg) scale(1.1);
+        transform: rotate(360deg) scale(1.1); }
 
 .contact .card {
   background: transparent;
@@ -8303,6 +8383,22 @@ footer .info-wrapper {
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+@-webkit-keyframes slideUp {
+  from {
+    top: 50px;
+    opacity: 0; }
+  to {
+    top: 10px;
+    opacity: 1; } }
+
+@keyframes slideUp {
+  from {
+    top: 50px;
+    opacity: 0; }
+  to {
+    top: 10px;
+    opacity: 1; } }
 
 * {
   font-family: 'Lato', sans-serif;

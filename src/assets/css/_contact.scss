@@ -5,7 +5,7 @@
 
     .container {
         margin: 0 auto;
-        padding-top: 4em;
+        padding: 20vh 0 10vh;
     }
 
     .contact-info {
@@ -13,10 +13,22 @@
 
         h1 {
             font-size: 2rem;
+            width: 100%;
         }
 
         p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            width: 100%;
+
+            &:last-of-type {
+                font-size: 0.8rem;
+                margin-top: 15px;
+            }
+
+            svg {
+                font-size: 1rem;
+                margin-right: 20px;
+            }
         }
 
         a {
@@ -30,6 +42,102 @@
                 opacity: 0.8;
                 color: $main-white;
                 text-decoration: none;
+            }
+        }
+
+        ul {
+            width: 100%;
+            background: transparent;
+            padding-left: 0;
+            margin-top: 45px;
+            list-style: none;
+            text-align: left;
+            position: relative;
+
+            &:before, &:after {
+                content: '';
+                height: 2px;
+                width: 100%;
+                opacity: 0.5;
+                position: relative;
+                background: $main-white;
+                display: block;
+            }
+
+
+            li {
+                display: inline-block;
+                padding: 20px 0;
+                width: 16.6666666%;
+                position: relative;
+
+                &:nth-of-type(1) {
+                    a:hover {
+                        color: #3b5998;
+                    }
+                }
+                &:nth-of-type(2) {
+                    a:hover {
+                        color: #333333;
+                    }
+                }
+                &:nth-of-type(3) {
+                    a:hover {
+                        color: #007bb5;
+                    }
+                }
+                &:nth-of-type(4) {
+                    a:hover {
+                        color: #c32aa3;
+                    }
+                }
+                &:nth-of-type(5) {
+                    a:hover {
+                        color: #ea4335;
+                    }
+                }
+                &:nth-of-type(6) {
+                    a:hover {
+                        color: #09b83e;
+                    }
+
+                    &:hover {
+                        &:after {
+                            position: absolute;
+                            content: "TUOLAJI_90";
+                            top: 10px;
+                            line-height: 10px;
+                            vertical-align: top;
+                            height: 10px;
+                            background: none;
+                            font-size: 12px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            color: #fff;
+                            font-weight: 600;
+                            transition:all 0.4s cubic-bezier(0.5,0,1,0.8);
+                            -webkit-animation: slideUp 0.8s cubic-bezier(0.5,0,1,0.8);
+                            -o-animation: slideUp 0.8s cubic-bezier(0.5,0,1,0.8);
+                            animation: slideUp 0.8s cubic-bezier(0.5,0,1,0.8);
+                        }
+                    }
+                }
+            }
+
+            a {
+                color: #fff;
+                font-size: 40px;
+                transition:all 0.4s cubic-bezier(0.5,0,1,0.8);
+                position: relative;
+                display: inline-block;
+
+                &:hover {
+                    transform: rotate(360deg);
+                }
+
+                &:active {
+                    transform: rotate(360deg) scale(1.1);
+                }
             }
         }
     }
@@ -235,5 +343,16 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 50px;
+        opacity: 0;
+    }
+    to {
+        top: 10px;
+        opacity: 1;
     }
 }

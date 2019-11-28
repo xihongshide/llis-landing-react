@@ -39,6 +39,7 @@ footer {
 
     .info-wrapper {
         width: 100%;
+        user-select: none;
         padding: 0 5px;
         text-align: right;
         position: relative;
@@ -48,6 +49,7 @@ footer {
             padding-left: 0;
             list-style: none;
             margin: 0 5px 0 0;
+            display: inline-block;
 
             li {
                 list-style: none;
@@ -56,10 +58,10 @@ footer {
                 margin: 0;
                 width: 36px;
 
-                a, button {
+                a {
                     color: $main-white;
                     cursor: pointer;
-                    opacity: 0.8;
+                    opacity: 0.7;
                     background: transparent;
                     border: none;
                     outline: none;
@@ -73,16 +75,31 @@ footer {
                         }
                     }
                 }
+            }
+        }
 
-                &:last-child {
-                    a svg {
-                        opacity: 0.4;
-                        color: $main-white;
+        button {
+            display: inline-block;
+            background: none;
+            outline: none;
+            border: none;
+            color: $main-white;
+            cursor: pointer;
+            background: transparent;
+            width: 40px;
 
-                        &:hover {
-                            opacity: 1;
-                        }
-                    }
+            svg {
+                opacity: 0.4;
+                color: $main-white;
+            }
+
+            &:hover {
+                opacity: 1;
+
+                svg {
+                    font-size: 1.1em;
+                    opacity: 1;
+                    color: $main-white;
                 }
             }
         }

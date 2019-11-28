@@ -262,6 +262,7 @@ Css Mixin Start
 
     &:hover {
         border: $thickness+1px solid $color;
+
         &:after ,
         &:before {
             height: $thickness + 2px;
@@ -291,7 +292,6 @@ Css Mixin Start
         bottom: auto;
         right: auto;
         top: auto;
-        left: auto;
         background-color: $color;
         border-radius: 10px;
         width: 100%;

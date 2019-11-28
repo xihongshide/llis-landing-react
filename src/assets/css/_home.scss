@@ -3,6 +3,10 @@
     $text-color: themeColor('text', 'home');
     $text-color-alter: $main-yellow-light;
 
+    .container {
+
+    }
+
     .home-btn {
         @include mainButton;
         width: max-content;
@@ -35,7 +39,7 @@
     // Over Write Bootstrap Carousel Style
 
     .carousel {
-        padding-top: 20vh;
+        padding: 25vh 0;
 
         .carousel-caption {
             position: relative;

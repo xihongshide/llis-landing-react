@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 import emailjs from 'emailjs-com';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Recaptcha from 'react-recaptcha';
+import {VelocityComponent} from "velocity-react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMapMarker} from "@fortawesome/free-solid-svg-icons";
+
+
+//Partial Components
+import SocialNetworkList from './partialComponents/socialNetworkList.js';
 
 /** ContactForm Component */
 
@@ -17,14 +22,8 @@ function validateNameMessage(res) {
         errors.push(res.name + " can't be empty");
     }
 
-    if (res.value.length < 3) {
-        if (res.name === "message") {
-            errors.push("Please enter a valid " + res.name + " at lease 20 characters");
-        }
-
-        if (res.name === "name") {
-            errors.push("Please enter a valid " + res.name + " between 3 to 32 characters.");
-        }
+    if (res.value.length < res.min || res.value.length > res.max) {
+        errors.push("Please enter a valid " + res.name + " between " + res.min  + " and " + res.max + " characters");
     }
 
     return errors;
@@ -51,21 +50,27 @@ class Contact extends Component {
                 label: "Name",
                 value: "",
                 focus: false,
-                errorMessage: ""
+                errorMessage: "",
+                max: 32,
+                min: 3,
             },
             email: {
                 name: "email",
                 label: "Email",
                 value: "",
                 focus: false,
-                errorMessage: ""
+                errorMessage: "",
+                max: 32,
+                min: 0
             },
             message: {
                 name: "message",
                 label: "Message",
                 value: "",
                 focus: false,
-                errorMessage: ""
+                errorMessage: "",
+                max: 10000,
+                min: 10,
             },
 
             recaptcha: false
@@ -154,9 +159,10 @@ class Contact extends Component {
                 <div className="container row no-padding">
                     <ContactInfo>
                         <h1> Conatact Info</h1>
-                        <p>Get in touch with me at anytime if you have any question.</p>
-                        <p>Ues the form to the righ or my details below and I'll get back to you ASAP.</p>
-                        <a href="mailto:liangli.0311@gmail.com" subject="Ciao Liang">liangli.0311@gmail.com</a>
+                        <p>Get in touch with me at anytime if you have any questions.</p>
+                        <p>Ues the form to the right or my details below and I'll get back to you ASAP.</p>
+                        <SocialNetworkList />
+                        <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
                     </ContactInfo>
 
                     <div className="col-sm-1"></div>
@@ -191,8 +197,13 @@ class Contact extends Component {
                                 verifyCallback={this.recaptchaVerifyCallback}
                                 onloadCallback={this.recaptchaCallback}
                             />
-
-                        {validated? <Submit>Submit</Submit>:""}
+                            <VelocityComponent
+                                animation={validated ? 'transition.slideRightIn' : 'transition.slideRightOut'}
+                                easing='linear'
+                                duration={450}
+                            >
+                                <Submit>Submit</Submit>
+                            </VelocityComponent>
                         </Form>
                     </Card>
                 </div>
