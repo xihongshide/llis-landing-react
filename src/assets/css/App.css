@@ -8400,6 +8400,9 @@ footer .info-wrapper {
     top: 10px;
     opacity: 1; } }
 
+div.content.skills {
+  padding-top: 25vh; }
+
 * {
   font-family: 'Lato', sans-serif;
   -webkit-box-sizing: border-box;
