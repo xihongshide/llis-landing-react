@@ -1,47 +1,86 @@
 import React, { Component } from 'react';
+import $ from "jquery";
+import Velocity from "velocity-animate";
+import { VelocityTransitionGroup } from 'velocity-react';
 
 const SkillConfig = [
     {
         name: "core",
-        icon: "icon",
-        time: "1 Years",
-        experience: ["Self-Discipline", "Curiosity"]
+        icon: "core icon",
+        details: [
+            {
+                name: "competitivenesssaf",
+                description: ["Self-Discipline1", "Curiosity2"]
+            }
+        ]
     },
     {
         name: "js",
-        icon: "icon",
-        time: "4 Years",
-        experience: ["Self-Discipline", "Curiosity"]
+        icon: "js icon",
+        details: [
+            {
+                name: "JS libs",
+                description: "Jquery, ReactJs"
+            }
+        ]
     },
     {
         name: "front-end",
-        icon: "icon",
-        time: "1 Years",
-        experience: ["Self-Discipline", "Curiosity"]
+        icon: "front-end icon",
+        details: [
+            {
+                name: "experiences",
+                description: "HTML5, SCSS/CSS, Reasponsive Design, WCAG, Animation"
+            }
+        ],
     },
     {
         name: "back-end",
-        icon: "icon",
-        time: "1 Years",
-        experience: ["Self-Discipline", "Curiosity"]
-    },
-    {
-        name: "tools",
-        icon: "icon",
-        time: "1 Years",
-        experience: ["Self-Discipline", "Curiosity"]
+        icon: "back-end icon",
+        details: [
+            {
+                name: "experiences",
+                description: "PHP/Zend, Python, MySQL, NodeJs"
+            }
+        ],
     },
     {
         name: "teaching",
-        icon: "icon",
-        time: "1 Years",
-        experience: ["Self-Discipline", "Curiosity"]
+        icon: "teaching icon",
+        details: [
+            {
+                name: "IELTS",
+                description: "4.5 Years"
+            },
+        ],
+    },
+    {
+        name: "tools",
+        icon: "tools icon",
+        details: [
+            {
+                name: "tools",
+                description: "Git, Jira, webpack, Photoshop, bitbucket, Npm"
+            }
+        ],
     },
     {
         name: "language",
-        icon: "icon",
-        time: "1 Years",
-        experience: ["Self-Discipline", "Curiosity"]
+        icon: "language icon",
+        details: [
+            {
+                name: "Mandarin",
+                description: "Mathertone"
+            },
+            {
+                name: "English",
+                description: "proficient"
+            },
+            {
+                name: "French",
+                description: "le débutant"
+            }
+        ],
     }
 ];
 
@@ -53,10 +92,11 @@ const HoverArea = (props) => (
                     <button
                         className="hover-skill-icons"
                         key={index}
-                        onClick={props.handleChange}
-                        onMouseEnter={props.handleChange}
+                        onClick={props.handleHover}
+                        onMouseEnter={props.handleHover}
+                        dataindex={index}
                     >
-                       <span>{SkillConfig[index].name[0]}</span>
+                       <span>{value.name[0]}</span>
                     </button>
                 );
             })
@@ -64,48 +104,72 @@ const HoverArea = (props) => (
     </div>
 );
 
-const SkillsDetails = (props) => (
-    <div className="skills-container col-md-6 col-sm-12">
-        <div className="skills-innner">
-            <i>{SkillConfig[props.activeSkill].icon}</i>
-            <h1>{SkillConfig[props.activeSkill].name}</h1>
-            <p>
-                <b>Years: </b>
-                <span>{SkillConfig[props.activeSkill].time}</span>
-            </p>
-            <p>
-                <b>Experience: </b>
-                <span>{SkillConfig[props.activeSkill].experience}</span>
-            </p>
-        </div>
-    </div>
-);
+class SkillsDetails extends Component {
+    render() {
+        const props = this.props;
+        let activeIndex = props.activeState.activeIndex;
+        let active = props.activeState.active;
+        let skillSet = SkillConfig[activeIndex];
+
+        if (!activeIndex || !active){
+            activeIndex = 0;
+            active = false;
+        }
+        return (
+            <div className="skills-container col-md-6 col-sm-12">
+                <h1>header</h1>
+                <VelocityTransitionGroup enter={{animation: "transition.slideRightBigIn", stagger: "300"}} leave={{animation: "transition.slideRightBigOut"}}>
+                    {active ? <p className="skills-ani"><i>{skillSet.icon}</i></p> : undefined}
+                    {active ? <h2 className="skills-ani">{skillSet.name}</h2> : undefined}
+                    {active ?
+                        (skillSet.details.map((value, index) => {
+                            return(
+                                <div className="skills-ani" key={index}>
+                                    <b>{value.name}: </b>
+                                    <span>{value.description}</span>
+                                </div>
+                            );
+                        })): undefined
+                    }
+                </VelocityTransitionGroup>
+            </div>
+        );
+    }
+}
 
 class Skills extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            activeSkill: 0,
+            activeIndex: 0,
+            active: false,
         };
-
-        this.handleChange = this.handleChange.bind(this);
+        this.lock = false;
+        this.handleHover = this.handleHover.bind(this);
     }
 
-    handleChange(e) {
-        let activeSkill = e.target.key;
-        console.log(e.target.key);
-        this.setState({
-            activeSkill: activeSkill,
-        });
+    handleHover(e) {
+        let self = this;
+
+        if(self.lock)
+            return;
+
+        self.lock = true;
+        let button = $(e.target);
+        let activeIndex = $(button).attr("dataindex");
+
+        self.setState({activeIndex: activeIndex, active: true});
+        $(button).on("mouseleave", () => self.setState({active: false}));
+
+        self.lock = false;
     }
 
     render() {
         return (
             <div className="content skills">
-                <div className="skills-contaner row">
-                    <HoverArea handleChange = {this.handleChange}/>
-                    <SkillsDetails activeSkill = {this.state.activeSkill} />
+                <div className="skills-contaner no-margin row">
+                    <HoverArea handleHover={this.handleHover} />
+                    <SkillsDetails activeState={this.state}/>
                 </div>
             </div>
         );

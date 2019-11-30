@@ -43,7 +43,7 @@ body {
 
     .content {
         padding: 0;
-        min-height: 100vh;
+        height: 100vh;
         font-size: 16px;
 
         @each $page in $pages{
@@ -82,4 +82,12 @@ body {
 
 .velocity-animate {
     opacity: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
 }

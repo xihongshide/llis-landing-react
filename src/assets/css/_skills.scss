@@ -1,7 +1,11 @@
 div.content.skills{
 	padding-top: 25vh;
 
-	.skills-container {
-
+	.skills-contaner {
+		.hover-skill-icons {
+			margin: 15px;
+			width: 100px;
+			display: block;
+		}
 	}
 }

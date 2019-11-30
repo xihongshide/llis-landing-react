@@ -5253,6 +5253,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .align-self-auto {
   -ms-flex-item-align: auto !important;
+  -ms-grid-row-align: auto !important;
   align-self: auto !important; }
 
 .align-self-start {
@@ -5265,6 +5266,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .align-self-center {
   -ms-flex-item-align: center !important;
+  -ms-grid-row-align: center !important;
   align-self: center !important; }
 
 .align-self-baseline {
@@ -5273,6 +5275,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .align-self-stretch {
   -ms-flex-item-align: stretch !important;
+  -ms-grid-row-align: stretch !important;
   align-self: stretch !important; }
 
 @media (min-width: 576px) {
@@ -5364,6 +5367,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-sm-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-sm-start {
     -ms-flex-item-align: start !important;
@@ -5373,12 +5377,14 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-sm-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-sm-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-sm-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 768px) {
@@ -5470,6 +5476,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-md-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-md-start {
     -ms-flex-item-align: start !important;
@@ -5479,12 +5486,14 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-md-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-md-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-md-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 992px) {
@@ -5576,6 +5585,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-lg-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-lg-start {
     -ms-flex-item-align: start !important;
@@ -5585,12 +5595,14 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-lg-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-lg-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-lg-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 1200px) {
@@ -5682,6 +5694,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-content: stretch !important; }
   .align-self-xl-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-xl-start {
     -ms-flex-item-align: start !important;
@@ -5691,12 +5704,14 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     align-self: flex-end !important; }
   .align-self-xl-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-xl-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-xl-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 .float-left {
@@ -8090,7 +8105,7 @@ footer .info-wrapper {
 
 .contact .container {
   margin: 0 auto;
-  padding: 20vh 0 10vh; }
+  padding: 15vh 0 0; }
 
 .contact .contact-info {
   text-align: left; }
@@ -8402,6 +8417,45 @@ footer .info-wrapper {
 
 div.content.skills {
   padding-top: 25vh; }
+  div.content.skills .skills-contaner .hover-skill-icons {
+    margin: 15px;
+    width: 100px;
+    display: block; }
+  div.content.skills .skills-contaner .skills-ani-1 {
+    -webkit-animation: aniSkills 0.8s linear 0.5s;
+    animation: aniSkills 0.8s linear 0.5s; }
+  div.content.skills .skills-contaner .skills-ani-2 {
+    -webkit-animation: aniSkills 0.8s linear 1s;
+    animation: aniSkills 0.8s linear 1s; }
+  div.content.skills .skills-contaner .skills-ani-3 {
+    -webkit-animation: aniSkills 0.8s linear 2s;
+    animation: aniSkills 0.8s linear 2s; }
+  div.content.skills .skills-contaner .skills-ani-4 {
+    -webkit-animation: aniSkills 0.8s linear 3s;
+    animation: aniSkills 0.8s linear 3s; }
+  div.content.skills .skills-contaner .skills-ani-5 {
+    -webkit-animation: aniSkills 0.8s linear 4s;
+    animation: aniSkills 0.8s linear 4s; }
+
+@-webkit-keyframes aniSkills {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(500px);
+    transform: translateX(500px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes aniSkills {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(500px);
+    transform: translateX(500px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
 
 * {
   font-family: 'Lato', sans-serif;
@@ -8434,7 +8488,7 @@ body {
     padding: 0; }
   .App .content {
     padding: 0;
-    min-height: 100vh;
+    height: 100vh;
     font-size: 16px; }
     .App .content.home {
       background-color: #333333;
@@ -8539,3 +8593,9 @@ body {
 
 .velocity-animate {
   opacity: 0; }
+
+.no-padding {
+  padding: 0; }
+
+.no-margin {
+  margin: 0; }
