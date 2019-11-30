@@ -1,11 +1,112 @@
 div.content.skills{
-	padding-top: 25vh;
+	padding-top: 20vh;
 
-	.skills-contaner {
-		.hover-skill-icons {
-			margin: 15px;
-			width: 100px;
-			display: block;
+	.skills-hexagon-innner {
+		text-align: center;
+		overflow: hidden;
+		width: 100%;
+		max-width: 450px;
+		margin: 0 auto;
+		font-size: 15px;
+		padding-bottom:8.3%;
+
+		&:after {
+		    content: "";
+		    display: block;
+		    clear: both;
+		}
+
+		.skill-hexagon * {
+			position: absolute;
+			visibility: visible;
+			outline:1px solid transparent;
+		}
+
+		.skill-hexagon {
+			position: relative;
+			list-style-type: none;
+			float: left;
+			overflow: hidden;
+			visibility: hidden;
+			outline: 2px solid transparent;
+			-webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+			-ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+			transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+			width: 32.3333333333%; /* = (100-3) / 3    or use 'calc()' */
+			padding-bottom: 37.3353174076%; /* =  width / sin(60deg) */
+			margin-bottom: -8.4%;
+
+			&:nth-child(5n+1),
+		    &:nth-child(5n+2),
+		    &:nth-child(5n+3) {
+		        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+		            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+		                transform: translateX(50%) rotate(-60deg) skewY(30deg);
+		    }
+
+		    &:nth-child(5n+3),
+		    &:nth-child(5n+4),
+		    &:nth-child(5n+5) {
+		        -webkit-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+		            -ms-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+		                transform: translateX(0%) rotate(-60deg) skewY(30deg);
+		    }
+
+			&:nth-child(5n+1){
+		        margin-left: 1%;
+		        margin-right: 1%;
+		    }
+
+		    &:nth-child(5n+4){
+		        margin-left: 1%;
+		        margin-right: 1%;
+		    }
+
+		    &:nth-child(5n+3) {
+		        clear: left;
+		        margin-left: 0.5%;
+		    }
+
+			button {
+				display: block;
+				border-radius: none;
+				border: none;
+				outline: none;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				overflow: hidden;
+				-webkit-transform: skewY(-30deg) rotate(60deg);
+				-ms-transform: skewY(-30deg) rotate(60deg);
+				transform: skewY(-30deg) rotate(60deg);
+				outline: 8px solid transparent;
+				cursor: pointer;
+				background: $main-green;
+
+				span {
+					position: absolute;
+					width: 100%;
+					top: 50%;
+					left: 50%;
+	               	transform:translate(-50%, -50%);
+					font-size: 3em;
+					font-weight: 700;
+					color: $main-white;
+				}
+			}
+		}
+	}
+
+	.skills-sets-container {
+		text-align: left;
+		padding-top: 80px;
+		padding-left: 50px;
+
+		h1 {
+			font-size: 3em;
+			font-weight: 600;
+			text-transform: uppercase;
+
 		}
 	}
 }

@@ -8416,46 +8416,89 @@ footer .info-wrapper {
     opacity: 1; } }
 
 div.content.skills {
-  padding-top: 25vh; }
-  div.content.skills .skills-contaner .hover-skill-icons {
-    margin: 15px;
-    width: 100px;
-    display: block; }
-  div.content.skills .skills-contaner .skills-ani-1 {
-    -webkit-animation: aniSkills 0.8s linear 0.5s;
-    animation: aniSkills 0.8s linear 0.5s; }
-  div.content.skills .skills-contaner .skills-ani-2 {
-    -webkit-animation: aniSkills 0.8s linear 1s;
-    animation: aniSkills 0.8s linear 1s; }
-  div.content.skills .skills-contaner .skills-ani-3 {
-    -webkit-animation: aniSkills 0.8s linear 2s;
-    animation: aniSkills 0.8s linear 2s; }
-  div.content.skills .skills-contaner .skills-ani-4 {
-    -webkit-animation: aniSkills 0.8s linear 3s;
-    animation: aniSkills 0.8s linear 3s; }
-  div.content.skills .skills-contaner .skills-ani-5 {
-    -webkit-animation: aniSkills 0.8s linear 4s;
-    animation: aniSkills 0.8s linear 4s; }
-
-@-webkit-keyframes aniSkills {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(500px);
-    transform: translateX(500px); }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-
-@keyframes aniSkills {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(500px);
-    transform: translateX(500px); }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
+  padding-top: 20vh; }
+  div.content.skills .skills-hexagon-innner {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    font-size: 15px;
+    padding-bottom: 8.3%; }
+    div.content.skills .skills-hexagon-innner:after {
+      content: "";
+      display: block;
+      clear: both; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon * {
+      position: absolute;
+      visibility: visible;
+      outline: 1px solid transparent; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon {
+      position: relative;
+      list-style-type: none;
+      float: left;
+      overflow: hidden;
+      visibility: hidden;
+      outline: 2px solid transparent;
+      -webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+      -ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+      transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+      width: 32.3333333333%;
+      /* = (100-3) / 3    or use 'calc()' */
+      padding-bottom: 37.3353174076%;
+      /* =  width / sin(60deg) */
+      margin-bottom: -8.4%; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+1), div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+2), div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3) {
+        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+        transform: translateX(50%) rotate(-60deg) skewY(30deg); }
+      div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3), div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4), div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+5) {
+        -webkit-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+        -ms-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+        transform: translateX(0%) rotate(-60deg) skewY(30deg); }
+      div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+1) {
+        margin-left: 1%;
+        margin-right: 1%; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4) {
+        margin-left: 1%;
+        margin-right: 1%; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3) {
+        clear: left;
+        margin-left: 0.5%; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button {
+        display: block;
+        border-radius: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        overflow: hidden;
+        -webkit-transform: skewY(-30deg) rotate(60deg);
+        -ms-transform: skewY(-30deg) rotate(60deg);
+        transform: skewY(-30deg) rotate(60deg);
+        outline: 8px solid transparent;
+        cursor: pointer;
+        background: #78a5a3; }
+        div.content.skills .skills-hexagon-innner .skill-hexagon button span {
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          font-size: 3em;
+          font-weight: 700;
+          color: #ffffff; }
+  div.content.skills .skills-sets-container {
+    text-align: left;
+    padding-top: 80px;
+    padding-left: 50px; }
+    div.content.skills .skills-sets-container h1 {
+      font-size: 3em;
+      font-weight: 600;
+      text-transform: uppercase; }
 
 * {
   font-family: 'Lato', sans-serif;

@@ -85,22 +85,26 @@ const SkillConfig = [
 ];
 
 const HoverArea = (props) => (
-    <div className="hover-skill-icons-container col-md-6 col-sm-12">
-        {
-            SkillConfig.map((value, index) => {
-                return (
-                    <button
-                        className="hover-skill-icons"
-                        key={index}
-                        onClick={props.handleHover}
-                        onMouseEnter={props.handleHover}
-                        dataindex={index}
-                    >
-                       <span>{value.name[0]}</span>
-                    </button>
-                );
-            })
-        }
+    <div className="skills-hexagon-container col-md-6 col-sm-12">
+        <div className="skills-hexagon-innner col-md-6 col-sm-12">
+            {
+                SkillConfig.map((value, index) => {
+                    return (
+                        <div className="skill-hexagon">
+                            <button
+                                className="skill-icon-btn"
+                                key={index}
+                                onClick={props.handleHover}
+                                onMouseEnter={props.handleHover}
+                                dataindex={index}
+                            >
+                               <span>{value.name[0]}</span>
+                            </button>
+                        </div>
+                    );
+                })
+            }
+        </div>
     </div>
 );
 
@@ -115,10 +119,14 @@ class SkillsDetails extends Component {
             activeIndex = 0;
             active = false;
         }
+
         return (
-            <div className="skills-container col-md-6 col-sm-12">
-                <h1>header</h1>
-                <VelocityTransitionGroup enter={{animation: "transition.slideRightBigIn", stagger: "300"}} leave={{animation: "transition.slideRightBigOut"}}>
+            <div className="skills-sets-container col-md-6 col-sm-12">
+                <h1>Skills</h1>
+                <VelocityTransitionGroup
+                    enter={{animation: "transition.slideRightBigIn", stagger: "300"}}
+                    leave={{animation: "transition.slideRightBigOut", duration: "500"}}
+                >
                     {active ? <p className="skills-ani"><i>{skillSet.icon}</i></p> : undefined}
                     {active ? <h2 className="skills-ani">{skillSet.name}</h2> : undefined}
                     {active ?
@@ -155,19 +163,20 @@ class Skills extends Component {
             return;
 
         self.lock = true;
+        $(".skills-container").css("pointer-event", "none");
         let button = $(e.target);
         let activeIndex = $(button).attr("dataindex");
-
-        self.setState({activeIndex: activeIndex, active: true});
         $(button).on("mouseleave", () => self.setState({active: false}));
-
-        self.lock = false;
+        setTimeout(() => {
+            self.setState({activeIndex: activeIndex, active: true});
+            self.lock = false;
+        }, 600);
     }
 
     render() {
         return (
             <div className="content skills">
-                <div className="skills-contaner no-margin row">
+                <div className="skills-container no-margin row">
                     <HoverArea handleHover={this.handleHover} />
                     <SkillsDetails activeState={this.state}/>
                 </div>
