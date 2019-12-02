@@ -3,6 +3,7 @@ import $ from "jquery";
 import emailjs from 'emailjs-com';
 import Recaptcha from 'react-recaptcha';
 import {VelocityComponent} from "velocity-react";
+import Velocity from "velocity-animate";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMapMarker} from "@fortawesome/free-solid-svg-icons";
 
@@ -40,6 +41,55 @@ function validateEmail(res) {
 
     return errors;
 }
+
+/** Components */
+const Card = props => <div className="card col-sm-7 velocity-animate" id="contact_card_js">{props.children}</div>;
+
+const Form = props => <form className="form" onSubmit={props.onSubmit}>{props.children}</form>;
+
+const TextInput = props => (
+    <div className={props.errorMessage? "text-input has-error" : "text-input"}>
+        <label
+            className={props.focus || props.value !== "" ? "label-focus" : ""}
+            htmlFor={props.name}
+        >
+            {props.label}
+        </label>
+        <input
+            className={props.focus || props.value !== "" ? "input-focus" : ""}
+            type="text"
+            name={props.name}
+            value={props.value}
+            onChange={props.onChange}
+            onFocus={props.onFocus}
+            onBlur={props.onBlur}
+        />
+        {props.errorMessage? <p>{props.errorMessage}</p>:""}
+    </div>
+);
+
+const TextArea = props => (
+    <div className={props.errorMessage? "text-area has-error" : "text-area"}>
+        <label
+            className={props.focus || props.value !== "" ? "label-focus" : ""}
+            htmlFor={props.name}
+        >
+            {props.label}
+        </label>
+        <textarea
+            className={props.focus || props.value !== "" ? "input-focus" : ""}
+            name={props.name}
+            value={props.value}
+            onChange={props.onChange}
+            onFocus={props.onFocus}
+            onBlur={props.onBlur}
+        />
+        {props.errorMessage? <p>{props.errorMessage}</p>:""}
+    </div>
+);
+
+const Submit = props => <input className={`submit-btn ${props.disabled ? "disabled": ""}`} type="submit" value="Send" />;
+const ContactInfo = props => <div className="contact-info col-sm-4 velocity-animate" id="contact_info_js">{props.children}</div>;
 
 class Contact extends Component {
     constructor() {
@@ -81,6 +131,11 @@ class Contact extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.recaptchaVerifyCallback = this.recaptchaVerifyCallback.bind(this);
+    }
+
+    componentDidMount() {
+        Velocity($("#contact_info_js"), 'transition.slideLeftBigIn', {duration: 1050, delay: 300} );
+        Velocity($("#contact_card_js"), 'transition.slideRightBigIn', {duration: 1050, delay: 300} );
     }
 
     handleFocus(e) {
@@ -128,7 +183,7 @@ class Contact extends Component {
             template_params: {
                 name: this.state.name.value,
                 email: this.state.email.value,
-                message: this.state.message.value
+                message: this.state.message.value,
             }
         };
 
@@ -136,12 +191,22 @@ class Contact extends Component {
             .then(function(response) {
                 setTimeout(()=>{
                     $(button).removeClass("on-click");
-                    $(button).val("Sent!").addClass( "validate", 1050, setTimeout(()=>{
+                    $(button).val("Sent!").addClass( "validate", 1550, setTimeout(()=>{
                         $(button).removeClass("validate").val("Send");
-                    }, 1050 ));
-                }, 1050);
+                    }, 1550 ));
+                }, 1550);
+                form.reset();
             }, function(err) {
-                $(button).append("<p>Sry... Plase refresh page and try again. <p>");
+                setTimeout(()=>{
+                    $("#error_message_js").text(err.text, ()=>{
+                        Velocity($(this), 'transition.expendIn', {duration: 850, delay: 300, display: 'block', opacity: '1'});
+                    });
+                    $(button).removeClass("on-click");
+                    setTimeout(()=>{
+                        Velocity($('#error_message_js'), 'transition.shrinkOut', {duration: 850, delay: 300, display: 'block', opacity: '0'} );
+                        $('#error_message_js').text("");
+                    }, 3000550 );
+                }, 1550);
             });
     }
 
@@ -196,14 +261,12 @@ class Contact extends Component {
                                 render="explicit"
                                 verifyCallback={this.recaptchaVerifyCallback}
                                 onloadCallback={this.recaptchaCallback}
+                                theme="Dark"
                             />
-                            <VelocityComponent
-                                animation={validated ? 'transition.slideRightIn' : 'transition.slideRightOut'}
-                                easing='linear'
-                                duration={450}
-                            >
-                                <Submit>Submit</Submit>
-                            </VelocityComponent>
+
+                            <p id="error_message_js" className="error-message velocity-animate"> </p>
+
+                            <Submit disabled={validated ? "": "disabled"}>Submit</Submit>
                         </Form>
                     </Card>
                 </div>
@@ -211,54 +274,4 @@ class Contact extends Component {
         );
     }
 }
-
-/** Components */
-const Card = props => <div className="card col-sm-7">{props.children}</div>;
-
-const Form = props => <form className="form" onSubmit={props.onSubmit}>{props.children}</form>;
-
-const TextInput = props => (
-    <div className={props.errorMessage? "text-input has-error" : "text-input"}>
-        <label
-            className={props.focus || props.value !== "" ? "label-focus" : ""}
-            htmlFor={props.name}
-        >
-            {props.label}
-        </label>
-        <input
-            className={props.focus || props.value !== "" ? "input-focus" : ""}
-            type="text"
-            name={props.name}
-            value={props.value}
-            onChange={props.onChange}
-            onFocus={props.onFocus}
-            onBlur={props.onBlur}
-        />
-        {props.errorMessage? <p>{props.errorMessage}</p>:""}
-    </div>
-);
-
-const TextArea = props => (
-    <div className={props.errorMessage? "text-area has-error" : "text-area"}>
-        <label
-            className={props.focus || props.value !== "" ? "label-focus" : ""}
-            htmlFor={props.name}
-        >
-            {props.label}
-        </label>
-        <textarea
-            className={props.focus || props.value !== "" ? "input-focus" : ""}
-            name={props.name}
-            value={props.value}
-            onChange={props.onChange}
-            onFocus={props.onFocus}
-            onBlur={props.onBlur}
-        />
-        {props.errorMessage? <p>{props.errorMessage}</p>:""}
-    </div>
-);
-
-const Submit = props => <input className="submit-btn" type="submit" value="Send" />;
-const ContactInfo = props => <div className="contact-info col-sm-4">{props.children}</div>;
-
 export default Contact;
