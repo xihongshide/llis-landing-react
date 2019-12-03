@@ -198,15 +198,15 @@ class Contact extends Component {
                 form.reset();
             }, function(err) {
                 setTimeout(()=>{
-                    $("#error_message_js").text(err.text, ()=>{
-                        Velocity($(this), 'transition.expendIn', {duration: 850, delay: 300, display: 'block', opacity: '1'});
+                    $("#error_message_js").text(err.text + ".", ()=>{
+                        Velocity($(this), 'transition.expendIn', {duration: 850, delay: 300, display: 'block', opacity: 1});
                     });
                     $(button).removeClass("on-click");
                     setTimeout(()=>{
                         Velocity($('#error_message_js'), 'transition.shrinkOut', {duration: 850, delay: 300, display: 'block', opacity: '0'} );
                         $('#error_message_js').text("");
-                    }, 3000550 );
-                }, 1550);
+                    }, 3550 );
+                }, 2550);
             });
     }
 
@@ -262,9 +262,10 @@ class Contact extends Component {
                                 verifyCallback={this.recaptchaVerifyCallback}
                                 onloadCallback={this.recaptchaCallback}
                                 theme="Dark"
+                                dataExpiredCallback={()=>this.setState({recaptcha: false,})}
                             />
 
-                            <p id="error_message_js" className="error-message velocity-animate"> </p>
+                            <p id="error_message_js" className="error-message"> </p>
 
                             <Submit disabled={validated ? "": "disabled"}>Submit</Submit>
                         </Form>

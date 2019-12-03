@@ -40,11 +40,11 @@ body {
         width: 100%;
         height: 7vh;
         padding: 0;
+        z-index: 1049;
     }
 
     .content {
-        padding: 15vh 0 0 0;
-        height: 100vh;
+        min-height: 100vh;
         font-size: 16px;
         box-sizing: border-box;
 
@@ -54,13 +54,22 @@ body {
                 color: themeColor("text", #{$page});
             }
         }
+
+        &.home {
+            padding-top: 60px;
+        }
+
+        &.contact {
+            padding-top: 60px;
+        }
     }
 
     .footer {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
+        z-index: 1049;
         background: transparent;
     }
 }

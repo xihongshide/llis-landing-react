@@ -160,8 +160,8 @@
             outline:none;
             text-align: center;
             width: 130px;
-            line-height: 40px;
-            border-radius: 2px;
+            line-height: 35px;
+            border-radius: 5px;
             border: 2px solid $main-white;
             color: $main-white;
             letter-spacing: 1px;
@@ -172,7 +172,8 @@
             font-weight: 700;
             display: inline-block;
             font-size: 18px;
-            margin-top: 15px;
+            margin-top: 5px;
+            animation: shake 3s linear 1s infinite;
 
             .icon {
                 display: none;
@@ -196,9 +197,10 @@
             }
 
             &.on-click {
-                width: 49px;
+                width: 45px;
                 border: 3px solid $main-white;
                 font-size:0;
+                border-radius: 45px;
                 border-left-color: $main-green;
                 animation: rotating 2s 0.25s linear infinite;
 
@@ -227,7 +229,9 @@
                 cursor: no-drop;
                 opacity: 0.8;
                 filter: grayscale(80%) blur(1px);
-                transform: scale(0.7);
+                transform: scale(0.9);
+                pointer-events: none;
+                animation: none;
             }
         }
 
@@ -240,10 +244,9 @@
             display: block;
             width: 100%;
             border: 2px solid $main-white;
-            padding: 1ch;
             border-radius: 3px;
-            transition: 150ms ease;
             outline: none;
+            padding: 5px;
             font-size: 1rem;
             font-family: inherit;
             background: transparent;
@@ -260,9 +263,9 @@
 
         @mixin label {
             position: absolute;
-            top: 1ch;
-            left: 1ch;
-            padding: 0 .5ch;
+            top: 5px;
+            left: 5px;
+            padding: 0 2.5px;
             pointer-events: none;
             transition: 150ms ease;
             color: $main-white;
@@ -366,4 +369,15 @@
         top: 10px;
         opacity: 1;
     }
+}
+
+@keyframes shake {
+    0% {transform: translateX(0);}
+    1% {transform: translateX(-3px)}
+    2% {transform: translateX(5px)}
+    3% {transform: translateX(-8px)}
+    4% {transform: translateX(8px)}
+    5% {transform: translateX(-5px)}
+    6% {transform: translateX(3px)}
+    7% {transform: translateX(0px)}
 }
