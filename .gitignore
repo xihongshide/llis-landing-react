@@ -65,3 +65,5 @@ typings/
 
 #jshint error
 *.jshintrc
+
+*.idea
