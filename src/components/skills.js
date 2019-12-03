@@ -90,10 +90,9 @@ const HoverArea = (props) => (
             {
                 SkillConfig.map((value, index) => {
                     return (
-                        <div className="skill-hexagon">
+                        <div className="skill-hexagon" key={index}>
                             <button
                                 className="skill-icon-btn"
-                                key={index}
                                 onClick={props.handleHover}
                                 onMouseEnter={props.handleHover}
                                 dataindex={index}
@@ -157,20 +156,28 @@ class Skills extends Component {
     }
 
     handleHover(e) {
+        e.preventDefault();
         let self = this;
+        console.log(self.lock);
 
         if(self.lock)
             return;
-
         self.lock = true;
-        $(".skills-container").css("pointer-event", "none");
-        let button = $(e.target);
-        let activeIndex = $(button).attr("dataindex");
-        $(button).on("mouseleave", () => self.setState({active: false}));
-        setTimeout(() => {
+
+        const button = $(e.target);
+
+        let timer = setTimeout(()=>{
+            $(".skills-container").css("pointer-event", "none");
+            let activeIndex = $(button).attr("dataindex");
             self.setState({activeIndex: activeIndex, active: true});
             self.lock = false;
-        }, 600);
+        }, 500);
+
+        $(button).on("mouseleave", () => {
+            self.setState({active: false});
+            clearTimeout(timer);
+            self.lock = false;
+        });
     }
 
     render() {

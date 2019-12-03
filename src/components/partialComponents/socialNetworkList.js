@@ -1,6 +1,6 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faGithub, faLinkedinIn, faInstagram, faWeixin} from "@fortawesome/free-brands-svg-icons";
+import {faGithub, faLinkedinIn, faInstagram, faWeixin} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 
 const SocialNestworkList = () => (

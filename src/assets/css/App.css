@@ -8606,7 +8606,8 @@ div.content.skills {
           transform: translate(-50%, -50%);
           font-size: 3em;
           font-weight: 700;
-          color: #ffffff; }
+          color: #ffffff;
+          pointer-events: none; }
   div.content.skills .skills-sets-container {
     text-align: left;
     padding-top: 80px;
