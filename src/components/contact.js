@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from "jquery";
 import emailjs from 'emailjs-com';
 import Recaptcha from 'react-recaptcha';
-import {VelocityComponent} from "velocity-react";
 import Velocity from "velocity-animate";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMapMarker} from "@fortawesome/free-solid-svg-icons";

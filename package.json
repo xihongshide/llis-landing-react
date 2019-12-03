@@ -29,6 +29,8 @@
   },
   "homepage": "https://github.com/xihongshide/llis-landing-react",
   "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-plugin-react": "^7.17.0",
     "gh-pages": "^2.1.1"
   },
   "dependencies": {
