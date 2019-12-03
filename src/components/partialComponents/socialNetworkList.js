@@ -6,9 +6,6 @@ import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 const SocialNestworkList = () => (
     <ul className="social-network-list">
         <li>
-            <a href="https://www.facebook.com/profile.php?id=100008402794110" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faFacebook } /></a>
-        </li>
-        <li>
             <a href="https://github.com/xihongshide/MY.git" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
         </li>
         <li>
@@ -27,4 +24,3 @@ const SocialNestworkList = () => (
 );
 
 export default SocialNestworkList;
-

@@ -6858,7 +6858,53 @@ Css keyframes End
   width: 100%;
   background: transparent !important; }
   .navbar .navbar-toggler {
-    border: none; }
+    border: none;
+    cursor: pointer; }
+    .navbar .navbar-toggler span {
+      display: block;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 100px;
+      -webkit-transition: width 0.6s ease-out, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48);
+      transition: width 0.6s ease-out, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48);
+      -o-transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-out;
+      transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-out;
+      transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-out, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48); }
+      .navbar .navbar-toggler span:not(:last-child) {
+        margin-bottom: 3px; }
+      .navbar .navbar-toggler span:first-child {
+        -webkit-transform-origin: 0 50%;
+        -ms-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+        width: 13px; }
+      .navbar .navbar-toggler span:nth-child(2) {
+        width: 26px; }
+      .navbar .navbar-toggler span:last-child {
+        -webkit-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        width: 18px; }
+    .navbar .navbar-toggler:hover {
+      opacity: 0.6; }
+    .navbar .navbar-toggler.collapsed span {
+      -webkit-transition: width 0.6s ease-in, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48);
+      transition: width 0.6s ease-in, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48);
+      -o-transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-in;
+      transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-in;
+      transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-in, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48); }
+      .navbar .navbar-toggler.collapsed span:first-child {
+        -webkit-transform: rotate(45deg) translate(0, -5px);
+        -ms-transform: rotate(45deg) translate(0, -5px);
+        transform: rotate(45deg) translate(0, -5px); }
+      .navbar .navbar-toggler.collapsed span:nth-child(2) {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
+      .navbar .navbar-toggler.collapsed span:last-child {
+        -webkit-transform: rotate(45deg) translate(9px, -4px);
+        -ms-transform: rotate(45deg) translate(9px, -4px);
+        transform: rotate(45deg) translate(9px, -4px);
+        width: 13px; }
   .navbar .nav-logo {
     font-family: 'Anton', sans-serif;
     -webkit-perspective: 1000px;
@@ -6992,11 +7038,19 @@ Css keyframes End
   @media screen and (max-width: 992px) {
     .navbar {
       text-align: right; }
+      .navbar .navbar-collapse {
+        position: fixed;
+        text-align: right;
+        width: 30%;
+        height: 100%;
+        left: 0;
+        background: #333; }
       .navbar .navbar-nav {
         text-align: left; }
         .navbar .navbar-nav ul li {
           width: 100%;
-          display: block; }
+          display: block;
+          color: #ffffff; }
           .navbar .navbar-nav ul li span {
             display: none; } }
 
@@ -7201,7 +7255,7 @@ footer .info-wrapper {
       background-color: #e1b16a; }
 
 .home .carousel {
-  padding: 25vh 0; }
+  padding: 10vh 0; }
   .home .carousel .carousel-caption {
     position: relative;
     right: auto;
@@ -7267,7 +7321,7 @@ footer .info-wrapper {
     text-align: center;
     height: 93vh;
     opacity: 0;
-    padding-top: 35vh; }
+    padding-top: 25vh; }
     .about .about-cols .about-col {
       height: 100%;
       margin: 0;
@@ -8105,7 +8159,7 @@ footer .info-wrapper {
 
 .contact .container {
   margin: 0 auto;
-  padding: 15vh 0 0; }
+  padding: 0; }
 
 .contact .contact-info {
   text-align: left; }
@@ -8512,14 +8566,15 @@ a {
   transition: all 0.12s linear; }
 
 body {
-  background: #fff;
   width: 100%;
   overflow: auto;
-  display: block; }
+  display: block;
+  min-height: 100vh;
+  background: transparent; }
 
 .App {
   text-align: center;
-  background: #f7f6f4;
+  background: transparent;
   overflow: auto; }
   .App .header {
     position: absolute;
@@ -8530,9 +8585,11 @@ body {
     height: 7vh;
     padding: 0; }
   .App .content {
-    padding: 0;
+    padding: 15vh 0 0 0;
     height: 100vh;
-    font-size: 16px; }
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
     .App .content.home {
       background-color: #333333;
       color: #ffffff; }
@@ -8548,10 +8605,8 @@ body {
     .App .content.blog {
       background-color: #ce5a57;
       color: #ffffff; }
-    .App .content .slide {
-      height: 90vh; }
   .App .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;

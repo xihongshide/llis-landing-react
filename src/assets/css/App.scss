@@ -20,15 +20,16 @@ a {
 }
 
 body {
-    background: #fff;
     width: 100%;
     overflow: auto;
     display: block;
+    min-height: 100vh;
+    background: transparent;
 }
 
 .App {
     text-align: center;
-    background: $main-bg;
+    background: transparent;
     overflow: auto;
 
     .header {
@@ -42,9 +43,10 @@ body {
     }
 
     .content {
-        padding: 0;
+        padding: 15vh 0 0 0;
         height: 100vh;
         font-size: 16px;
+        box-sizing: border-box;
 
         @each $page in $pages{
             &.#{$page} {
@@ -52,14 +54,10 @@ body {
                 color: themeColor("text", #{$page});
             }
         }
-
-        .slide {
-            height: 90vh;
-        }
     }
 
     .footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;

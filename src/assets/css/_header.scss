@@ -6,6 +6,56 @@
 
     .navbar-toggler {
         border: none;
+        cursor: pointer;
+
+        span {
+             display: block;
+             height: 3px;
+             background-color: $main-white;
+             border-radius: 100px;
+             transition: transform 0.6s cubic-bezier(.54,.1,.42,1.48), width 0.6s ease-out;
+
+             &:not(:last-child) {
+                 margin-bottom: 3px;
+             }
+
+             &:first-child {
+                 transform-origin: 0 50%;
+                 width: 13px;
+             }
+
+             &:nth-child(2) {
+                 width: 26px;
+             }
+
+             &:last-child {
+                 transform-origin: 100% 50%;
+                 width: 18px;
+             }
+         }
+
+         &:hover {
+             opacity: 0.6;
+         }
+
+         &.collapsed {
+            span {
+                transition: transform 0.6s cubic-bezier(.54,.1,.42,1.48), width 0.6s ease-in;
+
+                &:first-child {
+                    transform: rotate(45deg) translate(0, -5px);
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-45deg);
+                }
+
+                &:last-child {
+                    transform: rotate(45deg) translate(9px,-4px);
+                    width: 13px;
+                }
+            }
+       }
     }
 
     .nav-logo {
@@ -114,12 +164,23 @@
     @media screen and (max-width: $tablet-breakpoint) {
         text-align: right;
 
+        .navbar-collapse {
+            position: fixed;
+            text-align: right;
+            width: 30%;
+            height: 100%;
+
+            left: 0;
+            background: #333;
+        }
+
         .navbar-nav {
             text-align: left;
 
             ul li {
                 width: 100%;
                 display: block;
+                color: $main-white;
 
                 span {
                     display: none;

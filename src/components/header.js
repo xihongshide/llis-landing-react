@@ -18,6 +18,9 @@ class Header extends Component {
                     </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </Navbar.Toggle>
 
                     <Navbar.Collapse id="basic-navbar-nav">
