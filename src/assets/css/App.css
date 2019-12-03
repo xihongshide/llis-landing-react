@@ -7319,9 +7319,9 @@ footer .info-wrapper {
     width: 33.33333%;
     display: inline-block;
     text-align: center;
-    height: 93vh;
+    height: 100%;
     opacity: 0;
-    padding-top: 25vh; }
+    padding-top: 20%; }
     .about .about-cols .about-col {
       height: 100%;
       margin: 0;
