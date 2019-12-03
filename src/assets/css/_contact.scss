@@ -161,8 +161,7 @@
             text-align: center;
             width: 130px;
             line-height: 40px;
-            border-radius:40px;
-            background: #fff;
+            border-radius:2px;
             border: 2px solid $main-white;
             color: $main-white;
             letter-spacing: 1px;
@@ -223,6 +222,18 @@
                     content: "Sent"
                 }
             }
+
+            &.disabled {
+                cursor: no-drop;
+                opacity: 0.8;
+                filter: grayscale(80%) blur(1px);
+                transform: scale(0.7);
+            }
+        }
+
+        p.error-message {
+            color: $main-red;
+            margin: 10px 0 0;
         }
 
         @mixin input {
