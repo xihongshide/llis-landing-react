@@ -1,0 +1,16 @@
+div.wechat-modal {
+    background: transparent;
+
+    .modal-content,
+    .modal-body {
+        border: none;
+        padding: 0;
+        background: transparent;
+
+        img {
+            width: 80%;
+            height: auto;
+            border-radius: 30px;
+        }
+    }
+}

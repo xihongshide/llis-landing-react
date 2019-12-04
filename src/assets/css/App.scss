@@ -7,7 +7,7 @@
 @import '_about.scss';
 @import '_contact.scss';
 @import '_skills.scss';
-
+@import 'partial/_wechatModal.scss';
 * {
     font-family: 'Lato', sans-serif;
     -webkit-box-sizing: border-box;
@@ -40,7 +40,7 @@ body {
         width: 100%;
         height: 7vh;
         padding: 0;
-        z-index: 1049;
+        z-index: 1039;
     }
 
     .content {
@@ -69,7 +69,7 @@ body {
         bottom: 0;
         left: 0;
         width: 100%;
-        z-index: 1049;
+        z-index: 1039;
         background: transparent;
     }
 }

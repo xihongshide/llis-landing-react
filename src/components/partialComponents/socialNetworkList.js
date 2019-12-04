@@ -1,9 +1,10 @@
 import React from 'react';
+import $ from "jquery";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedinIn, faInstagram, faWeixin} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 
-const SocialNestworkList = () => (
+const SocialNetworkList = () => (
     <ul className="social-network-list">
         <li>
             <a href="https://github.com/xihongshide/MY.git" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
@@ -18,9 +19,9 @@ const SocialNestworkList = () => (
             <a href="mailto:liangli.0311@gmail.com" target="_top"><FontAwesomeIcon icon={ faEnvelope } /></a>
         </li>
         <li>
-            <a href="https://www.instagram.com/l.liiiiii/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faWeixin } /></a>
+            <a href="#" onClick={() => $("#wechat_modal").modal()}  rel="noopener noreferrer"><FontAwesomeIcon icon={ faWeixin } /></a>
         </li>
     </ul>
 );
 
-export default SocialNestworkList;
+export default SocialNetworkList;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import $ from "jquery";
-import Velocity from "velocity-animate";
 import { VelocityTransitionGroup } from 'velocity-react';
 
 const SkillConfig = [
