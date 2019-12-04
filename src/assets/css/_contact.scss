@@ -64,7 +64,6 @@
                 display: block;
             }
 
-
             li {
                 display: inline-block;
                 padding: 20px 0;
@@ -372,7 +371,7 @@
 }
 
 @keyframes shake {
-    0% {transform: translateX(0);}
+    0% {transform: translateX(0)}
     1% {transform: translateX(-3px)}
     2% {transform: translateX(5px)}
     3% {transform: translateX(-8px)}
