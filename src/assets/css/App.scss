@@ -73,6 +73,12 @@ body {
             @include centerer();
             min-height: 500px;
         }
+
+        .about-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
     }
 
     .footer {

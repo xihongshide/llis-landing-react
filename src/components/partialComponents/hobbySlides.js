@@ -40,8 +40,11 @@ const hobbyContent = [
 
 class HobbyContent extends React.Component {
     componentDidMount(){
-        let delay = Number(this.props.content.id) * 200;
-        Velocity(this.refs.slideAni, "transition.slideDownBigIn", { transform: ["skew(-11deg)", "translateY(0)"], display: "inline-block", duration: 800, delay: delay });
+        let delay = Number(this.props.content.id) * 300 + 300;
+        Velocity(this.refs.slideAni, {opacity: 1, skew: "-11deg", translateY: 0}, {duration: 800, delay: delay});
+        setTimeout(() => {
+            $(".about-hobby-container").css("pointer-events", "auto");
+        }, 2000);
     }
 
     render() {

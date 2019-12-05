@@ -5,6 +5,10 @@
     $text-color-alter: $main-yellow;
 
     .col-container {
+        height: 100%;
+    }
+
+    .col-inner-container {
         width: 100%;
         @include centerer;
         min-height: 200px;
@@ -181,6 +185,10 @@
     }
 
     //panel expanded style
+
+    .expanded-container {
+        height: 100%;
+    }
     .about-expanded {
         position: relative;
         overflow: hidden;
