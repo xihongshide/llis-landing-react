@@ -44,7 +44,7 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
         min-height: 500px;
         height: 100%;
         position: relative;
-        transform: translateY(-500px) skewX(-11deg);;
+        transform: translateY(-500px) skewX(-11deg);
         opacity: 0;
 
         @for $i from 1 through 4 {
