@@ -4,7 +4,6 @@ import $ from "jquery";
 import Brain from './brain.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faCode } from '@fortawesome/free-solid-svg-icons';
-import { VelocityTransitionGroup, VelocityComponent } from 'velocity-react';
 
 const WorkContent = [
     {
@@ -31,13 +30,15 @@ class Content extends Component {
 
     render () {
         let workContent = WorkContent[this.props.content.contentIndex];
-        let isOpen = this.props.content.isOpen;
 
         return (
             <div id="about_work_content" className={`${workContent.name} about-work-content`}>
                 <div className="velocity-animate">{workContent.icon}</div>
                 <h1 className="velocity-animate">{workContent.title}</h1>
                 <p className="velocity-animate">{workContent.description}</p>
+                <div className="brain-close-container velocity-animate">
+                    <button id="brain-close" onClick={this.props.closeBrain}>please close my brain after exploring</button>
+                </div>
             </div>
         );
     }
@@ -58,11 +59,13 @@ class Work extends Component {
 
     openBrain(e) {
         $('#barin_left_btn, #barin_right_btn').attr("disabled", "disabled");
-        Velocity($('#left_brain_svg'), {translateX: -500, delay: 1000, duration: 1500});
-        Velocity($('#right_brain_svg'), {translateX: 500, delay: 1000, duration: 1500});
+        Velocity($('#left_brain_svg'), {translateX: -500}, {easing: "ease-in-out", delay: 1000, duration: 500});
+        Velocity($('#right_brain_svg'), {translateX: 500}, {easing: "ease-in-out", delay: 1000, duration: 500});
         $($('.bot_brain_svg').get().reverse()).each((value, index) => {
             Velocity($(index), "transition.slideDownBigOut", {delay: 300 + value*300, duration: 500});
         });
+
+        $('.content').addClass("flash-bg");
 
         this.setState({contentIndex: e.target.getAttribute('value'), isOpen: true});
     }
@@ -73,8 +76,10 @@ class Work extends Component {
             Velocity($('#left_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
             Velocity($('#right_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
             Velocity($('.bot_brain_svg'), "transition.slideUpBigIn", {stagger: 300, delay: 1000, duration: 500});
-            this.setState({ontentIndex: null, isOpen: false,});
+            this.setState({contentIndex: null, isOpen: false,});
         }});
+
+        $('.content').removeClass("flash-bg");
     }
 
     render() {
@@ -83,18 +88,11 @@ class Work extends Component {
         return (
             <div className="about-work-container">
                 <div className="work-barin">
-                    {isOpen ? <Content content={this.state}/> : undefined}
+                    {isOpen ? <Content content={this.state} closeBrain={this.closeBrain}/> : undefined}
 
                     <div className="brain">
-                        <Brain onClick={this.openBrain}/>
-
+                        <Brain onClick={this.openBrain} content={this.state}/>
                     </div>
-
-                    <VelocityComponent animation={ isOpen ? 'transition.bounceDownIn' : 'transition.bounceUpOut'} delay={1500}>
-                        <div className="brain-close-container">
-                            <button id="brain-close" onClick={this.closeBrain}>close</button>
-                        </div>
-                    </VelocityComponent>
                 </div>
             </div>
         );

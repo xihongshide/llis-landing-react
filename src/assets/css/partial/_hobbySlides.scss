@@ -15,37 +15,42 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
     .hobby-slides {
         z-index: 20;
         height: 100%;
-
-        &:before,
-        &:after {
-            content: "";
-            width: 15%;
-            height: 100%;
-            position: absolute;
-            transform: skewX(-11deg);
-        }
-
-        &:before {
-            left: -15%;
-            background: $main-yellow;
-        }
-
-        &:after {
-            right: -15%;
-            background: $main-blue;
-        }
     }
 
     .hobby-slide {
         z-index: 20;
         display: inline-block;
         width: 25%;
-        overflow: hidden;
         min-height: 500px;
         height: 100%;
         position: relative;
         transform: translateY(-500px) skewX(-11deg);
         opacity: 0;
+        overflow: visible;
+
+        &:first-of-type {
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transform: skewX(-11deg);
+                left: -100%;
+                background: $main-yellow;
+            }
+        }
+
+        &:last-of-type {
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transform: skewX(-11deg);
+                right: -100%;
+                background: $main-blue;
+            }
+        }
 
         @for $i from 1 through 4 {
             &:nth-child(#{$i}) {

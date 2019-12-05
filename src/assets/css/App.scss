@@ -79,6 +79,10 @@ body {
             height: 100%;
             width: 100%;
         }
+        
+        &.flash-bg {
+            animation: flashBg 1.5s, ease-in-out;
+        }
     }
 
     .footer {
@@ -114,4 +118,37 @@ body {
 
 .no-margin {
     margin: 0;
+}
+
+@keyframes flashBg{
+    0% {
+        background: $main-blue;
+    }
+    5% {
+        background: blue;
+    }
+    10% {
+        background: orange;
+    }
+    15% {
+        background: green;
+    }
+    20% {
+        background: red;
+    }
+    25% {
+        background: yellow;
+    }
+    30% {
+        background: purple;
+    }
+    35% {
+        background: orange;
+    }
+    45% {
+        background: blue;
+    }
+    50% {
+        background: $main-blue;
+    }
 }
