@@ -51,61 +51,63 @@ class Home extends Component {
     render() {
         return (
             <div className="home content" id="home">
-                <div className="container">
-                    <Carousel
-                       interval = "40000"
-                       indicators = "true"
-                       className = "container"
-                       fade = "true"
-                       onSlideEnd = {this.aniHomeCopy}
-                       onSelect={this.handleSelect}
-                    >
-                        <Carousel.Item>
-                            <Carousel.Caption className="home-welcome">
-                                <div className="home-text-container">
-                                    <h3>WELCOME TO LLIS LANDING</h3>
-                                    <p>I am Liang a.k.a. <strong>the Mad Coder</strong> a.k.a. <strong>the Impatient Lego-Builder</strong> </p>
-                                </div>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Carousel.Caption className="home-work">
-                                <div className="home-text-container">
-                                    <h3>what I do for a living?</h3>
-                                    <p>In one word, coding.</p>
-                                    <div className="home-btn home_btn velocity-animate">
-                                        <NavLink to="/skills" activeClassName="selected" className="skills">
-                                            <button>Explore More</button>
-                                        </NavLink>
+                <div className="container home-container">
+                    <div className="inner-container">
+                        <Carousel
+                           interval = "40000"
+                           indicators = "true"
+                           className = "container"
+                           fade = "true"
+                           onSlideEnd = {this.aniHomeCopy}
+                           onSelect={this.handleSelect}
+                        >
+                            <Carousel.Item>
+                                <Carousel.Caption className="home-welcome">
+                                    <div className="home-text-container">
+                                        <h3>WELCOME TO LLIS LANDING</h3>
+                                        <p>I am Liang a.k.a. <strong>the Mad Coder</strong> a.k.a. <strong>the Impatient Lego-Builder</strong> </p>
                                     </div>
-                                </div>
-                            </Carousel.Caption>
-                         </Carousel.Item>
+                                </Carousel.Caption>
+                            </Carousel.Item>
 
-                         <Carousel.Item>
-                            <Carousel.Caption className="home-hobby">
-                                <div className="home-text-container">
-                                    <h3>What makes me feel alive?</h3>
-                                    <p>Basketball, Running, Coffee and Lego</p>
-                                </div>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                         <Carousel.Item>
-                            <Carousel.Caption className="home-game">
-                                <div className="home-text-container">
-                                    <h3>Bet ur tired of exploring?</h3>
-                                    <p>Play a game with me and buy me a beer if you lose. </p>
-                                    <div className="home-btn home_btn velocity-animate">
-                                        <NavLink to="/game" activeClassName="selected" className="game">
-                                            <button>Chanllenge Me</button>
-                                        </NavLink>
+                            <Carousel.Item>
+                                <Carousel.Caption className="home-work">
+                                    <div className="home-text-container">
+                                        <h3>what I do for a living?</h3>
+                                        <p>In one word, coding.</p>
+                                        <div className="home-btn home_btn velocity-animate">
+                                            <NavLink to="/skills" activeClassName="selected" className="skills">
+                                                <button>Explore More</button>
+                                            </NavLink>
+                                        </div>
                                     </div>
-                                </div>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
+                                </Carousel.Caption>
+                             </Carousel.Item>
+
+                             <Carousel.Item>
+                                <Carousel.Caption className="home-hobby">
+                                    <div className="home-text-container">
+                                        <h3>What makes me feel alive?</h3>
+                                        <p>Basketball, Running, Coffee and Lego</p>
+                                    </div>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+
+                             <Carousel.Item>
+                                <Carousel.Caption className="home-game">
+                                    <div className="home-text-container">
+                                        <h3>Bet ur tired of exploring?</h3>
+                                        <p>Play a game with me and buy me a beer if you lose. </p>
+                                        <div className="home-btn home_btn velocity-animate">
+                                            <NavLink to="/game" activeClassName="selected" className="game">
+                                                <button>Chanllenge Me</button>
+                                            </NavLink>
+                                        </div>
+                                    </div>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
+                    </div>
                 </div>
             </div>
         );

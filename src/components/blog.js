@@ -4,7 +4,11 @@ class Blog extends Component {
    render() {
       return (
          <div className="content blog">
-            <h1>under construction...</h1>
+            <div className="container">
+               <div className="inner-container">
+                  <h1>under construction...</h1>
+               </div>
+            </div>
          </div>
       );
    }

@@ -1,6 +1,4 @@
 div.content.skills{
-	padding-top: 20vh;
-
 	.skills-hexagon-innner {
 		text-align: center;
 		overflow: hidden;
@@ -9,6 +7,7 @@ div.content.skills{
 		margin: 0 auto;
 		font-size: 15px;
 		padding-bottom:8.3%;
+		position: relative;
 
 		&:after {
 		    content: "";
@@ -79,7 +78,7 @@ div.content.skills{
 				-webkit-transform: skewY(-30deg) rotate(60deg);
 				-ms-transform: skewY(-30deg) rotate(60deg);
 				transform: skewY(-30deg) rotate(60deg);
-				outline: 8px solid transparent;
+
 				cursor: pointer;
 				background: $main-green;
 

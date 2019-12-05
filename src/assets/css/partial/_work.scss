@@ -4,7 +4,6 @@
     margin: 0;
     text-align: center;
     position: relative;
-    padding-top: 80px;
 
     .work-barin {
         margin: 0 auto;
@@ -53,15 +52,16 @@
             }
         }
     }
-    .brain-close-container{
-        @include centererHorizontal;
+    .brain-close-container {
         @include mainButton;
         top: -30px;
 
-        #barin-close {
-            border-radius: none;
+        #brain-close {
+            border-radius: 0;
             border: none;
             font-size: 2em;
+            color: $main-white;
+            background: transparent;
         }
     }
 

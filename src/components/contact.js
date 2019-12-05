@@ -220,55 +220,57 @@ class Contact extends Component {
 
         return (
             <div className="contact content">
-                <div className="container row no-padding">
-                    <ContactInfo>
-                        <h1> Conatact Info</h1>
-                        <p>Get in touch with me at anytime if you have any questions.</p>
-                        <p>Ues the form to the right or my details below and I'll get back to you ASAP.</p>
-                        <SocialNetworkList />
-                        <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
-                    </ContactInfo>
+                <div className="container contact-container">
+                    <div className="inner-container row no-padding">
+                        <ContactInfo>
+                            <h1> Conatact Info</h1>
+                            <p>Get in touch with me at anytime if you have any questions.</p>
+                            <p>Ues the form to the right or my details below and I'll get back to you ASAP.</p>
+                            <SocialNetworkList />
+                            <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
+                        </ContactInfo>
 
-                    <div className="col-sm-1"></div>
+                        <div className="col-sm-1"></div>
 
-                    <Card>
-                        <h1>Ge in touch</h1>
-                        <Form onSubmit={this.handleSubmit}>
-                            <TextInput
-                                {...name}
-                                onFocus={this.handleFocus}
-                                onBlur={this.handleBlur}
-                                onChange={this.handleChange}
-                            />
+                        <Card>
+                            <h1>Ge in touch</h1>
+                            <Form onSubmit={this.handleSubmit}>
+                                <TextInput
+                                    {...name}
+                                    onFocus={this.handleFocus}
+                                    onBlur={this.handleBlur}
+                                    onChange={this.handleChange}
+                                />
 
-                            <TextInput
-                                {...email}
-                                onFocus={this.handleFocus}
-                                onBlur={this.handleBlur}
-                                onChange={this.handleChange}
-                            />
+                                <TextInput
+                                    {...email}
+                                    onFocus={this.handleFocus}
+                                    onBlur={this.handleBlur}
+                                    onChange={this.handleChange}
+                                />
 
-                            <TextArea
-                                {...message}
-                                onFocus={this.handleFocus}
-                                onBlur={this.handleBlur}
-                                onChange={this.handleChange}
-                            />
+                                <TextArea
+                                    {...message}
+                                    onFocus={this.handleFocus}
+                                    onBlur={this.handleBlur}
+                                    onChange={this.handleChange}
+                                />
 
-                            <Recaptcha
-                                sitekey="6Leaz8QUAAAAADTXF0k9MxdYIBEZsrAMwq1aJDHG"
-                                render="explicit"
-                                verifyCallback={this.recaptchaVerifyCallback}
-                                onloadCallback={this.recaptchaCallback}
-                                theme="Dark"
-                                dataExpiredCallback={()=>this.setState({recaptcha: false,})}
-                            />
+                                <Recaptcha
+                                    sitekey="6Leaz8QUAAAAADTXF0k9MxdYIBEZsrAMwq1aJDHG"
+                                    render="explicit"
+                                    verifyCallback={this.recaptchaVerifyCallback}
+                                    onloadCallback={this.recaptchaCallback}
+                                    theme="Dark"
+                                    dataExpiredCallback={()=>this.setState({recaptcha: false,})}
+                                />
 
-                            <p id="error_message_js" className="error-message"> </p>
+                                <p id="error_message_js" className="error-message"> </p>
 
-                            <Submit disabled={validated ? "": "disabled"}>Submit</Submit>
-                        </Form>
-                    </Card>
+                                <Submit disabled={validated ? "": "disabled"}>Submit</Submit>
+                            </Form>
+                        </Card>
+                    </div>
                 </div>
             </div>
         );

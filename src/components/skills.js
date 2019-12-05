@@ -181,9 +181,11 @@ class Skills extends Component {
     render() {
         return (
             <div className="content skills">
-                <div className="skills-container no-margin row">
-                    <HoverArea handleHover={this.handleHover} />
-                    <SkillsDetails activeState={this.state}/>
+                <div className="skills-container container">
+                    <div className='inner-container no-margin row'>
+                        <HoverArea handleHover={this.handleHover} />
+                        <SkillsDetails activeState={this.state}/>
+                    </div>
                 </div>
             </div>
         );

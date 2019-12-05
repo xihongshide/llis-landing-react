@@ -92,7 +92,7 @@ class Work extends Component {
 
                     <VelocityComponent animation={ isOpen ? 'transition.bounceDownIn' : 'transition.bounceUpOut'} delay={1500}>
                         <div className="brain-close-container">
-                            <button id="barin-close" onClick={this.closeBrain}>close</button>
+                            <button id="brain-close" onClick={this.closeBrain}>close</button>
                         </div>
                     </VelocityComponent>
                 </div>
