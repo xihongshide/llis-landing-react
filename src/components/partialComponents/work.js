@@ -4,6 +4,7 @@ import $ from "jquery";
 import Brain from './brain.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faCode } from '@fortawesome/free-solid-svg-icons';
+import { VelocityTransitionGroup, VelocityComponent } from 'velocity-react';
 
 const WorkContent = [
     {
@@ -25,16 +26,16 @@ const WorkContent = [
 
 class Content extends Component {
     componentDidMount(){
-        Velocity($('.about-work-content h1'), "transition.shrinkIn", { display: "block", duration: 500, delay: 50});
-        Velocity($('.about-work-content p'), "transition.shrinkIn", { display: "block", duration: 500, delay: 150});
+        Velocity($('#about_work_content > *'), "transition.expandIn", {stagger: 300, delay: 1200, duration: 800});
     }
 
-    render() {
-        let workContent = WorkContent[this.props.contentIndex];
-        console.log(this.props.contentIndex);
+    render () {
+        let workContent = WorkContent[this.props.content.contentIndex];
+        let isOpen = this.props.content.isOpen;
+
         return (
-            <div className={`${workContent.name} about-work-content`}>
-                {workContent.icon}
+            <div id="about_work_content" className={`${workContent.name} about-work-content`}>
+                <div className="velocity-animate">{workContent.icon}</div>
                 <h1 className="velocity-animate">{workContent.title}</h1>
                 <p className="velocity-animate">{workContent.description}</p>
             </div>
@@ -56,33 +57,44 @@ class Work extends Component {
     }
 
     openBrain(e) {
-        console.log(e.target);
-        this.setState({
-            contentIndex: e.target.getAttribute('value'),
-            isOpen: true,
+        $('#barin_left_btn, #barin_right_btn').attr("disabled", "disabled");
+        Velocity($('#left_brain_svg'), {translateX: -500, delay: 1000, duration: 1500});
+        Velocity($('#right_brain_svg'), {translateX: 500, delay: 1000, duration: 1500});
+        $($('.bot_brain_svg').get().reverse()).each((value, index) => {
+            Velocity($(index), "transition.slideDownBigOut", {delay: 300 + value*300, duration: 500});
         });
+
+        this.setState({contentIndex: e.target.getAttribute('value'), isOpen: true});
     }
 
     closeBrain(e) {
-        this.setState({
-            contentIndex: null,
-            isOpen: false,
-        });
+        $('#barin_left_btn, #barin_right_btn').removeAttr("disabled", "disabled");
+        Velocity($('#about_work_content > *'), "transition.expandOut", {stagger: 300, delay: 500, duration: 500, complete: ()=> {
+            Velocity($('#left_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
+            Velocity($('#right_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
+            Velocity($('.bot_brain_svg'), "transition.slideUpBigIn", {stagger: 300, delay: 1000, duration: 500});
+            this.setState({ontentIndex: null, isOpen: false,});
+        }});
     }
 
     render() {
+        let isOpen = this.state.isOpen;
+
         return (
             <div className="about-work-container">
                 <div className="work-barin">
-                    {this.state.isOpen? <Content contentIndex={this.state.contentIndex} />:""}
+                    {isOpen ? <Content content={this.state}/> : undefined}
+
                     <div className="brain">
-                        <Brain />
-                        <button id="barin-left-btn" className="col-xs-6 brain-left" value="0" onClick={this.openBrain}>
-                        </button>
-                        <button id="barin-right-btn" className="col-xs-6 brain-right" value="1" onClick={this.openBrain}>
-                        </button>
+                        <Brain onClick={this.openBrain}/>
+
                     </div>
-                    <button id="barin-close" onClick={this.closeBrain}>close</button>
+
+                    <VelocityComponent animation={ isOpen ? 'transition.bounceDownIn' : 'transition.bounceUpOut'} delay={1500}>
+                        <div className="brain-close-container">
+                            <button id="barin-close" onClick={this.closeBrain}>close</button>
+                        </div>
+                    </VelocityComponent>
                 </div>
             </div>
         );

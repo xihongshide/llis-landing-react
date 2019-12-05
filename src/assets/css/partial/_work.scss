@@ -8,47 +8,73 @@
 
     .work-barin {
         margin: 0 auto;
-        max-width: 300px;
         width: 100%;
         position: relative;
 
-        svg {
+        svg.brain-svg {
+            height: 500px;
             width: 100%;
-            z-index: 10
+            z-index: 10;
+
+            path {
+                transition: color 1s ease;
+            }
+
+            #left_brain_svg {
+                cursor: pointer;
+
+                &:hover {
+                    fill: $main-yellow;
+                }
+            }
+
+            #right_brain_svg {
+                path {
+                    cursor: pointer;
+
+                    &:hover {
+                        &:nth-child(2) {
+                            fill: $main-yellow;
+                        }
+
+                        &:nth-child(3),
+                        &:nth-child(4),
+                        &:nth-child(5),
+                        &:nth-child(6){
+                            fill: $main-red;
+                        }
+                    }
+                }
+            }
+            .bot_brain_svg {
+                &:hover {
+                    fill: $main-yellow;
+                }
+            }
         }
     }
-
-    .brain-left,
-    .brain-right {
-        border: none;
-        outline: none;
-        background: transparent;
-        height: 100%;
-        cursor: pointer;
-        position: absolute;
-        top: 5px;
-        width: 140px;
-        height: 75%;
-        z-index: 20;
-    }
-
-    .brain-left{
-        left: 0;
-    }
-
-    .brain-right {
-        right: 0
-    }
-
-    #barin-close {
+    .brain-close-container{
         @include centererHorizontal;
-        top: 20%;
+        @include mainButton;
+        top: -30px;
+
+        #barin-close {
+            border-radius: none;
+            border: none;
+            font-size: 2em;
+        }
     }
 
     .about-work-content {
         position: absolute;
+        max-width: 300px;
         left: 50%;
-        top: 50%;
+        top: 40%;
         transform: translate(-50%, -50%);
+
+        svg {
+            width: 140px;
+            height: auto;
+        }
     }
 }

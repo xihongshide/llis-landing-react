@@ -125,12 +125,12 @@ class SkillsDetails extends Component {
                     enter={{animation: "transition.slideRightBigIn", stagger: "300"}}
                     leave={{animation: "transition.slideRightBigOut", duration: "500"}}
                 >
-                    {active ? <p className="skills-ani"><i>{skillSet.icon}</i></p> : undefined}
-                    {active ? <h2 className="skills-ani">{skillSet.name}</h2> : undefined}
+                    {active ? <p><i>{skillSet.icon}</i></p> : undefined}
+                    {active ? <h2>{skillSet.name}</h2> : undefined}
                     {active ?
                         (skillSet.details.map((value, index) => {
                             return(
-                                <div className="skills-ani" key={index}>
+                                <div key={index}>
                                     <b>{value.name}: </b>
                                     <span>{value.description}</span>
                                 </div>
@@ -157,7 +157,6 @@ class Skills extends Component {
     handleHover(e) {
         e.preventDefault();
         let self = this;
-        console.log(self.lock);
 
         if(self.lock)
             return;
