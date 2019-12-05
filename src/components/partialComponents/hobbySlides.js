@@ -40,8 +40,8 @@ const hobbyContent = [
 
 class HobbyContent extends React.Component {
     componentDidMount(){
-        let delay = Number(this.props.content.id) * 300 + 300;
-        Velocity(this.refs.slideAni, {opacity: 1, skew: "-11deg", translateY: 0}, {duration: 800, delay: delay});
+        let delay = Number(this.props.content.id) * 300 + 200;
+        Velocity(this.refs.slideAni, {opacity: 1,  skewX: "-11deg", translateY: 0}, {duration: 600, delay: delay});
         setTimeout(() => {
             $(".about-hobby-container").css("pointer-events", "auto");
         }, 2000);
@@ -94,7 +94,7 @@ class HobbySlides extends Component {
             width: '15%',
         }, {
             duration: 300,
-            easing: 'ease',
+            easing: 'liner',
             complete: ()=> {
                 this.setState({disabled: false});
                 $(siblings).children('.hobby-slide-content').removeClass('disabled');
@@ -107,10 +107,10 @@ class HobbySlides extends Component {
             width: '55%',
         }, {
             duration: 300,
-            easing: 'ease',
+            easing: 'liner',
             complete: ()=>{
-                Velocity($(hoverElement).find('h1'), 'transition.slideUpBigIn', { opacity: 1, duration: 500, delay: 500});
-                Velocity($(hoverElement).find('p'), 'transition.slideUpBigIn', { opacity: 1, duration: 500, delay: 600});
+                Velocity($(hoverElement).find('h1'), 'transition.slideUpBigIn', { opacity: 1, duration: 300, delay: 200});
+                Velocity($(hoverElement).find('p'), 'transition.slideUpBigIn', { opacity: 1, duration: 300, delay: 300});
             },
         });
     }

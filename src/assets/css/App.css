@@ -8133,6 +8133,20 @@ div#home {
     .about .about-hobby-container .hobby-slides {
       z-index: 20;
       height: 100%; }
+      .about .about-hobby-container .hobby-slides:before, .about .about-hobby-container .hobby-slides:after {
+        content: "";
+        width: 15%;
+        height: 100%;
+        position: absolute;
+        -webkit-transform: skewX(-11deg);
+        -ms-transform: skewX(-11deg);
+        transform: skewX(-11deg); }
+      .about .about-hobby-container .hobby-slides:before {
+        left: -15%;
+        background: #ffc300; }
+      .about .about-hobby-container .hobby-slides:after {
+        right: -15%;
+        background: #444c5c; }
     .about .about-hobby-container .hobby-slide {
       z-index: 20;
       display: inline-block;
@@ -8141,9 +8155,9 @@ div#home {
       min-height: 500px;
       height: 100%;
       position: relative;
-      -webkit-transform: translateY(-200px);
-      -ms-transform: translateY(-200px);
-      transform: translateY(-200px);
+      -webkit-transform: translateY(-500px) skewX(-11deg);
+      -ms-transform: translateY(-500px) skewX(-11deg);
+      transform: translateY(-500px) skewX(-11deg);
       opacity: 0; }
       .about .about-hobby-container .hobby-slide:nth-child(1) {
         background: #ffc300; }

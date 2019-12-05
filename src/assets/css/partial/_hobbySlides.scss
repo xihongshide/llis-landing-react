@@ -15,6 +15,25 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
     .hobby-slides {
         z-index: 20;
         height: 100%;
+
+        &:before,
+        &:after {
+            content: "";
+            width: 15%;
+            height: 100%;
+            position: absolute;
+            transform: skewX(-11deg);
+        }
+
+        &:before {
+            left: -15%;
+            background: $main-yellow;
+        }
+
+        &:after {
+            right: -15%;
+            background: $main-blue;
+        }
     }
 
     .hobby-slide {
@@ -25,7 +44,7 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
         min-height: 500px;
         height: 100%;
         position: relative;
-        transform: translateY(-200px);
+        transform: translateY(-500px) skewX(-11deg);;
         opacity: 0;
 
         @for $i from 1 through 4 {
