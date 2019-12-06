@@ -9,16 +9,16 @@
     .work-barin {
         margin: 0 auto;
         width: 100%;
-        min-height: 600px;
+        min-height: 500px;
         @include centerer;
 
         .brain {
-            max-height: 600px;
+            max-height: 500px;
 
         }
 
         svg.brain-svg {
-            height: 600px;
+            height: 500px;
             width: 100%;
             z-index: 10;
 
@@ -110,6 +110,7 @@
             overflow: hidden;
             position: relative;
             opacity: 0.9;
+            outline: none;
 
             &:before,
             &:after {

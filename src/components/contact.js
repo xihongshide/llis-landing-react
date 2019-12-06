@@ -6,10 +6,40 @@ import Velocity from "velocity-animate";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMapMarker} from "@fortawesome/free-solid-svg-icons";
 
-
 //Partial Components
 import SocialNetworkList from './partialComponents/socialNetworkList.js';
 
+const defaultState ={
+    name: {
+        name: "name",
+        label: "Name",
+        value: "",
+        focus: false,
+        errorMessage: "",
+        max: 32,
+        min: 3,
+    },
+    email: {
+        name: "email",
+        label: "Email",
+        value: "",
+        focus: false,
+        errorMessage: "",
+        max: 32,
+        min: 0
+    },
+    message: {
+        name: "message",
+        label: "Message",
+        value: "",
+        focus: false,
+        errorMessage: "",
+        max: 10000,
+        min: 10,
+    },
+
+    recaptcha: false
+};
 /** ContactForm Component */
 
 // validate empty name input and message input
@@ -93,37 +123,7 @@ const ContactInfo = props => <div className="contact-info col-sm-4 velocity-anim
 class Contact extends Component {
     constructor() {
         super();
-        this.state = {
-            name: {
-                name: "name",
-                label: "Name",
-                value: "",
-                focus: false,
-                errorMessage: "",
-                max: 32,
-                min: 3,
-            },
-            email: {
-                name: "email",
-                label: "Email",
-                value: "",
-                focus: false,
-                errorMessage: "",
-                max: 32,
-                min: 0
-            },
-            message: {
-                name: "message",
-                label: "Message",
-                value: "",
-                focus: false,
-                errorMessage: "",
-                max: 10000,
-                min: 10,
-            },
-
-            recaptcha: false
-        };
+        this.state = defaultState;
 
         this.handleFocus = this.handleFocus.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
@@ -172,6 +172,7 @@ class Contact extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const self = this;
         let form = $(e.target);
         let button = $(e.target).find(".submit-btn");
         setTimeout(()=>{$(button).addClass('on-click');}, 450);
@@ -192,9 +193,10 @@ class Contact extends Component {
                     $(button).removeClass("on-click");
                     $(button).val("Sent!").addClass( "validate", 1550, setTimeout(()=>{
                         $(button).removeClass("validate").val("Send");
+                        self.setState(defaultState);
+                        window.grecaptcha.reset();
                     }, 1550 ));
                 }, 1550);
-                form.reset();
             }, function(err) {
                 setTimeout(()=>{
                     $("#error_message_js").text(err.text + ".", ()=>{
@@ -204,6 +206,8 @@ class Contact extends Component {
                     setTimeout(()=>{
                         Velocity($('#error_message_js'), 'transition.shrinkOut', {duration: 850, delay: 300, display: 'block', opacity: '0'} );
                         $('#error_message_js').text("");
+                        self.setState(defaultState);
+                        window.grecaptcha.reset();
                     }, 3550 );
                 }, 2550);
             });
