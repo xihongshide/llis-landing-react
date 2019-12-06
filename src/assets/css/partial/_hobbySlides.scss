@@ -94,11 +94,13 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
                 font-size: 2em;
                 font-weight: 700;
                 margin: 15px 0;
+                display: none;
             }
 
             p {
                 color: #fff;
                 font-size: 1em;
+                display: none;
             }
         }
     }

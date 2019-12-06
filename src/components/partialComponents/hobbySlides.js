@@ -44,7 +44,7 @@ class HobbyContent extends React.Component {
         Velocity(this.refs.slideAni, {opacity: 1,  skewX: "-11deg", translateY: 0}, {duration: 600, delay: delay});
         setTimeout(() => {
             $(".about-hobby-container").css("pointer-events", "auto");
-        }, 2000);
+        }, 2800);
     }
 
     render() {
@@ -85,8 +85,8 @@ class HobbySlides extends Component {
 
         $(hoverElement).children('.hobby-slide-content').addClass('disabled');
 
-        Velocity($(siblings).find('h1'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 200});
-        Velocity($(siblings).find('p'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 300});
+        Velocity($(siblings).find('h1'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 0});
+        Velocity($(siblings).find('p'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 100});
 
         Velocity(
             $(siblings),
