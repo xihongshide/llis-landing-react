@@ -33,11 +33,11 @@ class Home extends Component {
         let $homeBtn = $carouselIteam.find(".home_btn");
 
         $carouselIteam.find("h3 span").css("opacity","0").each(function(i){
-            Velocity($(this), titleTransition, { display: "inline-block", duration: 500, delay: i*200});
+            Velocity($(this), titleTransition, { display: "inline-block", duration: 500, delay: 300+i*200});
         });
 
         $carouselIteam.find("p span").css("opacity","0").each(function(i){
-            Velocity($(this), "transition.shrinkIn", { display: "inline-block", duration: 300, delay: i*50});
+            Velocity($(this), "transition.shrinkIn", { display: "inline-block", duration: 300, delay: 300+i*50});
         });
 
         $homeBtn.css("opacity","0");
