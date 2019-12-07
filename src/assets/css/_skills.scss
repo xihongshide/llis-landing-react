@@ -78,20 +78,43 @@ div.content.skills{
 				-webkit-transform: skewY(-30deg) rotate(60deg);
 				-ms-transform: skewY(-30deg) rotate(60deg);
 				transform: skewY(-30deg) rotate(60deg);
-
 				cursor: pointer;
 				background: $main-green;
 
 				span {
 					position: absolute;
-					width: 100%;
-					top: 50%;
-					left: 50%;
-	               	transform:translate(-50%, -50%);
-					font-size: 3em;
+					width: 50%;
+					top: 35%;
+					left: 33%;
+	               	transform: translate(-50%, -50%);
 					font-weight: 700;
 					color: $main-white;
 					pointer-events: none;
+					text-align: center;
+					font-size: 50px;
+					line-height: 50px;
+
+					svg {
+						width: 50px;
+						height: 50px;
+						margin: 0 auto;
+						transition: transform 300ms linear;
+					}
+
+					b {
+						width: 40px;
+						height: 40px;
+						margin: 0 auto;
+						transition: transform 300ms linear;
+					}
+				}
+
+				&:hover {
+					span {
+						svg, b {
+							transform: scale(1.2);
+						}
+					}
 				}
 			}
 		}

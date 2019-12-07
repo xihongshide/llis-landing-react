@@ -1,75 +1,67 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 import { VelocityTransitionGroup } from 'velocity-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSkull, faChalkboard ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
 
 const SkillConfig = [
     {
-        name: "core",
-        icon: "core icon",
+        name: "teaching",
+        icon: <FontAwesomeIcon icon={faChalkboard} />,
         details: [
             {
-                name: "competitivenesssaf",
-                description: ["Self-Discipline1", "Curiosity2"]
-            }
-        ]
+                name: "IELTS Test",
+                description: "4.5 Years of IELTS Test tuoring experience"
+            },
+        ],
     },
     {
-        name: "js",
-        icon: "js icon",
+        name: "Javasctipt",
+        icon: <b>Js</b>,
         details: [
             {
-                name: "JS libs",
-                description: "Jquery, ReactJs"
+                name: "JavaScript",
+                description: "jquery, reactJs, typescript, es6"
             }
         ]
     },
     {
         name: "front-end",
-        icon: "front-end icon",
+        icon: <b>FE</b>,
         details: [
             {
-                name: "experiences",
-                description: "HTML5, SCSS/CSS, Reasponsive Design, WCAG, Animation"
+                name: "Experiences",
+                description: "HTML5, twig, SCSS/CSS, Reasponsive Design, WCAG, bootstrap, Animations"
             }
         ],
     },
     {
-        name: "back-end",
-        icon: "back-end icon",
+        name: "core",
+        icon: <FontAwesomeIcon icon={faSkull} />,
         details: [
             {
-                name: "experiences",
-                description: "PHP/Zend, Python, MySQL, NodeJs"
+                name: "Core competitiveness",
+                description: "self-Discipline, curiosity"
             }
-        ],
-    },
-    {
-        name: "teaching",
-        icon: "teaching icon",
-        details: [
-            {
-                name: "IELTS",
-                description: "4.5 Years"
-            },
-        ],
+        ]
     },
     {
         name: "tools",
-        icon: "tools icon",
+        icon: <FontAwesomeIcon icon={faToolbox} />,
         details: [
             {
-                name: "tools",
-                description: "Git, Jira, webpack, Photoshop, bitbucket, Npm"
+                name: "Tools",
+                description: "git, jira, webpack, photoshop, bitbucket, npm"
             }
         ],
     },
     {
-        name: "language",
-        icon: "language icon",
+        name: "languages",
+        icon: <FontAwesomeIcon icon={faLanguage} />,
         details: [
             {
                 name: "Mandarin",
-                description: "Mathertone"
+                description: "mathertone"
             },
             {
                 name: "English",
@@ -80,14 +72,25 @@ const SkillConfig = [
                 description: "le débutant"
             }
         ],
-    }
+    },
+    {
+        name: "back-end",
+        icon: <b>BE</b>,
+        details: [
+            {
+                name: "experiences",
+                description: "PHP/Zend, Python/Django, MySQL, NodeJs/Express"
+            }
+        ],
+    },
 ];
 
 const HoverArea = (props) => (
-    <div className="skills-hexagon-container col-md-6 col-sm-12">
-        <div className="skills-hexagon-innner col-md-6 col-sm-12">
+    <div className="skills-hexagon-container col-md-7 col-sm-12">
+        <div className="skills-hexagon-innner">
             {
                 SkillConfig.map((value, index) => {
+                    console.log(value.icon);
                     return (
                         <div className="skill-hexagon" key={index}>
                             <button
@@ -96,7 +99,7 @@ const HoverArea = (props) => (
                                 onMouseEnter={props.handleHover}
                                 dataindex={index}
                             >
-                               <span>{value.name[0]}</span>
+                                <span>{value.icon}</span>
                             </button>
                         </div>
                     );
@@ -119,7 +122,7 @@ class SkillsDetails extends Component {
         }
 
         return (
-            <div className="skills-sets-container col-md-6 col-sm-12">
+            <div className="skills-sets-container col-md-5 col-sm-12">
                 <h1>Skills</h1>
                 <VelocityTransitionGroup
                     enter={{animation: "transition.slideRightBigIn", stagger: "300"}}
@@ -131,7 +134,7 @@ class SkillsDetails extends Component {
                         (skillSet.details.map((value, index) => {
                             return(
                                 <div key={index}>
-                                    <b>{value.name}: </b>
+                                    <b>{value.name}:</b>&nbsp;&nbsp;
                                     <span>{value.description}</span>
                                 </div>
                             );

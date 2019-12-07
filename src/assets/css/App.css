@@ -8699,16 +8699,40 @@ div.content.skills .skills-hexagon-innner {
       background: #78a5a3; }
       div.content.skills .skills-hexagon-innner .skill-hexagon button span {
         position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
+        width: 50%;
+        top: 35%;
+        left: 33%;
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        font-size: 3em;
         font-weight: 700;
         color: #ffffff;
-        pointer-events: none; }
+        pointer-events: none;
+        text-align: center;
+        font-size: 50px;
+        line-height: 50px; }
+        div.content.skills .skills-hexagon-innner .skill-hexagon button span svg {
+          width: 50px;
+          height: 50px;
+          margin: 0 auto;
+          -webkit-transition: -webkit-transform 300ms linear;
+          transition: -webkit-transform 300ms linear;
+          -o-transition: transform 300ms linear;
+          transition: transform 300ms linear;
+          transition: transform 300ms linear, -webkit-transform 300ms linear; }
+        div.content.skills .skills-hexagon-innner .skill-hexagon button span b {
+          width: 40px;
+          height: 40px;
+          margin: 0 auto;
+          -webkit-transition: -webkit-transform 300ms linear;
+          transition: -webkit-transform 300ms linear;
+          -o-transition: transform 300ms linear;
+          transition: transform 300ms linear;
+          transition: transform 300ms linear, -webkit-transform 300ms linear; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:hover span svg, div.content.skills .skills-hexagon-innner .skill-hexagon button:hover span b {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2); }
 
 div.content.skills .skills-sets-container {
   text-align: left;
