@@ -133,8 +133,8 @@ class Contact extends Component {
     }
 
     componentDidMount() {
-        Velocity($("#contact_info_js"), 'transition.slideLeftBigIn', {duration: 1050, delay: 300} );
-        Velocity($("#contact_card_js"), 'transition.slideRightBigIn', {duration: 1050, delay: 300} );
+        Velocity($("#contact_info_js"), 'transition.slideLeftBigIn', {duration: 1200, delay: 800} );
+        Velocity($("#contact_card_js"), 'transition.slideRightBigIn', {duration: 1200, delay: 800} );
     }
 
     handleFocus(e) {

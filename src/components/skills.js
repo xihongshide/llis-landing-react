@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from "jquery";
+import Velocity from 'velocity-animate';
 import { VelocityTransitionGroup } from 'velocity-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSkull, faChalkboard ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
@@ -85,31 +86,55 @@ const SkillConfig = [
     },
 ];
 
-const HoverArea = (props) => (
-    <div className="skills-hexagon-container col-md-7 col-sm-12">
-        <div className="skills-hexagon-innner">
-            {
-                SkillConfig.map((value, index) => {
-                    console.log(value.icon);
-                    return (
-                        <div className="skill-hexagon" key={index}>
-                            <button
-                                className="skill-icon-btn"
-                                onClick={props.handleHover}
-                                onMouseEnter={props.handleHover}
-                                dataindex={index}
-                            >
-                                <span>{value.icon}</span>
-                            </button>
-                        </div>
-                    );
-                })
-            }
-        </div>
-    </div>
-);
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+class HoverArea extends Component {
+    componentDidMount(){
+        let elements = shuffle($(".skill-icon-btn"));
+        $(elements).each((i, e) => {
+            Velocity($(e), {opacity: 1}, {delay: 800+200*i, duration: 1300});
+        });
+    }
+
+    render () {
+        return (
+            <div className="skills-hexagon-container col-md-7 col-sm-12">
+                <div className="skills-hexagon-innner">
+                    {
+                        SkillConfig.map((value, index) => {
+                            return (
+                                <div className="skill-hexagon" key={index}>
+                                    <button
+                                        className="skill-icon-btn velocity-animate"
+                                        onClick={this.props.handleHover}
+                                        onMouseEnter={this.props.handleHover}
+                                        dataindex={index}
+                                    >
+                                        <span>{value.icon}</span>
+                                    </button>
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+            </div>
+        );
+    }
+}
 
 class SkillsDetails extends Component {
+    componentDidMount(){
+        Velocity($("#skills-sets-header"), "transition.slideRightBigIn", {opacity: 1, delay: 1500, duration: 1000});
+    }
     render() {
         const props = this.props;
         let activeIndex = props.activeState.activeIndex;
@@ -123,7 +148,7 @@ class SkillsDetails extends Component {
 
         return (
             <div className="skills-sets-container col-md-5 col-sm-12">
-                <h1>Skills</h1>
+                <h1 id="skills-sets-header" className="velocity-animate">Skills</h1>
                 <VelocityTransitionGroup
                     enter={{animation: "transition.slideRightBigIn", stagger: "300"}}
                     leave={{animation: "transition.slideRightBigOut", duration: "500"}}

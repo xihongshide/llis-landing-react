@@ -5,12 +5,10 @@ import Velocity from 'velocity-animate';
 class Blog extends Component {
     componentDidMount(){
         $("#blog_coming p").blast({ delimiter: 'letter' });
-
         Velocity($("#blog-header"), "transition.slideLeftBigIn", {opacity: 1, duration: 200, delay: 800});
-
-        $("#blog_coming p").find("span").each(function(i){
-            let str = $(this).html();
-            let e = $(this);
+        $("#blog_coming p").find("span").each((i, ele) => {
+            let str = $(ele).html();
+            let e = $(ele);
 
             $(e).html("&nbsp;|");
             Velocity($(e), {opacity: 1}, {duration: 50, delay: 1000+i*100, complete:() => {

@@ -77,7 +77,7 @@ class Home extends Component {
                                         <p>In one word, coding.</p>
                                         <div className="home-btn home_btn velocity-animate">
                                             <NavLink to="/skills" activeClassName="selected" className="skills">
-                                                <button>Explore More</button>
+                                                <button>explore more</button>
                                             </NavLink>
                                         </div>
                                     </div>
@@ -93,6 +93,20 @@ class Home extends Component {
                                 </Carousel.Caption>
                             </Carousel.Item>
 
+                            <Carousel.Item>
+                               <Carousel.Caption className="home-contact">
+                                   <div className="home-text-container">
+                                       <h3>Bet ur tired of exploring</h3>
+                                       <p>Play contact me if you need anything. </p>
+                                       <div className="home-btn home_btn velocity-animate">
+                                           <NavLink to="/contact" activeClassName="selected" className="game">
+                                               <button>contact</button>
+                                           </NavLink>
+                                       </div>
+                                   </div>
+                               </Carousel.Caption>
+                             </Carousel.Item>
+                             {/*
                              <Carousel.Item>
                                 <Carousel.Caption className="home-game">
                                     <div className="home-text-container">
@@ -106,6 +120,7 @@ class Home extends Component {
                                     </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
+                            */}
                         </Carousel>
                     </div>
                 </div>

@@ -32,6 +32,7 @@ class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="footer-container">
+                    {/*
                     <div className="start-game-icon">
                         <VelocityComponent animation={ !animation ? 'transition.slideLeftIn' : 'transition.slideLeftOut' }>
                             <button onClick={ this.toggleInfo }>
@@ -40,6 +41,7 @@ class Footer extends Component {
                         </VelocityComponent>
 
                     </div>
+                    */} 
 
                     <VelocityComponent animation={ this.state.animated ? 'transition.slideUpBigIn' : 'transition.slideDownBigOut' }>
                         <div className="info-wrapper">

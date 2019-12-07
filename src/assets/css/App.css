@@ -8695,8 +8695,21 @@ div.content.skills .skills-hexagon-innner {
       -webkit-transform: skewY(-30deg) rotate(60deg);
       -ms-transform: skewY(-30deg) rotate(60deg);
       transform: skewY(-30deg) rotate(60deg);
-      cursor: pointer;
-      background: #78a5a3; }
+      cursor: pointer; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(1) {
+        background: #ffc300; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(2) {
+        background: #78a5a3; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(3) {
+        background: #d8d5c4; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(4) {
+        background: #ce5a57; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(5) {
+        background: #9c76a2; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(6) {
+        background: #e1b16a; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(7) {
+        background: rgba(0, 0, 0, 0.3); }
       div.content.skills .skills-hexagon-innner .skill-hexagon button span {
         position: absolute;
         width: 50%;
@@ -8768,6 +8781,8 @@ div.content.skills .skills-sets-container {
     padding-left: 60px; }
   .blog-inner-container #blog_coming p:nth-of-type(1), .blog-inner-container #blog_coming p:nth-of-type(4) {
     padding-left: 30px; }
+  .blog-inner-container #blog_coming p:nth-of-type(5), .blog-inner-container #blog_coming p:nth-of-type(6) {
+    display: inline-block; }
   .blog-inner-container #blog_coming span {
     font-size: 1em;
     position: relative; }
@@ -8784,7 +8799,8 @@ div.content.skills .skills-sets-container {
     opacity: 1;
     -webkit-animation: blinker 1s ease-in-out infinite;
     animation: blinker 1s ease-in-out infinite;
-    font-size: 1.3em; }
+    font-size: 1.2em;
+    padding-left: 5px; }
 
 @-webkit-keyframes blinker {
   50% {

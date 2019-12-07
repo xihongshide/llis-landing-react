@@ -79,7 +79,12 @@ div.content.skills{
 				-ms-transform: skewY(-30deg) rotate(60deg);
 				transform: skewY(-30deg) rotate(60deg);
 				cursor: pointer;
-				background: $main-green;
+
+				@for $i from 1 through 7 {
+                    &:nth-child(#{$i}) {
+						background: nth($sevenColors, $i);
+                    }
+                }
 
 				span {
 					position: absolute;

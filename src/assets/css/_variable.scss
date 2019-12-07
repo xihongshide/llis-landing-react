@@ -11,7 +11,7 @@ $main-yellow-light: #e1b16a;
 $main-yellow: #ffc300;
 $main-blue: #444c5c;
 $main-red: #ce5a57;
-$main-dark:rgb(51, 51, 51);
+$main-dark: rgb(51, 51, 51);
 $main-white: #ffffff;
 $main-black: #000a17;
 $main-purple: #9c76a2;
@@ -21,6 +21,7 @@ $main-overlay:rgba(0, 0, 0, .3);
 $colors: $main-dark $main-green $main-blue $main-yellow $main-red;
 $rainbowColors: $main-yellow $main-grey $main-blue $main-red $main-dark $main-red $main-blue $main-grey $main-yellow;
 $fourColors: $main-yellow $main-green $main-blue $main-red;
+$sevenColors: $main-yellow $main-green $main-grey $main-red $main-purple $main-yellow-light $main-overlay;
 $pages: "home" "about" "skills" "contact" "blog";
 
 //Themes For Every Route
