@@ -28,7 +28,7 @@ body {
     background: transparent;
 }
 
-.App {
+.app {
     text-align: center;
     background: transparent;
     overflow: auto;
@@ -65,6 +65,18 @@ body {
             &.home-container {
                 .inner-container {
                     min-height: 400px;
+                }
+            }
+
+            &.blog-container {
+                .inner-container {
+                    min-height: 400px;
+                }
+            }
+
+            &.skills-container {
+                .inner-container {
+                    min-height: 450px;
                 }
             }
         }

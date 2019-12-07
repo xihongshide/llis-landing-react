@@ -6,7 +6,7 @@ import { BrowserRouter as Router} from "react-router-dom";
 import Header from './components/header.js';
 import Content from './components/content.js';
 import Footer from './components/footer.js';
-import WechatModal from './components/partialComponents/wechatModal.js'
+import WechatModal from './components/partialComponents/wechatModal.js';
 
 
 /* ******************************************************************************
@@ -54,7 +54,7 @@ import WechatModal from './components/partialComponents/wechatModal.js'
 class App extends React.Component {
     render(){
         return (
-            <div className="App">
+            <div className="app">
                 <WechatModal />
                 <Router>
                     <Header />

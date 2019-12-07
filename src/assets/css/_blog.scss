@@ -1,7 +1,62 @@
-.blog-container {
-    @import 'partial/_codeView.scss';
+.blog-inner-container {
+    text-align: left;
+    max-width: 460px;
+    margin: 0 auto;
+    min-height: 400px;
 
-    h1 {
-        margin-bottom: 20px;
+    #blog-header {
+        margin-top: 50px;
+    }
+
+    b {
+        font-weight: normal;
+    }
+
+    .declare-color {color: #D3B64F}
+    .class-color {color: #FFC300}
+    .tag-color {color: #4789C7}
+    .prop-color {color: #A02AC0}
+    .propstr-color {color: #28A27C}
+    .normal-color {color: $main-white}
+
+    #blog_coming {
+        p {
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                padding-left: 60px;
+            }
+
+            &:nth-of-type(1),
+            &:nth-of-type(4) {
+                padding-left: 30px;
+            }
+        }
+
+        span {
+            font-size: 1em;
+            position: relative;
+
+            &:after{
+                content: "_";
+                position: absolute;
+                bottom: 0;
+                font-size: 1em;
+                left: 0;
+                display: none;
+                animation: blinkerHide 50ms ease-in-out;
+            }
+        }
+    }
+
+    .type-indicator {
+        opacity: 1;
+        animation: blinker 1s ease-in-out infinite;
+        font-size: 1.3em;
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
     }
 }
