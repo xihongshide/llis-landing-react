@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faChessKnight, faInfoCircle, faHeart, faCoffee, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import { VelocityComponent } from 'velocity-react';
+import $ from "jquery";
 
 //Partial Components
 import SocialNetworkList from './partialComponents/socialNetworkList.js';
@@ -23,6 +24,7 @@ class Footer extends Component {
 
     toggleInfo(e) {
         e.preventDefault();
+        $(".content, .header").on("click", ()=> this.setState({ animated: false }));
         this.setState({ animated: !this.state.animated });
     }
 
@@ -41,7 +43,7 @@ class Footer extends Component {
                         </VelocityComponent>
 
                     </div>
-                    */} 
+                    */}
 
                     <VelocityComponent animation={ this.state.animated ? 'transition.slideUpBigIn' : 'transition.slideDownBigOut' }>
                         <div className="info-wrapper">
