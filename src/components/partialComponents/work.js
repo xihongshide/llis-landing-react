@@ -55,6 +55,7 @@ class Work extends Component {
 
         this.openBrain = this.openBrain.bind(this);
         this.closeBrain = this.closeBrain.bind(this);
+        this.handleBotOpen = this.handleBotOpen.bind(this);
     }
 
     openBrain(e) {
@@ -68,6 +69,25 @@ class Work extends Component {
         $('.content').addClass("flash-bg");
 
         this.setState({contentIndex: e.target.getAttribute('value'), isOpen: true});
+    }
+
+    handleBotOpen(e) {
+        const ele =  $(e.target);
+        const siblings = $(ele).siblings(".bot_brain_svg");
+        $(ele).toggleClass("active");
+
+        if($(".bot_brain_svg").filter(".active").length === 3) {
+            $('#barin_left_btn, #barin_right_btn').attr("disabled", "disabled");
+            Velocity($('#left_brain_svg'), {translateX: -500}, {easing: "ease-in-out", delay: 1000, duration: 500});
+            Velocity($('#right_brain_svg'), {translateX: 500}, {easing: "ease-in-out", delay: 1000, duration: 500});
+            $($('.bot_brain_svg').get().reverse()).each((value, index) => {
+                Velocity($(index), "transition.slideDownBigOut", {delay: 300 + value*300, duration: 500});
+            });
+
+            $('.content').addClass("flash-bg");
+
+            this.setState({contentIndex: Math.floor(Math.random() * 2) , isOpen: true});
+        }
     }
 
     closeBrain(e) {
@@ -91,7 +111,7 @@ class Work extends Component {
                     {isOpen ? <Content content={this.state} closeBrain={this.closeBrain}/> : undefined}
 
                     <div className="brain">
-                        <Brain onClick={this.openBrain} content={this.state}/>
+                        <Brain onClick={this.openBrain} handleBotOpen={this.handleBotOpen} content={this.state}/>
                     </div>
                 </div>
             </div>

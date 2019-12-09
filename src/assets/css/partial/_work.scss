@@ -23,7 +23,7 @@
             z-index: 10;
 
             path {
-                transition: color 1.3s ease;
+                transition: fill 0.2s linear;
             }
 
             #left_brain_svg {
@@ -89,9 +89,21 @@
             }
 
             .bot_brain_svg {
-                &:hover,
-                &.open:hover {
+                pointer-events: auto;
+                cursor: pointer;
+                transition: all 0.35s linear;
+
+                &:hover {
+                    opacity: 0.6 !important;
+                }
+
+                &.active,
+                &.open {
                     fill: $main-yellow;
+
+                    &:hover {
+                        opacity: 0.6 !important;
+                    }
                 }
             }
         }

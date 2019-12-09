@@ -8097,9 +8097,9 @@ div#home {
         width: 100%;
         z-index: 10; }
         .about .about-work-container .work-barin svg.brain-svg path {
-          -webkit-transition: color 1.3s ease;
-          -o-transition: color 1.3s ease;
-          transition: color 1.3s ease; }
+          -webkit-transition: fill 0.2s linear;
+          -o-transition: fill 0.2s linear;
+          transition: fill 0.2s linear; }
         .about .about-work-container .work-barin svg.brain-svg #left_brain_svg {
           cursor: pointer; }
           .about .about-work-container .work-barin svg.brain-svg #left_brain_svg:hover {
@@ -8124,8 +8124,18 @@ div#home {
           fill: #d8d5c4; }
         .about .about-work-container .work-barin svg.brain-svg #right_brain_svg.open path:nth-child(6) {
           fill: #9c76a2; }
-        .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg:hover, .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.open:hover {
-          fill: #ffc300; }
+        .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg {
+          pointer-events: auto;
+          cursor: pointer;
+          -webkit-transition: all 0.35s linear;
+          -o-transition: all 0.35s linear;
+          transition: all 0.35s linear; }
+          .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg:hover {
+            opacity: 0.6 !important; }
+          .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.active, .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.open {
+            fill: #ffc300; }
+            .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.active:hover, .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.open:hover {
+              opacity: 0.6 !important; }
     .about .about-work-container .brain-close-container {
       margin-top: 50px; }
       .about .about-work-container .brain-close-container #brain-close {
