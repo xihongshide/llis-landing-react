@@ -3,12 +3,13 @@ import $ from "jquery";
 import Velocity from 'velocity-animate';
 import { VelocityTransitionGroup } from 'velocity-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSkull, faChalkboard ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faPaintBrush, jsSquare, faServer, faSkull, faChalkboardTeacher ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
 
 const SkillConfig = [
     {
         name: "teaching",
-        icon: <FontAwesomeIcon icon={faChalkboard} />,
+        icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
         details: [
             {
                 name: "IELTS Test",
@@ -18,7 +19,7 @@ const SkillConfig = [
     },
     {
         name: "Javasctipt",
-        icon: <b>Js</b>,
+        icon: <FontAwesomeIcon icon={faJsSquare} />,
         details: [
             {
                 name: "JavaScript",
@@ -28,7 +29,7 @@ const SkillConfig = [
     },
     {
         name: "front-end",
-        icon: <b>FE</b>,
+        icon: <FontAwesomeIcon icon={faPaintBrush} />,
         details: [
             {
                 name: "Experiences",
@@ -76,7 +77,7 @@ const SkillConfig = [
     },
     {
         name: "back-end",
-        icon: <b>BE</b>,
+        icon: <FontAwesomeIcon icon={faServer} />,
         details: [
             {
                 name: "experiences",

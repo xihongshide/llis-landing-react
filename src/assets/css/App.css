@@ -8705,21 +8705,11 @@ div.content.skills .skills-hexagon-innner {
       -webkit-transform: skewY(-30deg) rotate(60deg);
       -ms-transform: skewY(-30deg) rotate(60deg);
       transform: skewY(-30deg) rotate(60deg);
-      cursor: pointer; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(1) {
-        background: #ffc300; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(2) {
-        background: #78a5a3; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(3) {
-        background: #d8d5c4; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(4) {
-        background: #ce5a57; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(5) {
-        background: #9c76a2; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(6) {
-        background: #e1b16a; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:nth-child(7) {
-        background: rgba(0, 0, 0, 0.3); }
+      cursor: pointer;
+      background: #ffc300;
+      -webkit-transition: background 300ms linear;
+      -o-transition: background 300ms linear;
+      transition: background 300ms linear; }
       div.content.skills .skills-hexagon-innner .skill-hexagon button span {
         position: absolute;
         width: 50%;
@@ -8743,19 +8733,26 @@ div.content.skills .skills-hexagon-innner {
           -o-transition: transform 300ms linear;
           transition: transform 300ms linear;
           transition: transform 300ms linear, -webkit-transform 300ms linear; }
-        div.content.skills .skills-hexagon-innner .skill-hexagon button span b {
-          width: 40px;
-          height: 40px;
-          margin: 0 auto;
-          -webkit-transition: -webkit-transform 300ms linear;
-          transition: -webkit-transform 300ms linear;
-          -o-transition: transform 300ms linear;
-          transition: transform 300ms linear;
-          transition: transform 300ms linear, -webkit-transform 300ms linear; }
-      div.content.skills .skills-hexagon-innner .skill-hexagon button:hover span svg, div.content.skills .skills-hexagon-innner .skill-hexagon button:hover span b {
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2); }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button:hover {
+        background: #444c5c; }
+        div.content.skills .skills-hexagon-innner .skill-hexagon button:hover span svg {
+          -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          transform: scale(1.2); }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+1) button:hover span {
+      color: #4FC08D; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+2) button:hover span {
+      color: #F7DF1E; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3) button:hover span {
+      color: #CC6699; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4) button:hover span {
+      color: #66595C; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+5) button:hover span {
+      color: #8DD6F9; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+6) button:hover span {
+      color: #DD0031; }
+    div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+7) button:hover span {
+      color: #3776AB; }
 
 div.content.skills .skills-sets-container {
   text-align: left;
