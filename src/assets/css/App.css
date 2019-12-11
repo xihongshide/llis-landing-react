@@ -8154,7 +8154,7 @@ div#home {
         .about .about-work-container .brain-close-container #brain-close:before, .about .about-work-container .brain-close-container #brain-close:after {
           height: 100%;
           width: 50%;
-          top: 52%;
+          top: 58%;
           position: absolute;
           z-index: 30;
           pointer-events: none;

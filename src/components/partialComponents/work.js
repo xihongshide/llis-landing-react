@@ -7,20 +7,19 @@ import { faChalkboardTeacher, faCode } from '@fortawesome/free-solid-svg-icons';
 
 const WorkContent = [
     {
+        name: 'teacher',
+        title: 'IELTS Tutor',
+        description: 'As my second soul, it giving me a chance to see the world from all the different perspectives of my students.',
+        icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
+        color: '#fff',
+    },
+    {
         name: 'programmer',
         title: 'Mad Programmer',
-        description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
-        icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
-	    color: '#fff',
-    },
-
-    {
-        name: 'teacher',
-        title: 'IELTS Teacher',
-        description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
+        description: 'A web developer with years of experience building and implementing powerful and efficient web applications. Loves to create and use open-source wheels.',
         icon: <FontAwesomeIcon icon={faCode} />,
         color: '#fff',
-}
+    }
 ];
 
 class Content extends Component {
