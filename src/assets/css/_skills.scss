@@ -28,12 +28,12 @@ div.content.skills{
 			overflow: hidden;
 			visibility: hidden;
 			outline: 2px solid transparent;
-			-webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-			-ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-			transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+			-webkit-transform: rotate(-60deg) skewY(30deg);
+			-ms-transform: rotate(-60deg) skewY(30deg);
+			transform: rotate(-60deg) skewY(30deg);
 			width: 31.3333333333%; /* = (100-3) / 3    or use 'calc()' */
-			padding-bottom: 37.3353174076%; /* =  width / sin(60deg) */
-			margin-bottom: -8%;
+			padding-bottom: 36.3353174076%; /* =  width / sin(60deg) */
+			margin-bottom: -7%;
 
 			&:nth-child(5n+1),
 		    &:nth-child(5n+2),
@@ -52,8 +52,8 @@ div.content.skills{
 		    }
 
 			&:nth-child(5n+1){
-		        margin-left: 2%;
-		        margin-right: 2%;
+		        margin-left: 2.8%;
+		        margin-right: 2.2%;
 		    }
 
 		    &:nth-child(5n+4){
@@ -63,12 +63,12 @@ div.content.skills{
 
 		    &:nth-child(5n+3) {
 		        clear: left;
-		        margin-left: 1%;
+		        margin-left: 2%;
 		    }
 
 			button {
 				display: block;
-				border-radius: none;
+				border-radius: 0;
 				border: none;
 				outline: none;
 				width: 100%;
