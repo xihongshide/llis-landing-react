@@ -31,9 +31,9 @@ div.content.skills{
 			-webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
 			-ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
 			transform: rotate(-60deg) skewY(30deg) translatez(-1px);
-			width: 32.3333333333%; /* = (100-3) / 3    or use 'calc()' */
+			width: 31.3333333333%; /* = (100-3) / 3    or use 'calc()' */
 			padding-bottom: 37.3353174076%; /* =  width / sin(60deg) */
-			margin-bottom: -8.4%;
+			margin-bottom: -8%;
 
 			&:nth-child(5n+1),
 		    &:nth-child(5n+2),
@@ -52,18 +52,18 @@ div.content.skills{
 		    }
 
 			&:nth-child(5n+1){
-		        margin-left: 1%;
-		        margin-right: 1%;
+		        margin-left: 2%;
+		        margin-right: 2%;
 		    }
 
 		    &:nth-child(5n+4){
-		        margin-left: 1%;
-		        margin-right: 1%;
+		        margin-left: 2%;
+		        margin-right: 2%;
 		    }
 
 		    &:nth-child(5n+3) {
 		        clear: left;
-		        margin-left: 0.5%;
+		        margin-left: 1%;
 		    }
 
 			button {

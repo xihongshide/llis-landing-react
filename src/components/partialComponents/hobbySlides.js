@@ -90,7 +90,7 @@ class HobbySlides extends Component {
         let siblings = $(hoverElement).siblings('.hobby-slide');
 
         $(hoverElement).children('.hobby-slide-content').addClass('disabled');
-        console.log($(hoverElement).width()/$(window).width());
+
         if($(hoverElement).width()/$(window).width() !== 0.25) {
             Velocity($(siblings).find('h1'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 250});
             Velocity($(siblings).find('.quote-desc'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 85});

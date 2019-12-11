@@ -4,6 +4,7 @@ import $ from "jquery";
 import Brain from './brain.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faCode } from '@fortawesome/free-solid-svg-icons';
+import { shuffle } from '../../utility.js';
 
 const WorkContent = [
     {
@@ -55,50 +56,71 @@ class Work extends Component {
         this.openBrain = this.openBrain.bind(this);
         this.closeBrain = this.closeBrain.bind(this);
         this.handleBotOpen = this.handleBotOpen.bind(this);
+        this.timer = ()=>{};
+    }
+
+    componentDidMount() {
+        $('.content').addClass("flash-bg");
+        $('.explore-indicate').blast({ delimiter: 'letter' });
+        const exploreLetters = shuffle($('.explore-indicate').find("span"));
+        Velocity($('#left_brain_svg'), "transition.slideLeftBigIn", { delay: 800, duration: 1500});
+        Velocity($('#right_brain_svg'), "transition.slideRightBigIn", { delay: 800, duration: 1500});
+        Velocity($('.bot_brain_svg'), "transition.slideUpBigIn", {stagger: 200, delay: 800, duration: 500, complete: () => {
+            $('.content').removeClass("flash-bg");
+        }});
+        Velocity($(exploreLetters), "transition.bounceIn", {stagger: 50, delay: 1200, duration: 400});
+
     }
 
     openBrain(e) {
-        $('#barin_left_btn, #barin_right_btn').attr("disabled", "disabled");
-        Velocity($('#left_brain_svg'), {translateX: -500}, {easing: "ease-in-out", delay: 1000, duration: 500});
-        Velocity($('#right_brain_svg'), {translateX: 500}, {easing: "ease-in-out", delay: 1000, duration: 500});
-        $($('.bot_brain_svg').get().reverse()).each((value, index) => {
-            Velocity($(index), "transition.slideDownBigOut", {delay: 300 + value*300, duration: 500});
-        });
+        const self = this;
+        const ele = e.target;
 
-        $('.content').addClass("flash-bg");
-
-        this.setState({contentIndex: e.target.getAttribute('value'), isOpen: true});
+        $("#left_brain_svg, #right_brain_svg, .bot_brain_svg").addClass("disabled");
+        this.openAnimation();
+        self.setState({contentIndex: ele.getAttribute('value'), isOpen: true});
     }
 
     handleBotOpen(e) {
+        const self = this;
         const ele =  $(e.target);
-        const siblings = $(ele).siblings(".bot_brain_svg");
+
         $(ele).toggleClass("active");
-
         if($(".bot_brain_svg").filter(".active").length === 3) {
-            $('#barin_left_btn, #barin_right_btn').attr("disabled", "disabled");
-            Velocity($('#left_brain_svg'), {translateX: -500}, {easing: "ease-in-out", delay: 1000, duration: 500});
-            Velocity($('#right_brain_svg'), {translateX: 500}, {easing: "ease-in-out", delay: 1000, duration: 500});
-            $($('.bot_brain_svg').get().reverse()).each((value, index) => {
-                Velocity($(index), "transition.slideDownBigOut", {delay: 300 + value*300, duration: 500});
-            });
-
-            $('.content').addClass("flash-bg");
-
-            this.setState({contentIndex: Math.floor(Math.random() * 2) , isOpen: true});
+            $("#left_brain_svg, #right_brain_svg, .bot_brain_svg").addClass("disabled");
+            this.openAnimation();
+            self.setState({contentIndex: Math.floor(Math.random() * 2), isOpen: true});
         }
     }
 
-    closeBrain(e) {
-        $('#barin_left_btn, #barin_right_btn').removeAttr("disabled", "disabled");
-        Velocity($('#about_work_content > *'), "transition.expandOut", {stagger: 300, delay: 500, duration: 500, complete: ()=> {
-            Velocity($('#left_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
-            Velocity($('#right_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
-            Velocity($('.bot_brain_svg'), "transition.slideUpBigIn", {stagger: 300, delay: 1000, duration: 500});
+    closeBrain() {
+        Velocity($('#about_work_content > *'), "transition.expandOut", {stagger: 200, delay: 300, duration: 400, complete: ()=> {
+            this.closeAnimation();
             this.setState({contentIndex: null, isOpen: false,});
         }});
+    }
 
+    openAnimation(){
+        const exploreLetters = shuffle($('.explore-indicate').find("span"));
+        Velocity($('#left_brain_svg'), {translateX: -500}, {easing: "ease-in-out", delay: 1000, duration: 500});
+        Velocity($('#right_brain_svg'), {translateX: 500}, {easing: "ease-in-out", delay: 1000, duration: 500});
+        Velocity($(exploreLetters), "transition.slideUpOut", {delay: 200, duration: 1000});
+        $($('.bot_brain_svg').get().reverse()).each((value, index) => {
+            Velocity($(index), "transition.slideDownBigOut", {delay: 300 + value*300, duration: 500});
+        });
+        $('.content').addClass("flash-bg");
+    }
+
+    closeAnimation() {
+        const exploreLetters = shuffle($('.explore-indicate').find("span"));
+        Velocity($('#left_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
+        Velocity($('#right_brain_svg'), {translateX: 0, delay: 1000, duration: 1500});
+        Velocity($('.bot_brain_svg'), "transition.slideUpBigIn", {stagger: 50, delay: 200, duration: 600});
+        Velocity($(exploreLetters), "transition.bounceIn", {stagger: 50, delay: 200, duration: 400});
         $('.content').removeClass("flash-bg");
+        setTimeout(()=> {
+            $("#left_brain_svg, #right_brain_svg, .bot_brain_svg").removeClass("disabled");
+        },1600);
     }
 
     render() {
@@ -110,6 +132,7 @@ class Work extends Component {
                     {isOpen ? <Content content={this.state} closeBrain={this.closeBrain}/> : undefined}
 
                     <div className="brain">
+                        <p className="explore-indicate">Explore</p>
                         <Brain onClick={this.openBrain} handleBotOpen={this.handleBotOpen} content={this.state}/>
                     </div>
                 </div>

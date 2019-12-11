@@ -1,44 +1,54 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapMarker} from "@fortawesome/free-solid-svg-icons";
+import {faMapMarker, faPlane} from "@fortawesome/free-solid-svg-icons";
 
-const tagColor = ["#9c76a2", "#e1b16a", "#ffc300", "#444c5c", "#ce5a57"];
+const tagColor = ["#9c76a2", "#e1b16a", "#ffc300", "#444c5c", "#ce5a57", "#bcbcbc", "#ff8243"];
 const timelineData = [
     {
         id: "0",
         text: '',
         location: "Linfen, China",
-        title: 'Hellow World!',
+        title: 'Hello World!',
         category: {
-    	    tag: 'Feb, 1990',
+    	    tag: '07 Feb, 1990',
     	    color: tagColor[0]
     	},
     },
     {
         id: "1",
-        text: 'Got my Bachelor degree of Network Engineering at North University of China.',
-        location: "Taiyuan, China",
-        title: 'B.E.',
+        text: 'NBA Final: Celtics Big 3 vs Kobe Bryant, BOS wins 4-2',
+        location: "Linfen, China",
+        title: 'Became a dead Fan of Boston Celtics',
         category: {
-	           tag: '01 Jul, 2013',
-	       color: tagColor[1]
-    	},
-    },
-    {
-        id: "3",
-        text: 'First day of Working as a IELTS Tutor at Taiyuan New Oriental School',
-        location: "Taiyuan, China",
-        title: 'Tutoring',
-        category: {
-            tag: '01 Mar, 2014',
-            color: tagColor[4]
+            tag: '08 Jun, 2008',
+            color: tagColor[5]
         },
     },
     {
         id: "2",
-        text: 'Left my beloved home contry and started a new life in Ottawa, Canada.',
-        location: "Ottawa, Canada",
+        text: 'Got my Bachelor degree of Network Engineering',
+        location: "North University of China, Taiyuan, China",
+        title: 'B.E. Day',
+        category: {
+	           tag: '01 Jul, 2013',
+	       color: tagColor[3]
+    	},
+    },
+    {
+        id: "3",
+        text: 'Started Working as an IELTS Tutor',
+        location: "Taiyuan New Oriental School, Taiyuan, China",
+        title: 'Tutoring',
+        category: {
+            tag: 'Mar, 2014',
+            color: tagColor[4]
+        },
+    },
+    {
+        id: "4",
+        text: 'Left my beloved homecountry and moved to Ottawa, Canada',
+        location: <span>China<FontAwesomeIcon className="icon-plane" icon={faPlane} /> <FontAwesomeIcon icon={faMapMarker} /> Ottawa, Canada</span>,
         title: 'Big Move',
         category: {
     	    tag: '02 Sep, 2014',
@@ -46,43 +56,44 @@ const timelineData = [
     	},
     },
     {
-        id: "4",
-        text: 'The first day working at Capital International Academy as an IELTS Teacher',
-        location: "Ottawa, Canada",
+        id: "5",
+        text: 'Joined the family of Capital International Academy',
+        location: "Capital International Academy, Ottawa, Canada",
         title: 'IELTS Teacher',
         category: {
             tag: '20 Jan, 2015',
-            color: tagColor[3]
+            color: tagColor[6]
         },
     },
     {
-        id: "5",
-        text: 'Got my Master Degree of Electrical and Computer Engineering at Carleton University. Maybe my last day of school life.',
-        location: "Ottawa, Canada",
+        id: "6",
+        text: 'Master\'s degree achieved. Last day of school life',
+        location: "Carleton University, Ottawa, Canada",
         title: 'MEng',
         category: {
     	    tag: '10 May, 2016',
-    	    color: tagColor[3]
-    	},
-    },
-    {
-        id: "6",
-        text: 'Started working as a Web Developer at Launchfire Inc',
-        location: "Ottawa, Canada",
-        title: 'Web Developer',
-        category: {
-            tag: '27 Dec, 2017',
-            color: tagColor[0]
+            color: tagColor[6]
+
         },
     },
     {
         id: "7",
-        text: '',
-        location: "Shanxi, China",
+        text: 'Became a Launchfirer working in the Dev team ',
+        location: "Launchfire Interactive Inc., Ottawa, Canada",
+        title: 'Web Developer',
+        category: {
+            tag: '27 Dec, 2017',
+            color: tagColor[3]
+        },
+    },
+    {
+        id: "8",
+        text: 'Future is clouded and uncertain :-)',
+        location: "Earth",
         title: 'To be continued...',
         category: {
-            tag: '',
-            color: tagColor[0]
+            tag: 'Future',
+            color: tagColor[5]
         },
     }
 ];
@@ -98,7 +109,7 @@ const TimelineItem = (props) => (
             </span>
             <h3>{props.data.title}</h3>
             <p>{props.data.text}</p>
-            <small><FontAwesomeIcon icon={ faMapMarker } />{props.data.location}</small>
+            <small><FontAwesomeIcon icon={faMapMarker} />{props.data.location}</small>
             {props.data.link && (
                 <a
                     href={props.data.link.url}

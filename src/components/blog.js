@@ -45,7 +45,7 @@ class Blog extends Component {
                            </p>
                            <p>
                                <b className="tag-color"> &lt;p&gt;</b>
-                               <b className="normal-color">Working day and nigh</b>
+                               <b className="normal-color">Working day and night</b>
                                <b className="tag-color">&lt;&frasl;p&gt;</b>
                            </p>
                            <p><b className="tag-color">&lt;&frasl;div&gt;</b></p>

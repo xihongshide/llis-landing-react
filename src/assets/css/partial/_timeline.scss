@@ -203,11 +203,12 @@
 			color: #fff;
 			text-align: left;
 			padding-right: 200px;
-            min-height: 100px;
+            min-height: 120px;
 
             small {
                 svg {
                     margin-right: 5px;
+	                color: $main-red;
                 }
             }
 
@@ -234,6 +235,16 @@
 				font-size: 1.2em;
 				font-weight: 700;
                 margin: 0 0 5px;
+			}
+
+			small {
+				span {
+					svg.icon-plane {
+						margin: 0 30px;
+						animation: slideLeft 2s linear infinite;
+						color: $main-yellow;
+					}
+				}
 			}
 
 			a {
@@ -310,5 +321,28 @@
 		0% { opacity: 0; }
 		50% { opacity: 1; }
 		100% { opacity: 0;}
+	}
+
+	@keyframes slideLeft {
+		0% {
+			transform: translateX(-200%) translateY(20%) rotate(0deg);
+			opacity: 1;
+		}
+		20% {
+			transform: translateX(-120%) translateY(-20%) rotate(-30deg);
+			opacity: 1;
+		}
+		50% {
+			transform: translateX(0%) translateY(-60%) rotate(0deg);
+			opacity: 1;
+		}
+		80% {
+			transform: translateX(120%) translateY(-20%) rotate(30deg);
+			opacity: 1;
+		}
+		100% {
+			transform: translateX(200%) translateY(20%) rotate(0deg);
+			opacity: 1;
+		}
 	}
 }
