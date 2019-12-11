@@ -6896,7 +6896,8 @@ Css keyframes End
   background: transparent !important; }
   .navbar .navbar-toggler {
     border: none;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 1051; }
     .navbar .navbar-toggler span {
       display: block;
       height: 3px;
@@ -6907,41 +6908,41 @@ Css keyframes End
       -o-transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-out;
       transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-out;
       transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-out, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48); }
-      .navbar .navbar-toggler span:not(:last-child) {
-        margin-bottom: 3px; }
       .navbar .navbar-toggler span:first-child {
+        -webkit-transform: rotate(45deg) translate(0, -2px);
+        -ms-transform: rotate(45deg) translate(0, -2px);
+        transform: rotate(45deg) translate(0, -2px);
+        width: 13px; }
+      .navbar .navbar-toggler span:nth-child(2) {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        width: 26px; }
+      .navbar .navbar-toggler span:last-child {
+        -webkit-transform: rotate(45deg) translate(10px, -6px);
+        -ms-transform: rotate(45deg) translate(10px, -6px);
+        transform: rotate(45deg) translate(10px, -6px);
+        width: 13px; }
+    .navbar .navbar-toggler:hover {
+      opacity: 0.6; }
+    .navbar .navbar-toggler.collapsed span {
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none; }
+      .navbar .navbar-toggler.collapsed span:not(:last-child) {
+        margin-bottom: 3px; }
+      .navbar .navbar-toggler.collapsed span:first-child {
         -webkit-transform-origin: 0 50%;
         -ms-transform-origin: 0 50%;
         transform-origin: 0 50%;
         width: 13px; }
-      .navbar .navbar-toggler span:nth-child(2) {
+      .navbar .navbar-toggler.collapsed span:nth-child(2) {
         width: 26px; }
-      .navbar .navbar-toggler span:last-child {
+      .navbar .navbar-toggler.collapsed span:last-child {
         -webkit-transform-origin: 100% 50%;
         -ms-transform-origin: 100% 50%;
         transform-origin: 100% 50%;
         width: 18px; }
-    .navbar .navbar-toggler:hover {
-      opacity: 0.6; }
-    .navbar .navbar-toggler.collapsed span {
-      -webkit-transition: width 0.6s ease-in, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48);
-      transition: width 0.6s ease-in, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48);
-      -o-transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-in;
-      transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-in;
-      transition: transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48), width 0.6s ease-in, -webkit-transform 0.6s cubic-bezier(0.54, 0.1, 0.42, 1.48); }
-      .navbar .navbar-toggler.collapsed span:first-child {
-        -webkit-transform: rotate(45deg) translate(0, -5px);
-        -ms-transform: rotate(45deg) translate(0, -5px);
-        transform: rotate(45deg) translate(0, -5px); }
-      .navbar .navbar-toggler.collapsed span:nth-child(2) {
-        -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        transform: rotate(-45deg); }
-      .navbar .navbar-toggler.collapsed span:last-child {
-        -webkit-transform: rotate(45deg) translate(9px, -4px);
-        -ms-transform: rotate(45deg) translate(9px, -4px);
-        transform: rotate(45deg) translate(9px, -4px);
-        width: 13px; }
   .navbar .nav-logo {
     font-family: 'Anton', sans-serif;
     -webkit-perspective: 1000px;
@@ -7078,18 +7079,101 @@ Css keyframes End
       .navbar .navbar-collapse {
         position: fixed;
         text-align: right;
-        width: 30%;
+        width: 75%;
         height: 100%;
         left: 0;
-        background: #333; }
+        top: 0;
+        bottom: 0;
+        background: #333;
+        -webkit-animation: slideRight 0.8s linear;
+        -o-animation: slideRight 0.8s linear;
+        animation: slideRight 0.8s linear; }
+        .navbar .navbar-collapse:before {
+          content: '';
+          position: fixed;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: -1; }
       .navbar .navbar-nav {
-        text-align: left; }
+        text-align: left;
+        padding-top: 50px; }
+        .navbar .navbar-nav ul {
+          width: 100%;
+          display: block; }
         .navbar .navbar-nav ul li {
           width: 100%;
           display: block;
-          color: #ffffff; }
+          color: #ffffff;
+          padding-left: 50px;
+          padding-top: 15px;
+          opacity: 1;
+          -webkit-transform: translateX(-200px);
+          -ms-transform: translateX(-200px);
+          transform: translateX(-200px); }
+          .navbar .navbar-nav ul li:nth-child(1) {
+            -webkit-animation: dropDown 0.55s 0.95s ease 1 forwards;
+            -moz-animation: dropDown 0.55s 0.95s ease 1 forwards;
+            animation: dropDown 0.55s 0.95s ease 1 forwards; }
+          .navbar .navbar-nav ul li:nth-child(2) {
+            -webkit-animation: dropDown 0.55s 1.1s ease 1 forwards;
+            -moz-animation: dropDown 0.55s 1.1s ease 1 forwards;
+            animation: dropDown 0.55s 1.1s ease 1 forwards; }
+          .navbar .navbar-nav ul li:nth-child(3) {
+            -webkit-animation: dropDown 0.55s 1.25s ease 1 forwards;
+            -moz-animation: dropDown 0.55s 1.25s ease 1 forwards;
+            animation: dropDown 0.55s 1.25s ease 1 forwards; }
+          .navbar .navbar-nav ul li:nth-child(4) {
+            -webkit-animation: dropDown 0.55s 1.4s ease 1 forwards;
+            -moz-animation: dropDown 0.55s 1.4s ease 1 forwards;
+            animation: dropDown 0.55s 1.4s ease 1 forwards; }
+          .navbar .navbar-nav ul li:nth-child(5) {
+            -webkit-animation: dropDown 0.55s 1.55s ease 1 forwards;
+            -moz-animation: dropDown 0.55s 1.55s ease 1 forwards;
+            animation: dropDown 0.55s 1.55s ease 1 forwards; }
           .navbar .navbar-nav ul li span {
-            display: none; } }
+            display: none;
+            font-size: 2em; } }
+
+@-webkit-keyframes slideRight {
+  from {
+    left: -100%;
+    opacity: 0.6; }
+  to {
+    left: 0;
+    opacity: 1; } }
+
+@keyframes slideRight {
+  from {
+    left: -100%;
+    opacity: 0.6; }
+  to {
+    left: 0;
+    opacity: 1; } }
+
+@-webkit-keyframes dropDown {
+  0% {
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes dropDown {
+  0% {
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; } }
 
 footer .footer-container {
   position: relative;
