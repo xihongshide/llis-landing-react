@@ -203,20 +203,26 @@
 			color: #fff;
 			text-align: left;
 			padding-right: 200px;
+            min-height: 100px;
+
+            small {
+                svg {
+                    margin-right: 5px;
+                }
+            }
 
 			h3 {
-				font-size: 1.8em;
-				font-weight: 700;
-				margin: 0;
+				font-size: 1.7em;
+				font-weight: 600;
+				margin: 0 0 8px;
 			}
 
 			.tag {
 				color: #fff;
-				font-size: 1.2em;
+				font-size: 1.1em;
 				font-weight: 700;
-				text-transform: uppercase;
 				left: auto;
-				right: 5px;
+				right: 25px;
 				text-align: center;
 				position: absolute;
 				right: 0;
@@ -225,8 +231,9 @@
 			}
 
 			p {
-				font-size: 1.6em;
+				font-size: 1.2em;
 				font-weight: 700;
+                margin: 0 0 5px;
 			}
 
 			a {
