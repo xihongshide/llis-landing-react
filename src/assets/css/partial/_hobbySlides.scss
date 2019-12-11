@@ -68,18 +68,19 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
             padding: 0 25px;
             cursor: pointer;
             max-width: 320px;
+            min-height: 250px;
 
             &.disabled {
                 pointer-events: none;
 
-                svg {
-                    opacity: 0;
+                .header-icon svg {
+                    opacity: 0 !important;
                     transition: all 0.8s ease;
                     transform: translate(-50%, -200px);
                 }
             }
 
-            svg {
+            .header-icon svg {
                 height: 5em;
                 width: 5em;
                 color: #fff;
@@ -97,11 +98,36 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
                 display: none;
             }
 
-            p {
+            div.quote-icon {
+                position: relative;
+                width: 100%;
+                text-align: left;
+                margin-left: -10px;
+                margin-bottom: 5px;
+                display: none;
+
+                svg {
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    opacity: 1;
+                    position: relative;
+                }
+            }
+
+            p.quote-desc {
                 color: #fff;
                 font-size: 1em;
                 display: none;
             }
+
+            p.quote-name {
+                color: #fff;
+                font-size: 0.7em;
+                text-align: right;
+                display: none;
+            }
+
         }
     }
 }

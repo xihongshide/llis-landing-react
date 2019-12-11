@@ -8261,18 +8261,19 @@ div#home {
         color: inherit;
         padding: 0 25px;
         cursor: pointer;
-        max-width: 320px; }
+        max-width: 320px;
+        min-height: 250px; }
         .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled {
           pointer-events: none; }
-          .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled svg {
-            opacity: 0;
+          .about .about-hobby-container .hobby-slide .hobby-slide-content.disabled .header-icon svg {
+            opacity: 0 !important;
             -webkit-transition: all 0.8s ease;
             -o-transition: all 0.8s ease;
             transition: all 0.8s ease;
             -webkit-transform: translate(-50%, -200px);
             -ms-transform: translate(-50%, -200px);
             transform: translate(-50%, -200px); }
-        .about .about-hobby-container .hobby-slide .hobby-slide-content svg {
+        .about .about-hobby-container .hobby-slide .hobby-slide-content .header-icon svg {
           height: 5em;
           width: 5em;
           color: #fff;
@@ -8297,9 +8298,27 @@ div#home {
           font-weight: 700;
           margin: 15px 0;
           display: none; }
-        .about .about-hobby-container .hobby-slide .hobby-slide-content p {
+        .about .about-hobby-container .hobby-slide .hobby-slide-content div.quote-icon {
+          position: relative;
+          width: 100%;
+          text-align: left;
+          margin-left: -10px;
+          margin-bottom: 5px;
+          display: none; }
+          .about .about-hobby-container .hobby-slide .hobby-slide-content div.quote-icon svg {
+            display: block;
+            width: 15px;
+            height: 15px;
+            opacity: 1;
+            position: relative; }
+        .about .about-hobby-container .hobby-slide .hobby-slide-content p.quote-desc {
           color: #fff;
           font-size: 1em;
+          display: none; }
+        .about .about-hobby-container .hobby-slide .hobby-slide-content p.quote-name {
+          color: #fff;
+          font-size: 0.7em;
+          text-align: right;
           display: none; }
 
 @-webkit-keyframes pulsate {

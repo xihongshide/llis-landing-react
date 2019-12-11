@@ -2,39 +2,43 @@ import React, { Component } from 'react';
 import $ from "jquery";
 import Velocity from 'velocity-animate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRunning, faBasketballBall, faCoffee, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faRunning, faBasketballBall, faCoffee, faCode, faQuoteLeft} from '@fortawesome/free-solid-svg-icons';
 
 const hobbyContent = [
     {
-      id: 1,
-      name: "run",
-      title: 'Running\'s life',
-      icon: <FontAwesomeIcon icon={faRunning} />,
-      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+        id: 1,
+        name: "run",
+        title: 'Running',
+        icon: <FontAwesomeIcon icon={faRunning} />,
+        description:'With a strong heart and a good mind, you can do it.',
+        quoteName: "– Eliud Kipchoge",
     },
 
     {
-      id: 2,
-      name: "Basketball",
-      title: 'Ball\'s life',
-      icon: <FontAwesomeIcon icon={faBasketballBall} />,
-      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+        id: 2,
+        name: "Basketball",
+        title: 'Basketball\'s life',
+        icon: <FontAwesomeIcon icon={faBasketballBall} />,
+        description: "The game isn't over till the clock says zero.",
+        quoteName: "- Paul Pierce",
     },
 
     {
-      id: 3,
-      name: "coffee",
-      title: 'coffee\'s life',
-      icon: <FontAwesomeIcon icon={faCoffee} />,
-      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+        id: 3,
+        name: "coffee",
+        title: 'coffee\'s life',
+        icon: <FontAwesomeIcon icon={faCoffee} />,
+        description: 'Programmers is tool to convert coffeine to code.',
+        quoteName: "– an Anonymous Programmer",
     },
 
     {
-      id: 4,
-      name: "code",
-      title: 'code\'s life',
-      icon: <FontAwesomeIcon icon={faCode} />,
-      description: 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'
+        id: 4,
+        name: "code",
+        title: 'code\'s life',
+        icon: <FontAwesomeIcon icon={faCode} />,
+        description: 'Before software can be reusable it first has to be usable.',
+        quoteName: "– Ralph Johnson",
     }
 ];
 
@@ -51,9 +55,11 @@ class HobbyContent extends React.Component {
         return (
             <div className="hobby-slide velocity-animate" ref="slideAni">
                 <div className="hobby-slide-content" onMouseEnter={this.props.hoverHandler}  disabled={this.props.disabled}>
-                    {this.props.content.icon}
+                    <div className="header-icon">{this.props.content.icon}</div>
                     <h1 className="velocity-animate">{this.props.content.title}</h1>
-                    <p className="velocity-animate">{this.props.content.description}</p>
+                    <div className="velocity-animate quote-icon"><FontAwesomeIcon icon={faQuoteLeft} /></div>
+                    <p className="velocity-animate quote-desc">{this.props.content.description}</p>
+                    <p className="velocity-animate quote-name">{this.props.content.quoteName}</p>
                 </div>
             </div>
         );
@@ -84,16 +90,20 @@ class HobbySlides extends Component {
         let siblings = $(hoverElement).siblings('.hobby-slide');
 
         $(hoverElement).children('.hobby-slide-content').addClass('disabled');
-
-        Velocity($(siblings).find('h1'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 0});
-        Velocity($(siblings).find('p'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 100});
+        console.log($(hoverElement).width()/$(window).width());
+        if($(hoverElement).width()/$(window).width() !== 0.25) {
+            Velocity($(siblings).find('h1'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 250});
+            Velocity($(siblings).find('.quote-desc'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 85});
+            Velocity($(siblings).find('.quote-icon'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 125});
+            Velocity($(siblings).find('.quote-name'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 0});
+        }
 
         Velocity(
             $(siblings),
         {
             width: '15%',
         }, {
-            duration: 300,
+            duration: 500,
             easing: 'liner',
             complete: ()=> {
                 this.setState({disabled: false});
@@ -106,11 +116,13 @@ class HobbySlides extends Component {
         {
             width: '55%',
         }, {
-            duration: 300,
+            duration: 500,
             easing: 'liner',
             complete: ()=>{
-                Velocity($(hoverElement).find('h1'), 'transition.slideUpBigIn', { opacity: 1, duration: 300, delay: 200});
-                Velocity($(hoverElement).find('p'), 'transition.slideUpBigIn', { opacity: 1, duration: 300, delay: 300});
+                Velocity($(hoverElement).find('h1'), 'transition.slideUpBigIn', { opacity: 1, duration: 400, delay: 100});
+                Velocity($(hoverElement).find('.quote-icon'), 'transition.slideLeftBigIn', { opacity: 1, duration: 300, delay: 200});
+                Velocity($(hoverElement).find('.quote-desc'), 'transition.slideUpBigIn', { opacity: 1, duration: 300, delay: 300});
+                Velocity($(hoverElement).find('.quote-name'), 'transition.slideRightBigIn', { opacity: 1, duration: 300, delay: 400});
             },
         });
     }
