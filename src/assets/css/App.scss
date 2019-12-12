@@ -135,7 +135,7 @@ body {
     @media screen and (max-width: $break-sm){
         .content {
             height: 100vh;
-            min-height: 736px;
+            min-height: 600px;
 
             .container {
                 &.home-container {

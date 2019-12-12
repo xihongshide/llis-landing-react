@@ -227,4 +227,30 @@
             opacity: 0;
         }
     }
+
+    @media screen and (max-width: $break-md) {
+        .about-cols {
+            width: 100%;
+
+            .about-col {
+                height: auto;
+                margin: 25px auto;
+                button {
+                    opacity: 1 !important;
+                    span {
+                        top: 0%;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-xs) {
+        .about-cols {
+            .about-col {
+                margin: 18px auto;
+            }
+        }
+    }
 }

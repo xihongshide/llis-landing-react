@@ -8556,6 +8556,20 @@ div#home {
     -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2);
     opacity: 0; } }
+  @media screen and (max-width: 768px) {
+    .about .about-cols {
+      width: 100%; }
+      .about .about-cols .about-col {
+        height: auto;
+        margin: 25px auto; }
+        .about .about-cols .about-col button {
+          opacity: 1 !important; }
+          .about .about-cols .about-col button span {
+            top: 0%;
+            pointer-events: none; } }
+  @media screen and (max-width: 380px) {
+    .about .about-cols .about-col {
+      margin: 18px auto; } }
 
 .contact .contact-info {
   text-align: left; }
@@ -9235,7 +9249,7 @@ body {
   @media screen and (max-width: 480px) {
     .app .content {
       height: 100vh;
-      min-height: 736px; }
+      min-height: 600px; }
       .app .content .container.home-container {
         padding-top: 100px; } }
   @media screen and (max-width: 380px) {
