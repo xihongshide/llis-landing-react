@@ -4,6 +4,7 @@
   "description": "Github personal webpage",
   "private": true,
   "main": "src/index.js",
+  "homepage": "https://xihongshide.github.io/llis-landing-react",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

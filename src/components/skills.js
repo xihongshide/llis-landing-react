@@ -24,7 +24,7 @@ const SkillConfig = [
         details: [
             {
                 name: "JavaScript",
-                description: "jquery, reactJs, typescript, es6"
+                description: "Jquery, ReactJs, Typescript, ES6"
             }
         ]
     },
@@ -34,7 +34,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Experiences",
-                description: "HTML5, twig, SCSS/CSS, Reasponsive Design, WCAG, bootstrap, Animations"
+                description: "HTML5, Twig, SCSS/CSS, Reasponsive Design, WCAG, Bootstrap, Animations"
             }
         ],
     },
@@ -44,7 +44,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Core competitiveness",
-                description: "self-Discipline, curiosity"
+                description: "Self-Discipline, Curiosity"
             }
         ]
     },
@@ -54,7 +54,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Tools",
-                description: "git, jira, webpack, photoshop, bitbucket, npm"
+                description: "Git, Jira, Webpack, Bitbucket, npm"
             }
         ],
     },
