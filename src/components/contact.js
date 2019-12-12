@@ -72,7 +72,7 @@ function validateEmail(res) {
 }
 
 /** Components */
-const Card = props => <div className="card col-sm-7 velocity-animate" id="contact_card_js">{props.children}</div>;
+const Card = props => <div className="card col-xs-12 col-md-7 col-md-pull-5 velocity-animate" id="contact_card_js">{props.children}</div>;
 
 const Form = props => <form className="form" onSubmit={props.onSubmit}>{props.children}</form>;
 
@@ -118,7 +118,7 @@ const TextArea = props => (
 );
 
 const Submit = props => <input className={`submit-btn ${props.disabled ? "disabled": ""}`} type="submit" value="Send" />;
-const ContactInfo = props => <div className="contact-info col-sm-4 velocity-animate" id="contact_info_js">{props.children}</div>;
+const ContactInfo = props => <div className="contact-info col-md-4 col-xs-12 col-md-push-8 velocity-animate" id="contact_info_js">{props.children}</div>;
 
 class Contact extends Component {
     constructor() {
@@ -226,18 +226,9 @@ class Contact extends Component {
             <div className="contact content">
                 <div className="container contact-container">
                     <div className="inner-container row no-padding">
-                        <ContactInfo>
-                            <h1> Conatact Info</h1>
-                            <p>Get in touch with me at anytime if you have any questions.</p>
-                            <p>Ues the form to the right or my details below and I'll get back to you ASAP.</p>
-                            <SocialNetworkList />
-                            <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
-                        </ContactInfo>
-
-                        <div className="col-sm-1"></div>
-
                         <Card>
                             <h1>Ge in touch</h1>
+
                             <Form onSubmit={this.handleSubmit}>
                                 <TextInput
                                     {...name}
@@ -274,6 +265,16 @@ class Contact extends Component {
                                 <Submit disabled={validated ? "": "disabled"}>Submit</Submit>
                             </Form>
                         </Card>
+
+                        <div className="col-md-1 hidden-sm hidden-xs"> </div>
+
+                        <ContactInfo>
+                            <h1> Conatact Info</h1>
+                            <p>Get in touch with me at anytime if you have any questions.</p>
+                            <p>Ues the form to the right or my details below and I'll get back to you ASAP.</p>
+                            <SocialNetworkList />
+                            <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
+                        </ContactInfo>
                     </div>
                 </div>
             </div>
