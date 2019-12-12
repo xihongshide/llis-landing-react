@@ -49,8 +49,10 @@ $theme-colors: (
 }
 
 /* Responsive Design */
-$tablet-breakpoint: 992px;
-$mobile_breakpoint: 767px;
+$break-lg: 992px;
+$break-md: 768px;
+$break-sm: 430px;
+$break-xs: 380px;
 
 /***********************
 Css Mixin Start
