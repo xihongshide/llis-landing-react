@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 require('velocity-animate');
 require('velocity-animate/velocity.ui');
-require('bootstrap/dist/js/bootstrap.min.js')
+require('bootstrap/dist/js/bootstrap.min.js');
 window.$ = window.jQuery = require('jquery');
 require('blast-text/jquery.blast');
 

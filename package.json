@@ -1,16 +1,16 @@
 {
-  "name": "llis-landing",
+  "name": "llislanding",
   "version": "1.0.0",
   "description": "Github personal webpage",
   "private": true,
   "main": "src/index.js",
-  "homepage": "https://xihongshide.github.io/llis-landing-react",
+  "homepage": "",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "firebase deploy",
     "eject": "react-scripts eject"
   },
   "repository": {
@@ -27,12 +27,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/xihongshide/llis-landing-react/issues"
-  },
-  "homepage": "https://github.com/xihongshide/llis-landing-react",
-  "devDependencies": {
-    "eslint": "^6.7.2",
-    "eslint-plugin-react": "^7.17.0",
-    "gh-pages": "^2.1.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -69,5 +63,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2"
   }
 }
