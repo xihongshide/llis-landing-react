@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/xihongshide/llis-landing-react/precache-manifest.4b1c61d3003581b213c2f42301db6f50.js"
+  "/xihongshide/llis-landing-react/precache-manifest.f885f742b0031f16be3abec33aa97468.js"
 );
 
 self.addEventListener('message', (event) => {
