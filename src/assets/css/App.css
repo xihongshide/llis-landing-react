@@ -6886,6 +6886,50 @@ Css keyframes Start
     -webkit-transform: translateX(0px);
     transform: translateX(0px); } }
 
+@-webkit-keyframes flashBg {
+  0% {
+    background: #444c5c; }
+  5% {
+    background: blue; }
+  10% {
+    background: orange; }
+  15% {
+    background: green; }
+  20% {
+    background: red; }
+  25% {
+    background: yellow; }
+  30% {
+    background: purple; }
+  35% {
+    background: orange; }
+  45% {
+    background: blue; }
+  50% {
+    background: #444c5c; } }
+
+@keyframes flashBg {
+  0% {
+    background: #444c5c; }
+  5% {
+    background: blue; }
+  10% {
+    background: orange; }
+  15% {
+    background: green; }
+  20% {
+    background: red; }
+  25% {
+    background: yellow; }
+  30% {
+    background: purple; }
+  35% {
+    background: orange; }
+  45% {
+    background: blue; }
+  50% {
+    background: #444c5c; } }
+
 /*
 Css keyframes End
 */
@@ -7423,6 +7467,15 @@ div#home {
     div#home .carousel .carousel-control-prev,
     div#home .carousel .carousel-control-next {
       display: none; }
+  @media screen and (max-width: 768px) {
+    div#home .carousel .carousel-caption h3 {
+      font-size: 2.8rem; }
+    div#home .carousel .carousel-caption p {
+      font-size: 1rem; }
+    div#home .carousel .carousel-indicators {
+      bottom: -15px; }
+    div#home .home-btn {
+      margin-top: 15px; } }
 
 .about {
   position: relative; }
@@ -9000,81 +9053,6 @@ a {
   -o-transition: all 0.12s linear;
   transition: all 0.12s linear; }
 
-body {
-  width: 100%;
-  overflow: auto;
-  display: block;
-  min-height: 100vh;
-  background: transparent; }
-
-.app {
-  text-align: center;
-  background: transparent;
-  overflow: auto; }
-  .app .header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 7vh;
-    padding: 0;
-    z-index: 1039; }
-  .app .content {
-    height: 100vh;
-    min-height: 600px;
-    font-size: 16px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-    .app .content.home {
-      background-color: #333333;
-      color: #ffffff; }
-    .app .content.about {
-      background-color: #78a5a3;
-      color: #ffffff; }
-    .app .content.skills {
-      background-color: #444c5c;
-      color: #ffffff; }
-    .app .content.contact {
-      background-color: #ffc300;
-      color: #ffffff; }
-    .app .content.blog {
-      background-color: #ce5a57;
-      color: #ffffff; }
-    .app .content .container {
-      position: relative;
-      height: 100%;
-      width: 100%; }
-      .app .content .container.home-container .inner-container {
-        min-height: 400px; }
-      .app .content .container.blog-container .inner-container {
-        min-height: 400px; }
-      .app .content .container.skills-container .inner-container {
-        min-height: 450px; }
-    .app .content .inner-container {
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      min-height: 500px; }
-    .app .content .about-container {
-      position: relative;
-      height: 100%;
-      width: 100%; }
-    .app .content.flash-bg {
-      -webkit-animation: flashBg 1.5s, ease-in-out;
-      animation: flashBg 1.5s, ease-in-out; }
-  .app .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1039;
-    background: transparent; }
-
 /* Globale Use */
 .main-btn {
   -webkit-box-sizing: border-box;
@@ -9161,46 +9139,95 @@ body {
 .no-margin {
   margin: 0; }
 
-@-webkit-keyframes flashBg {
-  0% {
-    background: #444c5c; }
-  5% {
-    background: blue; }
-  10% {
-    background: orange; }
-  15% {
-    background: green; }
-  20% {
-    background: red; }
-  25% {
-    background: yellow; }
-  30% {
-    background: purple; }
-  35% {
-    background: orange; }
-  45% {
-    background: blue; }
-  50% {
-    background: #444c5c; } }
+body {
+  width: 100%;
+  overflow: auto;
+  display: block;
+  min-height: 100vh;
+  background: transparent; }
 
-@keyframes flashBg {
-  0% {
-    background: #444c5c; }
-  5% {
-    background: blue; }
-  10% {
-    background: orange; }
-  15% {
-    background: green; }
-  20% {
-    background: red; }
-  25% {
-    background: yellow; }
-  30% {
-    background: purple; }
-  35% {
-    background: orange; }
-  45% {
-    background: blue; }
-  50% {
-    background: #444c5c; } }
+.app {
+  text-align: center;
+  background: transparent;
+  overflow: auto; }
+  .app .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    padding: 0;
+    z-index: 1039; }
+  .app .content {
+    height: 100vh;
+    min-height: 600px;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .app .content.home {
+      background-color: #333333;
+      color: #ffffff; }
+    .app .content.about {
+      background-color: #78a5a3;
+      color: #ffffff; }
+    .app .content.skills {
+      background-color: #444c5c;
+      color: #ffffff; }
+    .app .content.contact {
+      background-color: #ffc300;
+      color: #ffffff; }
+    .app .content.blog {
+      background-color: #ce5a57;
+      color: #ffffff; }
+    .app .content .container {
+      position: relative;
+      height: 100%;
+      width: 100%; }
+      .app .content .container.home-container .inner-container {
+        min-height: 400px; }
+      .app .content .container.blog-container .inner-container {
+        min-height: 400px; }
+      .app .content .container.skills-container .inner-container {
+        min-height: 450px; }
+    .app .content .inner-container {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      min-height: 500px; }
+    .app .content .about-container {
+      position: relative;
+      height: 100%;
+      width: 100%; }
+    .app .content.flash-bg {
+      -webkit-animation: flashBg 1.5s, ease-in-out;
+      animation: flashBg 1.5s, ease-in-out; }
+  .app .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1039;
+    background: transparent; }
+  @media screen and (max-width: 430px) {
+    .app .content {
+      height: 100%;
+      min-height: 100vh; }
+      .app .content .container.home-container {
+        padding-top: 100px; }
+      .app .content .container .inner-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 100%;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0); } }
+  @media screen and (max-width: 380px) {
+    .app .content .container.home-container {
+      padding-top: 60px; } }
