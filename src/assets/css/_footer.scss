@@ -129,4 +129,30 @@ footer {
             }
         }
     }
+
+    @media screen and (max-width: $break-sm) {
+        .info-wrapper {
+            text-align: center;
+
+            ul {
+                display: block;
+            }
+
+            button {
+               display: none;
+            }
+
+            p {
+                margin-top: 5px;
+                margin-bottom: 0;
+                left: 0;
+                display: block;
+                position: relative;
+                transform: translate(0, 0);
+                top: 0;
+                padding-bottom: 15px;
+            }
+
+        }
+    }
 }

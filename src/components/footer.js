@@ -45,14 +45,22 @@ class Footer extends Component {
                     </div>
                     */}
 
-                    <VelocityComponent animation={ this.state.animated ? 'transition.slideUpBigIn' : 'transition.slideDownBigOut' }>
+                    <VelocityComponent
+                        animation={this.state.animated ? 'transition.slideUpBigIn' : 'transition.slideDownBigOut'}
+                        delay={this.state.animated ? "1300" : "500"}
+                        duration={this.state.animated ? "800" : "800"}
+                    >
                         <div className="info-wrapper">
                             <FooterInfo toggleInfo={ this.toggleInfo }/>
                         </div>
                     </VelocityComponent>
 
                     <div className="info-icon">
-                        <VelocityComponent animation={ !this.state.animated ? 'transition.slideRightIn' : 'transition.slideRightOut' }>
+                        <VelocityComponent
+                            animation={!this.state.animated ? 'transition.slideRightIn' : 'transition.slideRightOut'}
+                            delay={!this.state.animated ? "1300" : "500"}
+                            duration={!this.state.animated ? "800" : "800"}
+                        >
                             <button onClick={ this.toggleInfo }>
                                 <FontAwesomeIcon icon={ faInfoCircle } />
                             </button>
