@@ -14,15 +14,33 @@
         p {
             font-size: 0.9rem;
             width: 100%;
+            svg {
+                color: $main-red;
+            }
+
+            &:nth-of-type(2) {
+                display: block;
+
+                svg {
+                    margin: 0 2px 0 4px;
+                }
+            }
+
+            &:nth-of-type(3) {
+                display: none;
+                svg {
+                    margin: 0 2px 0 4px;
+                }
+            }
 
             &:last-of-type {
                 font-size: 0.8rem;
                 margin-top: 15px;
-            }
 
-            svg {
-                font-size: 1rem;
-                margin-right: 20px;
+                svg {
+                    font-size: 1rem;
+                    margin-right: 20px;
+                }
             }
         }
 
@@ -143,7 +161,28 @@
 
         h1 {
             font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.95em;
+            line-height: 1.1;
             margin-bottom: 20px;
+            width: 100%;
+            filter: grayscale(100%);
+
+            svg {
+                width: 8px;
+                margin-right: 5px;
+                vertical-align: initial;
+            }
+
+            span {
+                font-size: 0.9em;
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
         }
 
         .form {
@@ -360,8 +399,10 @@
 
     @media screen and (max-width: $break-md) {
         .contact-info {
-            margin-bottom: 20px;
-            padding: 0 15px 30px 15px;
+            width: 100%;
+            max-width: 360px;
+            margin: 10px auto 20px;
+            padding: 0 0 30px;
 
             h1 {
                 display: none;
@@ -369,6 +410,14 @@
 
             p {
                 margin-bottom: 5px;
+
+                &:nth-of-type(2) {
+                    display: none;
+                }
+
+                &:nth-of-type(3) {
+                    display: block;
+                }
             }
 
             ul {
@@ -386,6 +435,23 @@
 
         .card {
             padding: 7vh 0 60px 0;
+            margin: 10px auto;
+            width: 100%;
+            max-width: 360px;
+
+            p {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-sm) {
+        .contact-info {
+            max-width: 300px;
+        }
+
+        .card {
+            max-width: 300px;
         }
     }
 }

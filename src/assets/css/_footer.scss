@@ -91,6 +91,7 @@ footer {
             svg {
                 opacity: 0.4;
                 color: $main-white;
+                animation: shake 3s linear 2s infinite;
             }
 
             &:hover {

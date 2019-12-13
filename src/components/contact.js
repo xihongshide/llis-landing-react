@@ -3,8 +3,9 @@ import $ from "jquery";
 import emailjs from 'emailjs-com';
 import Recaptcha from 'react-recaptcha';
 import Velocity from "velocity-animate";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapMarker} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarker, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHandPointUp, faHandPointLeft, faHandPointDown } from "@fortawesome/free-regular-svg-icons";
 
 //Partial Components
 import SocialNetworkList from './partialComponents/socialNetworkList.js';
@@ -228,6 +229,7 @@ class Contact extends Component {
                     <div className="inner-container row no-padding">
                         <Card>
                             <h1>Ge in touch</h1>
+                            <p><FontAwesomeIcon icon={faQuoteLeft} />It's very, very dangerous to lose contact with living nature. <span>― Albrt Hofmann</span></p>
 
                             <Form onSubmit={this.handleSubmit}>
                                 <TextInput
@@ -271,7 +273,8 @@ class Contact extends Component {
                         <ContactInfo>
                             <h1> Conatact Info</h1>
                             <p>Get in touch with me at anytime if you have any questions.</p>
-                            <p>Ues the form to the right or my details below and I'll get back to you ASAP.</p>
+                            <p>Ues the form to the <b>left<FontAwesomeIcon icon={faHandPointLeft} /></b> or my details <b>below<FontAwesomeIcon icon={faHandPointDown} /></b> and I'll get back to you ASAP.</p>
+                            <p>Ues the contact form <b>above<FontAwesomeIcon icon={faHandPointUp} /></b> or my details <b>below<FontAwesomeIcon icon={faHandPointDown} /></b> and I'll get back to you ASAP.</p>
                             <SocialNetworkList />
                             <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
                         </ContactInfo>

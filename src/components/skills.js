@@ -183,7 +183,7 @@ class Skills extends Component {
 
         const button = $(e.target);
 
-        let timer = setTimeout(()=>{
+        let timer = setTimeout(()=> {
             $(".skills-container").css("pointer-event", "none");
             let activeIndex = $(button).attr("dataindex");
             self.setState({activeIndex: activeIndex, active: true});

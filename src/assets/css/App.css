@@ -7313,7 +7313,9 @@ footer .info-wrapper {
     width: 40px; }
     footer .info-wrapper button svg {
       opacity: 0.4;
-      color: #ffffff; }
+      color: #ffffff;
+      -webkit-animation: shake 3s linear 2s infinite;
+      animation: shake 3s linear 2s infinite; }
     footer .info-wrapper button:hover {
       opacity: 1; }
       footer .info-wrapper button:hover svg {
@@ -8590,12 +8592,22 @@ div#home {
   .contact .contact-info p {
     font-size: 0.9rem;
     width: 100%; }
+    .contact .contact-info p svg {
+      color: #ce5a57; }
+    .contact .contact-info p:nth-of-type(2) {
+      display: block; }
+      .contact .contact-info p:nth-of-type(2) svg {
+        margin: 0 2px 0 4px; }
+    .contact .contact-info p:nth-of-type(3) {
+      display: none; }
+      .contact .contact-info p:nth-of-type(3) svg {
+        margin: 0 2px 0 4px; }
     .contact .contact-info p:last-of-type {
       font-size: 0.8rem;
       margin-top: 15px; }
-    .contact .contact-info p svg {
-      font-size: 1rem;
-      margin-right: 20px; }
+      .contact .contact-info p:last-of-type svg {
+        font-size: 1rem;
+        margin-right: 20px; }
   .contact .contact-info a {
     font-size: 0.85rem;
     text-decoration: underline;
@@ -8681,7 +8693,23 @@ div#home {
   text-align: left; }
   .contact .card h1 {
     font-size: 2rem;
-    margin-bottom: 20px; }
+    margin-bottom: 8px; }
+  .contact .card p {
+    font-size: 0.95em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .contact .card p svg {
+      width: 8px;
+      margin-right: 5px;
+      vertical-align: initial; }
+    .contact .card p span {
+      font-size: 0.9em;
+      display: block;
+      width: 100%;
+      text-align: right; }
   .contact .card .form {
     padding: 0; }
   .contact .card .submit-btn {
@@ -8876,12 +8904,18 @@ div#home {
 
 @media screen and (max-width: 768px) {
   .contact .contact-info {
-    margin-bottom: 20px;
-    padding: 0 15px 30px 15px; }
+    width: 100%;
+    max-width: 360px;
+    margin: 10px auto 20px;
+    padding: 0 0 30px; }
     .contact .contact-info h1 {
       display: none; }
     .contact .contact-info p {
       margin-bottom: 5px; }
+      .contact .contact-info p:nth-of-type(2) {
+        display: none; }
+      .contact .contact-info p:nth-of-type(3) {
+        display: block; }
     .contact .contact-info ul {
       margin-top: 20px; }
       .contact .contact-info ul li {
@@ -8889,7 +8923,18 @@ div#home {
       .contact .contact-info ul a {
         font-size: 32px; }
   .contact .card {
-    padding: 7vh 0 60px 0; } }
+    padding: 7vh 0 60px 0;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 360px; }
+    .contact .card p {
+      display: block; } }
+
+@media screen and (max-width: 480px) {
+  .contact .contact-info {
+    max-width: 300px; }
+  .contact .card {
+    max-width: 300px; } }
 
 @-webkit-keyframes rotating {
   from {
@@ -9251,6 +9296,8 @@ body {
       position: relative;
       height: 100%;
       width: 100%; }
+      .app .content .container .inner-container {
+        margin-left: 0; }
       .app .content .container.home-container .inner-container {
         min-height: 400px; }
       .app .content .container.blog-container .inner-container {
