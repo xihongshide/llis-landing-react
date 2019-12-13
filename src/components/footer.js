@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faChessKnight, faInfoCircle, faHeart, faCoffee, faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle, faHeart, faCoffee, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import { VelocityComponent } from 'velocity-react';
 import $ from "jquery";
 
@@ -46,9 +46,9 @@ class Footer extends Component {
                     */}
 
                     <VelocityComponent
-                        animation={this.state.animated ? 'transition.slideUpBigIn' : 'transition.slideDownBigOut'}
-                        delay={this.state.animated ? "600" : "200"}
-                        duration={this.state.animated ? "400" : "400"}
+                        animation={animation ? 'transition.slideUpBigIn' : 'transition.slideDownBigOut'}
+                        delay={animation ? "600" : "200"}
+                        duration={animation ? "400" : "400"}
                     >
                         <div className="info-wrapper">
                             <FooterInfo toggleInfo={ this.toggleInfo }/>
@@ -57,9 +57,9 @@ class Footer extends Component {
 
                     <div className="info-icon">
                         <VelocityComponent
-                            animation={!this.state.animated ? 'transition.slideRightIn' : 'transition.slideRightOut'}
-                            delay={!this.state.animated ? "600" : "200"}
-                            duration={!this.state.animated ? "400" : "400"}
+                            animation={!animation ? 'transition.slideRightIn' : 'transition.slideRightOut'}
+                            delay={!animation ? "600" : "200"}
+                            duration={!animation ? "400" : "400"}
                         >
                             <button onClick={ this.toggleInfo }>
                                 <FontAwesomeIcon icon={ faInfoCircle } />

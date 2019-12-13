@@ -3,7 +3,7 @@ import $ from "jquery";
 import Velocity from 'velocity-animate';
 import { VelocityTransitionGroup } from 'velocity-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaintBrush, jsSquare, faServer, faSkull, faChalkboardTeacher ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faPaintBrush, faServer, faSkull, faChalkboardTeacher ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
 import { shuffle} from '../utility.js';
 

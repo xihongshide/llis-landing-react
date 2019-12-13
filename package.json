@@ -1,10 +1,10 @@
 {
   "name": "llislanding",
   "version": "1.0.0",
-  "description": "Github personal webpage",
+  "description": "Personal webpage",
   "private": true,
   "main": "src/index.js",
-  "homepage": "",
+  "homepage": "https://llislanding.firebaseapp.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

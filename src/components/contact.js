@@ -174,7 +174,6 @@ class Contact extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const self = this;
-        let form = $(e.target);
         let button = $(e.target).find(".submit-btn");
         setTimeout(()=>{$(button).addClass('on-click');}, 450);
 
