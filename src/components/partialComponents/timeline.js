@@ -62,7 +62,7 @@ const timelineData = [
         title: 'IELTS Teacher',
         category: {
             tag: '20 Jan, 2015',
-            color: tagColor[6]
+            color: tagColor[5]
         },
     },
     {
@@ -104,10 +104,10 @@ const Arrows = (props) => <div className={`${props.direction} arrows`}><span></s
 const TimelineItem = (props) => (
     <div className="timeline-item">
         <div className="timeline-item-content">
+            <h3>{props.data.title}</h3>
             <span className="tag" style={{ background: props.data.category.color }}>
                 {props.data.category.tag}
             </span>
-            <h3>{props.data.title}</h3>
             <p>{props.data.text}</p>
             <small><FontAwesomeIcon icon={faMapMarker} />{props.data.location}</small>
             {props.data.link && (

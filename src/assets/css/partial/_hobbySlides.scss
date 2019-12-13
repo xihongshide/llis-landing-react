@@ -37,6 +37,8 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
                 transform: skewX(-11deg);
                 left: -100%;
                 background: $main-yellow;
+                z-index: 1;
+                pointer-events: none;
             }
         }
 
@@ -49,6 +51,8 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
                 transform: skewX(-11deg);
                 right: -100%;
                 background: $main-blue;
+                z-index: 1;
+                pointer-events: none;
             }
         }
 
@@ -59,6 +63,7 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
         }
 
         .hobby-slide-content {
+            z-index: 2;
             position: absolute;
             width: 100%;
             left: 50%;
@@ -127,7 +132,67 @@ $slides-colors: $main-yellow $main-purple $main-red $main-blue;
                 text-align: right;
                 display: none;
             }
+        }
+    }
 
+    @media screen and (max-width: $break-md) {
+        .hobby-slide {
+            &:first-of-type {
+                &:before {
+                    width: 150%;
+                    transform: skewX(0deg);
+                }
+            }
+
+            &:last-of-type {
+                &:after {
+                    width: 150%;
+                    transform: skewX(0deg);
+                }
+            }
+
+            .hobby-slide-content {
+                .header-icon svg {
+                    width: 4em;
+                    height: 4em;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 510px) {
+        .hobby-slide {
+            .hobby-slide-content {
+                padding: 0 20px;
+
+                .header-icon svg {
+                    width: 3em;
+                    height: 3em;
+                }
+
+                p.quote-des {
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-xs) {
+        .hobby-slide {
+            .hobby-slide-content {
+                h1 {
+                    font-size: 1.55em;
+                }
+
+                p.quote-des {
+                    font-size: 0.85em;
+                }
+
+                .header-icon svg {
+                    width: 2em;
+                    height: 2em;
+                }
+            }
         }
     }
 }

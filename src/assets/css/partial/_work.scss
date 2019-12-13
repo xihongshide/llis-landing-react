@@ -198,4 +198,42 @@
     .disabled {
         pointer-events: none !important;
     }
+
+    @media screen and (max-width: 630px) {
+        .about-work-content {
+            svg {
+                width: 60px;
+            }
+
+            h1 {
+                font-weight: 600;
+                font-size: 1.75em;
+            }
+
+            p {
+                font-size: 0.9em;
+            }
+        }
+    }
+
+    @media screen and (max-width: $break-sm) {
+        .work-barin {
+            .brain {
+                p.explore-indicate {
+                    font-weight: 600;
+                    font-size: 2.5em;
+                }
+            }
+        }
+        .about-work-content {
+            h1 {
+                font-weight: 600;
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+        }
+    }
 }

@@ -26,7 +26,7 @@ const hobbyContent = [
     {
         id: 3,
         name: "coffee",
-        title: 'coffee\'s life',
+        title: 'Coffee',
         icon: <FontAwesomeIcon icon={faCoffee} />,
         description: 'Programmers is tool to convert coffeine to code.',
         quoteName: "– an Anonymous Programmer",
@@ -35,7 +35,7 @@ const hobbyContent = [
     {
         id: 4,
         name: "code",
-        title: 'code\'s life',
+        title: 'Coding',
         icon: <FontAwesomeIcon icon={faCode} />,
         description: 'Before software can be reusable it first has to be usable.',
         quoteName: "– Ralph Johnson",
@@ -48,7 +48,7 @@ class HobbyContent extends React.Component {
         Velocity(this.refs.slideAni, {opacity: 1,  skewX: "-11deg", translateY: 0}, {duration: 600, delay: delay});
         setTimeout(() => {
             $(".about-hobby-container").css("pointer-events", "auto");
-        }, 2800);
+        }, 2000);
     }
 
     render() {
