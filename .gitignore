@@ -73,3 +73,5 @@ firebase.json
 .firebaserc
 
 build
+
+src/index.js
