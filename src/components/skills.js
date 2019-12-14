@@ -9,11 +9,12 @@ import { shuffle} from '../utility.js';
 
 const SkillConfig = [
     {
-        name: "teaching",
+        name: "Teaching",
         icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
+        color: "#4FC08D",
         details: [
             {
-                name: "IELTS Test",
+                name: "IELTS tutoring",
                 description: "4.5 Years of IELTS Test tuoring experience"
             },
         ],
@@ -21,6 +22,7 @@ const SkillConfig = [
     {
         name: "Javasctipt",
         icon: <FontAwesomeIcon icon={faJsSquare} />,
+        color: "#F7DF1E",
         details: [
             {
                 name: "JavaScript",
@@ -29,8 +31,9 @@ const SkillConfig = [
         ]
     },
     {
-        name: "front-end",
+        name: "Front-end",
         icon: <FontAwesomeIcon icon={faPaintBrush} />,
+        color: "#CC6699",
         details: [
             {
                 name: "Experiences",
@@ -39,8 +42,9 @@ const SkillConfig = [
         ],
     },
     {
-        name: "core",
+        name: "Core",
         icon: <FontAwesomeIcon icon={faSkull} />,
+        color: "#66595C",
         details: [
             {
                 name: "Core competitiveness",
@@ -49,8 +53,9 @@ const SkillConfig = [
         ]
     },
     {
-        name: "tools",
+        name: "Tools",
         icon: <FontAwesomeIcon icon={faToolbox} />,
+        color: "#8DD6F9",
         details: [
             {
                 name: "Tools",
@@ -61,6 +66,7 @@ const SkillConfig = [
     {
         name: "languages",
         icon: <FontAwesomeIcon icon={faLanguage} />,
+        color: "#ce5a57",
         details: [
             {
                 name: "Mandarin",
@@ -79,9 +85,10 @@ const SkillConfig = [
     {
         name: "back-end",
         icon: <FontAwesomeIcon icon={faServer} />,
+        color: "#3776AB",
         details: [
             {
-                name: "experiences",
+                name: "Experiences",
                 description: "PHP/Zend, Python/Django, MySQL, NodeJs/Express"
             }
         ],
@@ -92,7 +99,7 @@ class HoverArea extends Component {
     componentDidMount(){
         let elements = shuffle($(".skill-icon-btn"));
         $(elements).each((i, e) => {
-            Velocity($(e), {opacity: 1}, {delay: 800+200*i, duration: 1300});
+            Velocity($(e), {opacity: 1}, {delay: 1300+200*i, duration: 1300});
         });
     }
 
@@ -144,12 +151,12 @@ class SkillsDetails extends Component {
                     enter={{animation: "transition.slideRightBigIn", stagger: "300"}}
                     leave={{animation: "transition.slideRightBigOut", duration: "500"}}
                 >
-                    {active ? <p><i>{skillSet.icon}</i></p> : undefined}
+                    {active ? <p><i style={{color: skillSet.color}}>{skillSet.icon}</i></p> : undefined}
                     {active ? <h2>{skillSet.name}</h2> : undefined}
                     {active ?
                         (skillSet.details.map((value, index) => {
                             return(
-                                <div key={index}>
+                                <div className="skill-experience" key={index}>
                                     <b>{value.name}:</b>&nbsp;&nbsp;
                                     <span>{value.description}</span>
                                 </div>

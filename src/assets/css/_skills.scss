@@ -33,7 +33,7 @@ div.content.skills{
 			transform: rotate(-60deg) skewY(30deg);
 			width: 31.3333333333%; /* = (100-3) / 3    or use 'calc()' */
 			padding-bottom: 36.3353174076%; /* =  width / sin(60deg) */
-			margin-bottom: -7%;
+			margin-bottom: -7.1666%;
 
 			&:nth-child(5n+1),
 		    &:nth-child(5n+2),
@@ -52,8 +52,8 @@ div.content.skills{
 		    }
 
 			&:nth-child(5n+1){
-		        margin-left: 2.8%;
-		        margin-right: 2.2%;
+				margin-left: 2%;
+       			margin-right: 2%;
 		    }
 
 		    &:nth-child(5n+4){
@@ -62,8 +62,8 @@ div.content.skills{
 		    }
 
 		    &:nth-child(5n+3) {
+				margin-left: 1%;
 		        clear: left;
-		        margin-left: 2%;
 		    }
 
 			button {
@@ -84,20 +84,17 @@ div.content.skills{
 
 				span {
 					position: absolute;
-					width: 50%;
-					top: 35%;
-					left: 33%;
-					transform: translate(-50%, -50%);
 					font-weight: 700;
 					color: $main-white;
 					pointer-events: none;
 					text-align: center;
-					font-size: 50px;
-					line-height: 50px;
 
 					svg {
-						width: 50px;
-						height: 50px;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						width: 45px;
+						height: 45px;
 						margin: 0 auto;
 						transition: transform 300ms linear;
 					}
@@ -108,7 +105,7 @@ div.content.skills{
 
 					span {
 						svg {
-							transform: scale(1.2);
+							transform: scale(1.1);
 						}
 					}
 				}
@@ -170,6 +167,72 @@ div.content.skills{
 			font-size: 3em;
 			font-weight: 600;
 			text-transform: uppercase;
+		}
+
+		h2 {
+			font-size: 2em;
+		}
+
+		.skill-experience{
+			b {
+				font-size: 1.1em;
+			}
+
+			span {
+				font-size: 1em;
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		padding-top: 7vh;
+
+		.skills-hexagon-innner {
+			max-width: 350px;
+
+			.skill-hexagon {
+				button span {
+					svg {
+						width: 35px;
+						height: 35px;
+					}
+				}
+			}
+		}
+
+		.skills-sets-container {
+			padding: 20px 15px 0;
+			text-align: center;
+			min-height: 200px;
+
+			h1 {
+				font-size: 2.5em;
+				height:50px;
+			}
+		}
+	}
+
+	@media screen and (max-width: $break-xs) {
+		.skills-hexagon-innner {
+			.skill-hexagon {
+				button span {
+					svg {
+						width: 28px;
+						height: 28px;
+					}
+				}
+			}
+
+			.skills-sets-container {
+				h1 {
+					font-size: 1.8em;
+					height: 40px;
+				}
+
+				h2 {
+					font-size: 1.6em;
+				}
+			}
 		}
 	}
 }

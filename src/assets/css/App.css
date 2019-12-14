@@ -7499,7 +7499,7 @@ div#home {
     div#home .carousel .carousel-control-prev,
     div#home .carousel .carousel-control-next {
       display: none; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     div#home .carousel .carousel-caption h3 {
       font-size: 2.8rem; }
     div#home .carousel .carousel-caption p {
@@ -8263,7 +8263,7 @@ div#home {
   @media only screen and (max-width: 1023px) {
     .about .timeline-outter-container .timeline-item-content {
       max-width: 100%; } }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     .about .timeline-main-container .scroll-indicator {
       left: 15px; }
     .about .timeline-outter-container .timeline-innner-container {
@@ -8598,7 +8598,7 @@ div#home {
           font-size: 0.7em;
           text-align: right;
           display: none; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       .about .about-hobby-container .hobby-slide:first-of-type:before {
         width: 150%;
         -webkit-transform: skewX(0deg);
@@ -8652,7 +8652,7 @@ div#home {
     -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2);
     opacity: 0; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .about .about-cols {
       width: 100%; }
       .about .about-cols .about-col {
@@ -8985,7 +8985,7 @@ div#home {
   .contact .contact-info ul a {
     font-size: 32px; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .contact .contact-info {
     width: 100%;
     max-width: 360px;
@@ -9082,7 +9082,7 @@ div.content.skills .skills-hexagon-innner {
     /* = (100-3) / 3    or use 'calc()' */
     padding-bottom: 36.3353174076%;
     /* =  width / sin(60deg) */
-    margin-bottom: -7%; }
+    margin-bottom: -7.1666%; }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+1), div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+2), div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3) {
       -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
       -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
@@ -9092,14 +9092,14 @@ div.content.skills .skills-hexagon-innner {
       -ms-transform: translateX(0%) rotate(-60deg) skewY(30deg);
       transform: translateX(0%) rotate(-60deg) skewY(30deg); }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+1) {
-      margin-left: 2.8%;
-      margin-right: 2.2%; }
+      margin-left: 2%;
+      margin-right: 2%; }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4) {
       margin-left: 2%;
       margin-right: 2%; }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3) {
-      clear: left;
-      margin-left: 2%; }
+      margin-left: 1%;
+      clear: left; }
     div.content.skills .skills-hexagon-innner .skill-hexagon button {
       display: block;
       border-radius: 0;
@@ -9119,21 +9119,18 @@ div.content.skills .skills-hexagon-innner {
       transition: background 300ms linear; }
       div.content.skills .skills-hexagon-innner .skill-hexagon button span {
         position: absolute;
-        width: 50%;
-        top: 35%;
-        left: 33%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
         font-weight: 700;
         color: #ffffff;
         pointer-events: none;
-        text-align: center;
-        font-size: 50px;
-        line-height: 50px; }
+        text-align: center; }
         div.content.skills .skills-hexagon-innner .skill-hexagon button span svg {
-          width: 50px;
-          height: 50px;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 45px;
+          height: 45px;
           margin: 0 auto;
           -webkit-transition: -webkit-transform 300ms linear;
           transition: -webkit-transform 300ms linear;
@@ -9143,9 +9140,9 @@ div.content.skills .skills-hexagon-innner {
       div.content.skills .skills-hexagon-innner .skill-hexagon button:hover {
         background: #444c5c; }
         div.content.skills .skills-hexagon-innner .skill-hexagon button:hover span svg {
-          -webkit-transform: scale(1.2);
-          -ms-transform: scale(1.2);
-          transform: scale(1.2); }
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1); }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+1) button:hover span {
       color: #4FC08D; }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+2) button:hover span {
@@ -9169,6 +9166,38 @@ div.content.skills .skills-sets-container {
     font-size: 3em;
     font-weight: 600;
     text-transform: uppercase; }
+  div.content.skills .skills-sets-container h2 {
+    font-size: 2em; }
+  div.content.skills .skills-sets-container .skill-experience b {
+    font-size: 1.1em; }
+  div.content.skills .skills-sets-container .skill-experience span {
+    font-size: 1em; }
+
+@media screen and (max-width: 767px) {
+  div.content.skills {
+    padding-top: 7vh; }
+    div.content.skills .skills-hexagon-innner {
+      max-width: 350px; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon button span svg {
+        width: 35px;
+        height: 35px; }
+    div.content.skills .skills-sets-container {
+      padding: 20px 15px 0;
+      text-align: center;
+      min-height: 200px; }
+      div.content.skills .skills-sets-container h1 {
+        font-size: 2.5em;
+        height: 50px; } }
+
+@media screen and (max-width: 380px) {
+  div.content.skills .skills-hexagon-innner .skill-hexagon button span svg {
+    width: 28px;
+    height: 28px; }
+  div.content.skills .skills-hexagon-innner .skills-sets-container h1 {
+    font-size: 1.8em;
+    height: 40px; }
+  div.content.skills .skills-hexagon-innner .skills-sets-container h2 {
+    font-size: 1.6em; } }
 
 .blog-inner-container {
   text-align: left;
@@ -9421,11 +9450,13 @@ body {
     width: 100%;
     z-index: 1039;
     background: transparent; }
-  @media screen and (max-width: 768px) {
-    .app .content.contact {
+  @media screen and (max-width: 767px) {
+    .app .content.contact, .app .content.skills {
       height: 100%;
       min-height: 750px; }
-      .app .content.contact .container.contact-container .inner-container {
+      .app .content.contact .container.contact-container .inner-container,
+      .app .content.contact .container.skills-container .inner-container, .app .content.skills .container.contact-container .inner-container,
+      .app .content.skills .container.skills-container .inner-container {
         position: relative;
         -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
