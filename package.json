@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "homepage": "https://llislanding.firebaseapp.com",
   "scripts": {
+    "watch": "watch 'npm run deploy' ./src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,12 +41,13 @@
     "emailjs-com": "^2.4.1",
     "firebase": "^7.5.2",
     "jquery": "^3.4.1",
+    "npm-watch": "^0.6.0",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-recaptcha": "^2.3.10",
     "react-router-dom": "^5.1.1",
-    "react-scripts": "^3.1.1",
+    "react-scripts": "^3.3.0",
     "redux": "^4.0.4",
     "velocity-react": "^1.4.3",
     "velocity-transition-group": "^1.2.2"
