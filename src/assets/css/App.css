@@ -9157,6 +9157,7 @@ div.content.skills .skills-sets-container {
 .blog-inner-container {
   text-align: left;
   max-width: 460px;
+  width: 100%;
   margin: 0 auto;
   min-height: 400px; }
   .blog-inner-container #blog-header {
@@ -9199,6 +9200,15 @@ div.content.skills .skills-sets-container {
     animation: blinker 1s ease-in-out infinite;
     font-size: 1.2em;
     padding-left: 5px; }
+  @media screen and (max-width: 550px) {
+    .blog-inner-container #blog-header {
+      padding: 0 20px; }
+    .blog-inner-container #blog_coming {
+      padding: 0 20px; }
+      .blog-inner-container #blog_coming p:nth-of-type(2), .blog-inner-container #blog_coming p:nth-of-type(3) {
+        padding-left: 30px; }
+      .blog-inner-container #blog_coming p:nth-of-type(1), .blog-inner-container #blog_coming p:nth-of-type(4) {
+        padding-left: 15px; } }
 
 @-webkit-keyframes blinker {
   50% {
