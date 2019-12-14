@@ -151,14 +151,16 @@
                 content: '>>>>>>>>>>>>';
                 font-weight: 700;
                 color: $main-yellow;
-                transform: translate(-125%, -50%);
+                left: 0;
+                transform: translate(-200%, -50%);
             }
 
             &:after {
                 content: '<<<<<<<<<<<<';
                 font-weight: 700;
+                right: 0;
                 color: $main-red;
-                transform: translate(125%, -50%);
+                transform: translate(200%, -50%);
             }
 
             &:hover {
@@ -170,7 +172,7 @@
                 }
 
                 &:after {
-                    transform: translate(-100%, -50%);
+                    transform: translate(0%, -50%);
                 }
             }
         }
@@ -241,20 +243,20 @@
 
             #brain-close {
                 &:before {
-                    content: '>>>>';
+                    content: '>>>>>>>';
                 }
 
                 &:after {
-                    content: '<<<<';
+                    content: '<<<<<<<';
                 }
 
                 &:hover {
                     &:before {
-                        transform: translate(50%, -50%);
+                        transform: translate(0%, -50%);
                     }
 
                     &:after {
-                        transform: translate(-100%, -50%);
+                        transform: translate(0%, -50%);
                     }
                 }
             }
