@@ -9333,7 +9333,8 @@ body {
   overflow: auto;
   display: block;
   min-height: 100vh;
-  background: transparent; }
+  background: transparent;
+  background: rgba(0, 0, 0, 0.3); }
 
 .app {
   text-align: center;

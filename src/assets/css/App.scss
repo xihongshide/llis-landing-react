@@ -9,6 +9,7 @@
 @import '_skills.scss';
 @import '_blog.scss';
 @import 'partial/_wechatModal.scss';
+
 * {
     font-family: 'Lato', sans-serif;
     -webkit-box-sizing: border-box;
@@ -51,6 +52,7 @@ body {
     display: block;
     min-height: 100vh;
     background: transparent;
+    background: $main-overlay;
 }
 
 .app {
@@ -90,7 +92,7 @@ body {
             .inner-container {
                 margin-left: 0
             }
-            
+
             &.home-container {
                 .inner-container {
                     min-height: 400px;
