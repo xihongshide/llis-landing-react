@@ -235,5 +235,29 @@
                 font-size: 0.8em;
             }
         }
+
+        .brain-close-container {
+            margin-top: 50px;
+
+            #brain-close {
+                &:before {
+                    content: '>>>>';
+                }
+
+                &:after {
+                    content: '<<<<';
+                }
+
+                &:hover {
+                    &:before {
+                        transform: translate(50%, -50%);
+                    }
+
+                    &:after {
+                        transform: translate(-100%, -50%);
+                    }
+                }
+            }
+        }
     }
 }
