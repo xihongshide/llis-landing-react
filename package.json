@@ -1,7 +1,7 @@
 {
   "name": "llislanding",
   "version": "1.0.0",
-  "description": "Personal webpage",
+  "description": "lli's Personal webpage",
   "private": true,
   "main": "src/index.js",
   "homepage": "https://llislanding.firebaseapp.com",
