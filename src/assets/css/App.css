@@ -8279,12 +8279,14 @@ div#home {
       .about .timeline-outter-container .timeline-item-content .circle {
         left: -48px; } }
   @media only screen and (max-width: 480px) {
+    .about .timeline-main-container .scroll-indicator {
+      bottom: 120px; }
     .about .timeline-outter-container .timeline-innner-container {
       padding: 0 0 50px 86px; }
       .about .timeline-outter-container .timeline-innner-container:before {
         left: 55px; }
     .about .timeline-outter-container .timeline-item-content .tag {
-      width: 80px;
+      width: 120px;
       text-align: center;
       font-size: 1em; }
     .about .timeline-outter-container .timeline-item-content .circle {
@@ -8451,9 +8453,11 @@ div#home {
       .about .about-work-container .about-work-content p {
         font-size: 0.9em; } }
     @media screen and (max-width: 480px) {
-      .about .about-work-container .work-barin .brain p.explore-indicate {
-        font-weight: 600;
-        font-size: 2.5em; }
+      .about .about-work-container .work-barin {
+        top: 46%; }
+        .about .about-work-container .work-barin .brain p.explore-indicate {
+          font-weight: 600;
+          font-size: 2.5em; }
       .about .about-work-container .about-work-content h1 {
         font-weight: 600;
         font-size: 1.6em; }
@@ -8614,7 +8618,8 @@ div#home {
         height: 4em; } }
     @media screen and (max-width: 510px) {
       .about .about-hobby-container .hobby-slide .hobby-slide-content {
-        padding: 0 20px; }
+        padding: 0 20px;
+        top: 46%; }
         .about .about-hobby-container .hobby-slide .hobby-slide-content .header-icon svg {
           width: 3em;
           height: 3em; }
@@ -8653,6 +8658,8 @@ div#home {
     transform: scale(1.2, 1.2);
     opacity: 0; } }
   @media screen and (max-width: 767px) {
+    .about .col-inner-container {
+      top: 46%; }
     .about .about-cols {
       width: 100%; }
       .about .about-cols .about-col {
@@ -9467,7 +9474,11 @@ body {
         height: 100%; } }
   @media screen and (max-width: 480px) {
     .app .content .container.home-container {
-      padding-top: 100px; } }
+      padding-top: 100px; }
+      .app .content .container.home-container .inner-container {
+        top: 46%; }
+    .app .content .container.blog-container .inner-container {
+      top: 46%; } }
   @media screen and (max-width: 380px) {
     .app .content .container.home-container {
       padding-top: 60px; } }

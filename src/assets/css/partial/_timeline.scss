@@ -353,6 +353,10 @@
 
 
 @media only screen and (max-width: $break-sm) {
+    .timeline-main-container .scroll-indicator {
+        bottom: 120px;
+    }
+
     .timeline-outter-container {
         .timeline-innner-container {
             padding: 0 0 50px 86px;
@@ -364,7 +368,7 @@
 
         .timeline-item-content {
             .tag {
-                width: 80px;
+                width: 120px;
                 text-align: center;
                 font-size: 1em;
             }

@@ -137,6 +137,7 @@ body {
         z-index: 1039;
         background: transparent;
     }
+
     @media screen and (max-width: $break-md) {
         .content {
             &.contact,
@@ -164,6 +165,14 @@ body {
             .container {
                 &.home-container {
                     padding-top: 100px;
+
+                    .inner-container {
+                        top: 46%;
+                    }
+                }
+
+                &.blog-container .inner-container {
+                    top: 46%;
                 }
             }
         }

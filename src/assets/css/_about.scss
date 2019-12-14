@@ -229,6 +229,10 @@
     }
 
     @media screen and (max-width: $break-md) {
+        .col-inner-container {
+            top: 46%;
+        }
+        
         .about-cols {
             width: 100%;
 
