@@ -65,7 +65,7 @@ class Home extends Component {
                                 <Carousel.Caption className="home-welcome">
                                     <div className="home-text-container">
                                         <h3>WELCOME TO LLIS LANDING</h3>
-                                        <p>I am Liang Li. <strong>A Mad Coder</strong> and <strong>a Impatient Lego Builder</strong> </p>
+                                        <p>I am <strong>Liang Li</strong>. a<strong> Mad Coder</strong> and a<strong> Impatient Lego Builder</strong> </p>
                                     </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
@@ -96,8 +96,8 @@ class Home extends Component {
                             <Carousel.Item>
                                <Carousel.Caption className="home-contact">
                                    <div className="home-text-container">
-                                       <h3>Bet ur tired of exploring</h3>
-                                       <p>Play contact me if you need anything. </p>
+                                       <h3>Tired of exploring?</h3>
+                                       <p>Why not contacting me directly if you need anything. </p>
                                        <div className="home-btn home_btn velocity-animate">
                                            <NavLink to="/contact" activeClassName="selected" className="game">
                                                <button>contact</button>
