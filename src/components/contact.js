@@ -259,6 +259,7 @@ class Contact extends Component {
                                     onloadCallback={this.recaptchaCallback}
                                     theme="Dark"
                                     dataExpiredCallback={()=>this.setState({recaptcha: false,})}
+                                    hl="en"
                                 />
 
                                 <p id="error_message_js" className="error-message"> </p>
