@@ -65,7 +65,7 @@ class Home extends Component {
                                 <Carousel.Caption className="home-welcome">
                                     <div className="home-text-container">
                                         <h3>WELCOME TO LLIS LANDING</h3>
-                                        <p>I am Liang a.k.a. <strong>the Mad Coder</strong> a.k.a. <strong>the Impatient Lego-Builder</strong> </p>
+                                        <p>I am Liang Li. <strong>A Mad Coder</strong> and <strong>a Impatient Lego Builder</strong> </p>
                                     </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
