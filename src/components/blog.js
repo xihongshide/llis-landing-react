@@ -33,10 +33,10 @@ class Blog extends Component {
                            <p>
                                <b className="tag-color">&lt;div</b> &nbsp;
                                <b className="prop-color">className</b>&#61;
-                               <b className="propstr-color">&quot;llis-bolg-container&quot;</b>&nbsp;
-                               <b className="prop-color">state</b>&#61;
-                               &#x7b;isBuilding&#x7d;
-                               <b className="normal-color">&gt;</b>
+                               <b className="propstr-color">&quot;container&quot;</b>&nbsp;
+                               <b className="prop-color">isBuilding</b>&#61;
+                               &#x7b;props.isBuilding&#x7d;
+                               <b className="tag-color">&gt;</b>
                            </p>
                            <p>
                                <b className="tag-color"> &lt;p&gt;</b>

@@ -23,8 +23,8 @@ const AboutJourneyExpand = (props) => <Timeline />;
 class AboutUnexpand extends Component {
     componentDidMount(){
         Velocity(this.refs.ani1, "transition.shrinkIn", { display: "inline-block", duration: 800, delay: 800});
-        Velocity(this.refs.ani2, "transition.shrinkIn", { display: "inline-block", duration: 800, delay: 1100});
-        Velocity(this.refs.ani3, "transition.shrinkIn", { display: "inline-block", duration: 800, delay: 1400});
+        Velocity(this.refs.ani2, "transition.shrinkIn", { display: "inline-block", duration: 800, delay: 1000});
+        Velocity(this.refs.ani3, "transition.shrinkIn", { display: "inline-block", duration: 800, delay: 1200});
     }
 
     render() {
