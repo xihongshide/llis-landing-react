@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from 'react-router-dom';
+import $ from 'jquery';
 
 class Header extends Component {
     constructor(props) {
@@ -15,14 +16,16 @@ class Header extends Component {
     }
 
     toggle() {
-        console.log("toggle");
+        const isOpen = this.state.isOpen;
+        $("body").toggleClass("overflow-hidden");
+        
         this.setState({
             isOpen: !this.state.isOpen
         });
     }
 
     closeNavbar() {
-        console.log("close");
+        $("body").removeClass("overflow-hidden");
         this.setState({
             isOpen: false
         });

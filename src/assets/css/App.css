@@ -7140,9 +7140,9 @@ Css keyframes End
         top: 0;
         bottom: 0;
         background: #333;
-        -webkit-animation: slideRight 0.8s linear;
-        -o-animation: slideRight 0.8s linear;
-        animation: slideRight 0.8s linear; }
+        -webkit-animation: slideRight 0.45s linear;
+        -o-animation: slideRight 0.45s linear;
+        animation: slideRight 0.45s linear; }
         .navbar .navbar-collapse:before {
           content: '';
           position: fixed;
@@ -7171,25 +7171,25 @@ Css keyframes End
           -ms-transform: translateX(-200px);
           transform: translateX(-200px); }
           .navbar .navbar-nav ul li:nth-child(1) {
-            -webkit-animation: dropDown 0.55s 0.95s ease 1 forwards;
-            -moz-animation: dropDown 0.55s 0.95s ease 1 forwards;
-            animation: dropDown 0.55s 0.95s ease 1 forwards; }
+            -webkit-animation: dropDown 0.35s 0.3s ease 1 forwards;
+            -moz-animation: dropDown 0.35s 0.3s ease 1 forwards;
+            animation: dropDown 0.35s 0.3s ease 1 forwards; }
           .navbar .navbar-nav ul li:nth-child(2) {
-            -webkit-animation: dropDown 0.55s 1.1s ease 1 forwards;
-            -moz-animation: dropDown 0.55s 1.1s ease 1 forwards;
-            animation: dropDown 0.55s 1.1s ease 1 forwards; }
+            -webkit-animation: dropDown 0.35s 0.4s ease 1 forwards;
+            -moz-animation: dropDown 0.35s 0.4s ease 1 forwards;
+            animation: dropDown 0.35s 0.4s ease 1 forwards; }
           .navbar .navbar-nav ul li:nth-child(3) {
-            -webkit-animation: dropDown 0.55s 1.25s ease 1 forwards;
-            -moz-animation: dropDown 0.55s 1.25s ease 1 forwards;
-            animation: dropDown 0.55s 1.25s ease 1 forwards; }
+            -webkit-animation: dropDown 0.35s 0.5s ease 1 forwards;
+            -moz-animation: dropDown 0.35s 0.5s ease 1 forwards;
+            animation: dropDown 0.35s 0.5s ease 1 forwards; }
           .navbar .navbar-nav ul li:nth-child(4) {
-            -webkit-animation: dropDown 0.55s 1.4s ease 1 forwards;
-            -moz-animation: dropDown 0.55s 1.4s ease 1 forwards;
-            animation: dropDown 0.55s 1.4s ease 1 forwards; }
+            -webkit-animation: dropDown 0.35s 0.6s ease 1 forwards;
+            -moz-animation: dropDown 0.35s 0.6s ease 1 forwards;
+            animation: dropDown 0.35s 0.6s ease 1 forwards; }
           .navbar .navbar-nav ul li:nth-child(5) {
-            -webkit-animation: dropDown 0.55s 1.55s ease 1 forwards;
-            -moz-animation: dropDown 0.55s 1.55s ease 1 forwards;
-            animation: dropDown 0.55s 1.55s ease 1 forwards; }
+            -webkit-animation: dropDown 0.35s 0.7s ease 1 forwards;
+            -moz-animation: dropDown 0.35s 0.7s ease 1 forwards;
+            animation: dropDown 0.35s 0.7s ease 1 forwards; }
           .navbar .navbar-nav ul li span {
             display: none;
             font-size: 2em; } }

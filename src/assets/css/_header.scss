@@ -174,9 +174,9 @@
             top: 0;
             bottom: 0;
             background: #333;
-            -webkit-animation: slideRight 0.8s linear;
-            -o-animation: slideRight 0.8s linear;
-            animation: slideRight 0.8s linear;
+            -webkit-animation: slideRight 0.45s linear;
+            -o-animation: slideRight 0.45s linear;
+            animation: slideRight 0.45s linear;
 
             &:before {
                 content: '';
@@ -212,9 +212,9 @@
 
                 @for $i from 1 through 5 {
                     &:nth-child( #{$i} ) {
-                        -webkit-animation: dropDown .55s #{$i * 0.15 + 0.8}s ease 1 forwards;
-                        -moz-animation: dropDown .55s #{$i * 0.15 + 0.8}s ease 1 forwards;
-                        animation: dropDown .55s #{$i * 0.15 + 0.8}s ease 1 forwards;
+                        -webkit-animation: dropDown .35s #{$i * 0.1 + 0.2}s ease 1 forwards;
+                        -moz-animation: dropDown .35s #{$i * 0.1 + 0.2}s ease 1 forwards;
+                        animation: dropDown .35s #{$i * 0.1 + 0.2}s ease 1 forwards;
 
                     }
                 }
