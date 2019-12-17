@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from "firebase/app";
 import "firebase/performance";
+import "firebase/analytics";
 
 require('velocity-animate');
 require('velocity-animate/velocity.ui');
@@ -27,8 +28,12 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+const perf = firebase.performance();
+const gua = firebase.analytics();
+
+export default { perf, gua };
+
 // Initialize Performance Monitoring and get a reference to the service
-var perf = firebase.performance();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

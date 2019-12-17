@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarker, faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { faHandPointUp, faHandPointLeft, faHandPointDown } from "@fortawesome/free-regular-svg-icons";
 
+import gua from "../index";
+
 //Partial Components
 import SocialNetworkList from './partialComponents/socialNetworkList.js';
 
@@ -196,6 +198,7 @@ class Contact extends Component {
                         self.setState(defaultState);
                         window.grecaptcha.reset();
                     }, 1550 ));
+                    gua.logEvent("contact through email.");
                 }, 1550);
             }, function(err) {
                 setTimeout(()=>{
