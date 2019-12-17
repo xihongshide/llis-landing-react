@@ -8991,7 +8991,8 @@ div#home {
 
 @media screen and (max-width: 992px) {
   .contact .contact-info ul li {
-    padding: 15px 5px; }
+    padding: 10px 0;
+    margin-right: 3px; }
   .contact .contact-info ul a {
     font-size: 32px; } }
 
