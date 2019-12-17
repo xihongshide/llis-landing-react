@@ -9108,6 +9108,14 @@ div.content.skills .skills-hexagon-innner {
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4) {
       margin-left: 2%;
       margin-right: 2%; }
+      div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4) button:hover {
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(102, 89, 92, 0.3)), to(rgba(102, 89, 92, 0.3))), url("/images/avatar.jpg") no-repeat center;
+        background: -webkit-linear-gradient(rgba(102, 89, 92, 0.3), rgba(102, 89, 92, 0.3)), url("/images/avatar.jpg") no-repeat center;
+        background: -o-linear-gradient(rgba(102, 89, 92, 0.3), rgba(102, 89, 92, 0.3)), url("/images/avatar.jpg") no-repeat center;
+        background: linear-gradient(rgba(102, 89, 92, 0.3), rgba(102, 89, 92, 0.3)), url("/images/avatar.jpg") no-repeat center;
+        background-size: cover; }
+        div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+4) button:hover svg {
+          display: none; }
     div.content.skills .skills-hexagon-innner .skill-hexagon:nth-child(5n+3) {
       margin-left: 1%;
       clear: left; }

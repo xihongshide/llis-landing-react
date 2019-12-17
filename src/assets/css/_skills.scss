@@ -59,6 +59,17 @@ div.content.skills{
 		    &:nth-child(5n+4){
 		        margin-left: 2%;
 		        margin-right: 2%;
+
+				button:hover {
+					background:   linear-gradient(
+				      rgba(102, 89, 92, 0.3),
+				      rgba(102, 89, 92, 0.3),
+    	  			),url("/images/avatar.jpg") no-repeat center;
+					background-size: cover;
+					svg {
+						display: none;
+					}
+				}
 		    }
 
 		    &:nth-child(5n+3) {
