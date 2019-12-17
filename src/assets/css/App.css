@@ -7134,12 +7134,15 @@ Css keyframes End
       .navbar .navbar-collapse {
         position: fixed;
         text-align: right;
-        width: 75%;
+        width: 50%;
         height: 100%;
         left: 0;
         top: 0;
         bottom: 0;
-        background: #333;
+        background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.4)), color-stop(75%, rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.8)));
+        background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.8) 100%);
+        background: -o-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.8) 100%);
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.8) 100%);
         -webkit-animation: slideRight 0.45s linear;
         -o-animation: slideRight 0.45s linear;
         animation: slideRight 0.45s linear; }

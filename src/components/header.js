@@ -18,7 +18,7 @@ class Header extends Component {
     toggle() {
         const isOpen = this.state.isOpen;
         $("body").toggleClass("overflow-hidden");
-        
+
         this.setState({
             isOpen: !this.state.isOpen
         });
@@ -53,20 +53,20 @@ class Header extends Component {
                         <Nav className="mr-auto nav-list">
                             <div>
                                 <ul>
-                                    <li onClick={this.closeNavbar}>
-                                        <NavLink exact to="/" activeClassName="selected" className="home">Home</NavLink>
+                                    <li>
+                                        <NavLink exact to="/" activeClassName="selected" className="home" onClick={this.closeNavbar}>Home</NavLink>
                                     </li>
-                                    <li onClick={this.closeNavbar}>
-                                        <span>/</span><NavLink to="/about" activeClassName="selected" className="about">About</NavLink>
+                                    <li>
+                                        <span>/</span><NavLink to="/about" activeClassName="selected" className="about" onClick={this.closeNavbar}>About</NavLink>
                                     </li>
-                                    <li onClick={this.closeNavbar}>
-                                        <span>/</span><NavLink to="/skills" activeClassName="selected" className="skills">Skills</NavLink>
+                                    <li>
+                                        <span>/</span><NavLink to="/skills" activeClassName="selected" className="skills" onClick={this.closeNavbar}>Skills</NavLink>
                                     </li>
-                                    <li onClick={this.closeNavbar}>
-                                        <span>/</span><NavLink to="/contact" activeClassName="selected" className="contact">Contact</NavLink>
+                                    <li>
+                                        <span>/</span><NavLink to="/contact" activeClassName="selected" className="contact" onClick={this.closeNavbar}>Contact</NavLink>
                                     </li>
-                                    <li onClick={this.closeNavbar}>
-                                        <span>/</span><NavLink to="/blog" activeClassName="selected" className="blog">Blog</NavLink>
+                                    <li>
+                                        <span>/</span><NavLink to="/blog" activeClassName="selected" className="blog" onClick={this.closeNavbar}>Blog</NavLink>
                                     </li>
                                 </ul>
                             </div>
