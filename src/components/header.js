@@ -16,9 +16,7 @@ class Header extends Component {
     }
 
     toggle() {
-        const isOpen = this.state.isOpen;
         $("body").toggleClass("overflow-hidden");
-
         this.setState({
             isOpen: !this.state.isOpen
         });
