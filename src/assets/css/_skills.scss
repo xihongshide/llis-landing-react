@@ -24,11 +24,14 @@ div.content.skills{
 		.skill-hexagon {
 			position: relative;
 			list-style-type: none;
-			float: left;
 			overflow: hidden;
 			visibility: hidden;
+			float: left;
 			outline: 2px solid transparent;
 			-webkit-transform: rotate(-60deg) skewY(30deg);
+			-moz-transform: rotate(-60deg) skewY(30deg);
+			-ms-transform: rotate(-60deg) skewY(30deg);
+			-o-transform: rotate(-60deg) skewY(30deg);
 			-ms-transform: rotate(-60deg) skewY(30deg);
 			transform: rotate(-60deg) skewY(30deg);
 			width: 31.3333333333%; /* = (100-3) / 3    or use 'calc()' */
@@ -39,16 +42,20 @@ div.content.skills{
 		    &:nth-child(5n+2),
 		    &:nth-child(5n+3) {
 		        -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-		            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
-		                transform: translateX(50%) rotate(-60deg) skewY(30deg);
+				-moz-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+	            -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+				-o-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                transform: translateX(50%) rotate(-60deg) skewY(30deg);
 		    }
 
 		    &:nth-child(5n+3),
 		    &:nth-child(5n+4),
 		    &:nth-child(5n+5) {
 		        -webkit-transform: translateX(0%) rotate(-60deg) skewY(30deg);
-		            -ms-transform: translateX(0%) rotate(-60deg) skewY(30deg);
-		                transform: translateX(0%) rotate(-60deg) skewY(30deg);
+				-moz-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+	            -ms-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+				-o-transform: translateX(0%) rotate(-60deg) skewY(30deg);
+                transform: translateX(0%) rotate(-60deg) skewY(30deg);
 		    }
 
 			&:nth-child(5n+1){
@@ -87,9 +94,12 @@ div.content.skills{
 				text-align: center;
 				overflow: hidden;
 				-webkit-transform: skewY(-30deg) rotate(60deg);
+				-moz-transform: skewY(-30deg) rotate(60deg);
 				-ms-transform: skewY(-30deg) rotate(60deg);
+				-o-transform: skewY(-30deg) rotate(60deg);
 				transform: skewY(-30deg) rotate(60deg);
 				cursor: pointer;
+				overflow: hidden;
 				background: $main-yellow;
 				transition: background 300ms linear;
 

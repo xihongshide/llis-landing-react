@@ -37,7 +37,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Experiences",
-                description: "HTML5, Twig, SCSS/CSS, Reasponsive Design, WCAG, Bootstrap, Animations"
+                description: "HTML5, Twig, SCSS/CSS, Reasponsive Design, WCAG, Bootstrap, Responsive Design, Cross Browser Testing"
             }
         ],
     },
@@ -59,7 +59,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Tools",
-                description: "Git, Jira, Webpack, Bitbucket, npm"
+                description: "Git, Webpack, Bitbucket, npm"
             }
         ],
     },
@@ -99,7 +99,7 @@ class HoverArea extends Component {
     componentDidMount(){
         let elements = shuffle($(".skill-hexagon"));
         $(elements).each((i, e) => {
-            Velocity($(e), {opacity: 1}, {delay: 1300+200*i, duration: 1300});
+            Velocity($(e), {opacity: 1}, {delay: 500+200*i, duration: 800});
         });
     }
 
