@@ -97,7 +97,7 @@ const SkillConfig = [
 
 class HoverArea extends Component {
     componentDidMount(){
-        let elements = shuffle($(".skill-icon-btn"));
+        let elements = shuffle($(".skill-hexagon"));
         $(elements).each((i, e) => {
             Velocity($(e), {opacity: 1}, {delay: 1300+200*i, duration: 1300});
         });
@@ -110,9 +110,9 @@ class HoverArea extends Component {
                     {
                         SkillConfig.map((value, index) => {
                             return (
-                                <div className="skill-hexagon" key={index}>
+                                <div className="skill-hexagon velocity-animate" key={index}>
                                     <button
-                                        className="skill-icon-btn velocity-animate"
+                                        className="skill-icon-btn"
                                         onClick={this.props.handleHover}
                                         onMouseEnter={this.props.handleHover}
                                         dataindex={index}
