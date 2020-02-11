@@ -65,7 +65,7 @@ class Home extends Component {
                                 <Carousel.Caption className="home-welcome">
                                     <div className="home-text-container">
                                         <h3>WELCOME TO LLIS LANDING</h3>
-                                        <p>I am <strong>Liang Li</strong>. a<strong> Mad Coder</strong> and an<strong> Impatient Lego Builder</strong> </p>
+                                        <p>I am <strong>Liang</strong>. a<strong> Mad Programmer</strong> and an<strong> Impatient Lego Builder</strong> </p>
                                     </div>
                                 </Carousel.Caption>
                             </Carousel.Item>
@@ -73,8 +73,7 @@ class Home extends Component {
                             <Carousel.Item>
                                 <Carousel.Caption className="home-work">
                                     <div className="home-text-container">
-                                        <h3>what I do for a living?</h3>
-                                        <p>In one word, coding.</p>
+                                        <h3>Looking for a Web Developer & Programmer?</h3>
                                         <div className="home-btn home_btn velocity-animate">
                                             <NavLink to="/skills" activeClassName="selected" className="skills">
                                                 <button>explore more</button>
@@ -97,7 +96,7 @@ class Home extends Component {
                                <Carousel.Caption className="home-contact">
                                    <div className="home-text-container">
                                        <h3>Tired of exploring?</h3>
-                                       <p>Why not contacting me directly if you need anything. </p>
+                                       <p>Contact me if you need anything. </p>
                                        <div className="home-btn home_btn velocity-animate">
                                            <NavLink to="/contact" activeClassName="selected" className="game">
                                                <button>contact</button>

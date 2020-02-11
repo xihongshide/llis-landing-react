@@ -7,7 +7,7 @@ import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 const SocialNetworkList = () => (
     <ul className="social-network-list">
         <li>
-            <a href="https://github.com/xihongshide/MY.git" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
+            <a href="https://github.com/xihongshide" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
         </li>
         <li>
             <a href="https://www.linkedin.com/in/leon-liang-li" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faLinkedinIn } /></a>

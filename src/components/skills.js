@@ -15,7 +15,7 @@ const SkillConfig = [
         details: [
             {
                 name: "IELTS tutoring",
-                description: "4.5 Years of IELTS Test tuoring experience"
+                description: "4.5 Years of IELTS Test tutoring experience"
             },
         ],
     },
@@ -26,7 +26,7 @@ const SkillConfig = [
         details: [
             {
                 name: "JavaScript",
-                description: "Jquery, ReactJs, Typescript, ES6"
+                description: "Jquery, ReactJs, Typescript, ES6, TypeScript"
             }
         ]
     },
@@ -89,7 +89,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Experiences",
-                description: "PHP/Zend, Python/Django, MySQL, NodeJs/Express"
+                description: "PHP/Zend, MySQL, NodeJs/Express"
             }
         ],
     },
@@ -110,9 +110,9 @@ class HoverArea extends Component {
                     {
                         SkillConfig.map((value, index) => {
                             return (
-                                <div className="skill-hexagon velocity-animate" key={index}>
+                                <div className="skill-hexagon" key={index}>
                                     <button
-                                        className="skill-icon-btn"
+                                        className="skill-icon-btn velocity-animate"
                                         onClick={this.props.handleHover}
                                         onMouseEnter={this.props.handleHover}
                                         dataindex={index}
