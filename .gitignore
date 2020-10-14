@@ -69,7 +69,6 @@ typings/
 *.idea
 *.firebase
 
-firebase.json
 .firebaserc
 
 build
