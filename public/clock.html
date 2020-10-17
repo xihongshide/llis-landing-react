@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/images/logo512.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+            name="madlli"
+            content="Liang Li's Personal Webpage"
+    />
+    <script   src="https://code.jquery.com/jquery-3.5.1.slim.min.js"   integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="   crossorigin="anonymous"></script>
+    <title>Mad lli</title>
+</head>
+<body>
+    <div class="content clock" style="background: #FFF">
+        <div class="clock-container">
+            <h1 id="date"></h1>
+            <h2 id="clock"></h2>
+        </div>
+    </div>
+    <script>
+
+
+        $( document ).ready(function() {
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var mon = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            function showClock() {
+                var d = new Date();
+                var day = days[d.getDay() -1].toString().substring(0,3);
+                var date = d.getDate()	+ " " + mon[d.getMonth() - 1].toString().substring(0,3);
+                var h = d.getHours();
+                var m = d.getMinutes().toString().length === 1 ? ("0" + d.getMinutes()) : d.getMinutes();
+                var session = h >= 12? "PM" : "AM";
+
+                if(h == 0) {
+                    h = 12
+                }else {
+                    h = h > 12 ? h-12 : h;
+                }
+
+                $("#clock").html(h + ":" + m + " " + session);
+                $("#date").html(day + " " + date);
+                setTimeout(showClock, 1000 );
+            }
+
+            showClock()
+        });
+    </script>
+
+    <style>
+        .clock {
+            height: 100vh;
+            position: relative;
+        }
+
+        .clock-container {
+            font-size: 48px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'roboto', sans-serif;
+            font-size: 72px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'roboto', sans-serif;
+            font-size: 86px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 0px;
+        }
+    </style>
+</body>
+</html>
