@@ -9194,7 +9194,12 @@ div.content.skills .skills-sets-container {
   div.content.skills .skills-sets-container h1 {
     font-size: 3em;
     font-weight: 600;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0; }
+  div.content.skills .skills-sets-container small {
+    font-size: 12px;
+    margin-bottom: 15px; }
   div.content.skills .skills-sets-container h2 {
     font-size: 2em; }
   div.content.skills .skills-sets-container .skill-experience b {

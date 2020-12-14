@@ -110,9 +110,9 @@ class HoverArea extends Component {
                     {
                         SkillConfig.map((value, index) => {
                             return (
-                                <div className="skill-hexagon" key={index}>
+                                <div className="skill-hexagon velocity-animate" key={index}>
                                     <button
-                                        className="skill-icon-btn velocity-animate"
+                                        className="skill-icon-btn"
                                         onClick={this.props.handleHover}
                                         onMouseEnter={this.props.handleHover}
                                         dataindex={index}
@@ -131,8 +131,10 @@ class HoverArea extends Component {
 
 class SkillsDetails extends Component {
     componentDidMount(){
-        Velocity($("#skills-sets-header"), "transition.slideRightBigIn", {opacity: 1, delay: 1500, duration: 1000});
+        Velocity($("#skills-sets-header"), "transition.slideRightBigIn", {opacity: 1, delay: 1400, duration: 1000});
+        Velocity($("#skills-sets-sub"), "transition.slideRightBigIn", {opacity: 1, delay: 1700, duration: 1000});
     }
+
     render() {
         const props = this.props;
         let activeIndex = props.activeState.activeIndex;
@@ -140,13 +142,13 @@ class SkillsDetails extends Component {
         let skillSet = SkillConfig[activeIndex];
 
         if (!activeIndex || !active){
-            activeIndex = 0;
             active = false;
         }
 
         return (
             <div className="skills-sets-container col-md-5 col-sm-12">
                 <h1 id="skills-sets-header" className="velocity-animate">Skills</h1>
+                <small id="skills-sets-sub" className="velocity-animate">Hover hex to explore</small>
                 <VelocityTransitionGroup
                     enter={{animation: "transition.slideRightBigIn", stagger: "300"}}
                     leave={{animation: "transition.slideRightBigOut", duration: "500"}}
