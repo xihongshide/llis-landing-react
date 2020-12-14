@@ -177,7 +177,7 @@ class Contact extends Component {
         setTimeout(()=>{$(button).addClass('on-click');}, 450);
 
         let contactFromData= {
-            service_id: 'llislanding',
+            service_id: 'llis_landing',
             template_id: 'llis_landing',
             template_params: {
                 name: this.state.name.value,
@@ -186,7 +186,7 @@ class Contact extends Component {
             }
         };
 
-        emailjs.send(contactFromData.service_id, contactFromData.template_id, contactFromData.template_params, 'user_F8QEhEnKQp2iFas9nJ735')
+        emailjs.send(contactFromData.service_id, contactFromData.template_id, contactFromData.template_params, 'user_zzBvLXwJRsvU8hv9aGWQX')
             .then(function(response) {
                 setTimeout(()=>{
                     $(button).removeClass("on-click");
