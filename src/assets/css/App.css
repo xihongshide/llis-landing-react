@@ -6774,7 +6774,7 @@ Css keyframes Start
   85% {
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 70%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 70%);
-    color: #ffc300; }
+    color: #DAA520; }
   90% {
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
@@ -6799,7 +6799,7 @@ Css keyframes Start
   85% {
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 70%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 70%);
-    color: #ffc300; }
+    color: #DAA520; }
   90% {
     -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
@@ -6831,7 +6831,7 @@ Css keyframes Start
 
 @-webkit-keyframes changingColor {
   0% {
-    background-color: #ffc300; }
+    background-color: #DAA520; }
   25% {
     background-color: #78a5a3; }
   50% {
@@ -6841,7 +6841,7 @@ Css keyframes Start
 
 @keyframes changingColor {
   0% {
-    background-color: #ffc300; }
+    background-color: #DAA520; }
   25% {
     background-color: #78a5a3; }
   50% {
@@ -7117,11 +7117,11 @@ Css keyframes End
           opacity: 0.8;
           color: #444c5c; }
         .navbar .navbar-nav ul li:nth-of-type(4) a:before {
-          background: #ffc300;
+          background: #DAA520;
           height: 0.18em; }
         .navbar .navbar-nav ul li:nth-of-type(4) a:hover {
           opacity: 0.8;
-          color: #ffc300; }
+          color: #DAA520; }
         .navbar .navbar-nav ul li:nth-of-type(5) a:before {
           background: #ce5a57;
           height: 0.18em; }
@@ -7653,7 +7653,7 @@ div#home {
           left: 0px;
           -webkit-animation-delay: 0s;
           animation-delay: 0s;
-          background: #ffc300; }
+          background: #DAA520; }
         .about .about-cols .about-col.hobby-col .hobby-heart .heart-piece-1 {
           left: 16px;
           -webkit-animation-delay: 0.15s;
@@ -7693,7 +7693,7 @@ div#home {
           left: 128px;
           -webkit-animation-delay: 1.2s;
           animation-delay: 1.2s;
-          background: #ffc300; }
+          background: #DAA520; }
 
 @-webkit-keyframes piece-4 {
   0% {
@@ -8156,7 +8156,7 @@ div#home {
         margin: 0 30px;
         -webkit-animation: slideLeft 2s linear infinite;
         animation: slideLeft 2s linear infinite;
-        color: #ffc300; }
+        color: #DAA520; }
       .about .timeline-outter-container .timeline-item-content a {
         color: #fff;
         text-decoration: none;
@@ -8342,23 +8342,23 @@ div#home {
         .about .about-work-container .work-barin svg.brain-svg #left_brain_svg {
           cursor: pointer; }
           .about .about-work-container .work-barin svg.brain-svg #left_brain_svg:hover {
-            fill: #ffc300; }
+            fill: #DAA520; }
         .about .about-work-container .work-barin svg.brain-svg #right_brain_svg path {
           cursor: pointer; }
           .about .about-work-container .work-barin svg.brain-svg #right_brain_svg path:nth-child(2):hover {
             fill: #ce5a57; }
           .about .about-work-container .work-barin svg.brain-svg #right_brain_svg path:nth-child(3):hover {
-            fill: #ffc300; }
+            fill: #DAA520; }
           .about .about-work-container .work-barin svg.brain-svg #right_brain_svg path:nth-child(4):hover {
             fill: #d8d5c4; }
           .about .about-work-container .work-barin svg.brain-svg #right_brain_svg path:nth-child(6):hover {
             fill: #9c76a2; }
         .about .about-work-container .work-barin svg.brain-svg #left_brain_svg.open {
-          fill: #ffc300; }
+          fill: #DAA520; }
         .about .about-work-container .work-barin svg.brain-svg #right_brain_svg.open path:nth-child(2) {
           fill: #ce5a57; }
         .about .about-work-container .work-barin svg.brain-svg #right_brain_svg.open path:nth-child(3) {
-          fill: #ffc300; }
+          fill: #DAA520; }
         .about .about-work-container .work-barin svg.brain-svg #right_brain_svg.open path:nth-child(4) {
           fill: #d8d5c4; }
         .about .about-work-container .work-barin svg.brain-svg #right_brain_svg.open path:nth-child(6) {
@@ -8371,7 +8371,7 @@ div#home {
           .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg:hover {
             opacity: 0.6 !important; }
           .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.active, .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.open {
-            fill: #ffc300; }
+            fill: #DAA520; }
             .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.active:hover, .about .about-work-container .work-barin svg.brain-svg .bot_brain_svg.open:hover {
               opacity: 0.6 !important; }
     .about .about-work-container .brain-close-container {
@@ -8402,7 +8402,7 @@ div#home {
         .about .about-work-container .brain-close-container #brain-close:before {
           content: '>>>>>>>>>>>>';
           font-weight: 700;
-          color: #ffc300;
+          color: #DAA520;
           left: 0;
           -webkit-transform: translate(-200%, -50%);
           -ms-transform: translate(-200%, -50%);
@@ -8507,7 +8507,7 @@ div#home {
         -ms-transform: skewX(-11deg);
         transform: skewX(-11deg);
         left: -100%;
-        background: #ffc300;
+        background: #DAA520;
         z-index: 1;
         pointer-events: none; }
       .about .about-hobby-container .hobby-slide:last-of-type:after {
@@ -8523,7 +8523,7 @@ div#home {
         z-index: 1;
         pointer-events: none; }
       .about .about-hobby-container .hobby-slide:nth-child(1) {
-        background: #ffc300; }
+        background: #DAA520; }
       .about .about-hobby-container .hobby-slide:nth-child(2) {
         background: #9c76a2; }
       .about .about-hobby-container .hobby-slide:nth-child(3) {
@@ -8825,14 +8825,14 @@ div#home {
     .contact .card .submit-btn .icon {
       display: none; }
     .contact .card .submit-btn:hover {
-      color: #ffc300;
+      color: #DAA520;
       background: #ffffff; }
     .contact .card .submit-btn:active {
       letter-spacing: 3px;
       -webkit-transition: all 0.85s ease;
       -o-transition: all 0.85s ease;
       transition: all 0.85s ease;
-      color: #ffc300;
+      color: #DAA520;
       background: #ffffff; }
     .contact .card .submit-btn:after {
       content: "Sent";
@@ -8853,7 +8853,7 @@ div#home {
     .contact .card .submit-btn.validate {
       font-size: 15px;
       font-weight: 700;
-      color: #ffc300;
+      color: #DAA520;
       background: #ffffff; }
       .contact .card .submit-btn.validate:after {
         content: "Sent"; }
@@ -9138,7 +9138,7 @@ div.content.skills .skills-hexagon-innner {
       transform: skewY(-30deg) rotate(60deg);
       cursor: pointer;
       overflow: hidden;
-      background: #ffc300;
+      background: #DAA520;
       -webkit-transition: background 300ms linear;
       -o-transition: background 300ms linear;
       transition: background 300ms linear; }
@@ -9440,7 +9440,7 @@ body {
       background-color: #444c5c;
       color: #ffffff; }
     .app .content.contact {
-      background-color: #ffc300;
+      background-color: #DAA520;
       color: #ffffff; }
     .app .content.blog {
       background-color: #ce5a57;
