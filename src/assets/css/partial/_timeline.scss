@@ -98,7 +98,7 @@
 
 .timeline-outter-container {
    	max-height: 98vh;
-	padding-top: 2vh;
+	padding-top: 4vh;
 	position: relative;
 	z-index: 20;
 	width: 100%;
@@ -171,14 +171,14 @@
 			width: 4px;
 			height: 95%;
 			z-index: 30;
-			top: 2.5%;
+			top: 4.5%;
 		}
 	}
 
 	.timeline-item {
 		display: flex;
 		position: relative;
-		margin: 30px 0;
+		margin: 25px 0;
 		width: 100%;
 		align-self: flex-end;
 		justify-content: flex-start;
@@ -193,8 +193,7 @@
         border-radius: 5px;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        padding: 0;
+        padding: 5px 200px 0 0;
         position: relative;
         width: 100%;
         max-width: 700px;
@@ -203,7 +202,6 @@
         font-size: 12px;
         color: #fff;
         text-align: left;
-        padding-right: 200px;
         min-height: 120px;
 
         small {
