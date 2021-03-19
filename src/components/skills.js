@@ -15,7 +15,7 @@ const SkillConfig = [
         details: [
             {
                 name: "IELTS tutoring",
-                description: "4.5 Years of IELTS Test tutoring experience"
+                description: "5.5 Years of IELTS Test tutoring experience"
             },
         ],
     },
@@ -26,7 +26,7 @@ const SkillConfig = [
         details: [
             {
                 name: "JavaScript",
-                description: "Jquery, ReactJs, Typescript, ES6, TypeScript"
+                description: "Jquery, React, Typescript, ES6"
             }
         ]
     },
@@ -37,7 +37,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Experiences",
-                description: "HTML5, Twig, SCSS/CSS, Reasponsive Design, WCAG, Bootstrap, Responsive Design, Cross Browser Testing"
+                description: "HTML5, Twig, SCSS/CSS, WCAG, Bootstrap, Responsive Design, Cross Browser Testing, SEO"
             }
         ],
     },
@@ -59,7 +59,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Tools",
-                description: "Git, Webpack, Bitbucket, npm"
+                description: "Git, Webpack, Bitbucket, npm, JetBrains IDE, Bitbucket, Postman, Firebase, JIRA, Basecamp"
             }
         ],
     },
@@ -89,7 +89,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Experiences",
-                description: "PHP/Zend, MySQL, NodeJs/Express"
+                description: "PHP/Zend, MySQL, NodeJs/Express, Python/Django, RESTful API"
             }
         ],
     },
