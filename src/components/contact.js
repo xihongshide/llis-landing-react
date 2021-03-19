@@ -275,7 +275,7 @@ class Contact extends Component {
                             <p>Ues the form to the <b>left<FontAwesomeIcon icon={faHandPointLeft} /></b> or my details <b>below<FontAwesomeIcon icon={faHandPointDown} /></b> and I'll get back to you ASAP.</p>
                             <p>Ues the contact form <b>above<FontAwesomeIcon icon={faHandPointUp} /></b> or my details <b>below<FontAwesomeIcon icon={faHandPointDown} /></b> and I'll get back to you ASAP.</p>
                             <SocialNetworkList />
-                            <p><FontAwesomeIcon icon={ faMapMarker } /> Ottawa | ON.</p>
+                            <p><FontAwesomeIcon icon={ faMapMarker } /> Vancouver | BC.</p>
                         </ContactInfo>
                     </div>
                 </div>
