@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import Velocity from 'velocity-animate';
 import $ from "jquery";
 
-//Partial Components
+// Partial Components
 import Timeline from './partialComponents/timeline.js';
 import Work from './partialComponents/work.js';
 import HobbySlides from './partialComponents/hobbySlides.js';
 
 import AniHeart from './partialComponents/aniHeart.js';
 
-//Unexpanded  Component
+// Unexpanded  Component
 const AboutHobby = (props) => <div className="hobby-col about-col">{props.children}</div>;
 const AboutWork = (props) => <div className="work-col about-col">{props.children}</div>;
 const AboutJourney = (props) => <div className="journey-col about-col">{props.children}</div>;
 
-//expanded Components
+// Expanded Components
 const AboutHobbyExpand = (props) => <HobbySlides />;
 const AboutWorkExpand = (props) => <Work />;
 const AboutJourneyExpand = (props) => <Timeline />;

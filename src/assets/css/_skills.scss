@@ -183,6 +183,7 @@ div.content.skills{
 		text-align: left;
 		padding-top: 80px;
 		padding-left: 50px;
+		overflow-x: hidden;
 
 		h1 {
 			font-size: 3em;
@@ -210,6 +211,10 @@ div.content.skills{
 				font-size: 1em;
 			}
 		}
+
+		>div {
+			overflow-x: hidden;
+		}
 	}
 
 	@media screen and (max-width: 767px) {
@@ -228,10 +233,14 @@ div.content.skills{
 			}
 		}
 
+		.skills-hexagon-container {
+			height: fit-content;
+		}
+
 		.skills-sets-container {
 			padding: 20px 15px 0;
 			text-align: center;
-			min-height: 200px;
+			height: 300px;
 
 			h1 {
 				font-size: 2.5em;

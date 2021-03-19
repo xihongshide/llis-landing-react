@@ -142,11 +142,9 @@ body {
         .content {
             &.contact,
             &.skills {
-                height: 100%;
-                min-height: 750px;
+                height: 100vh;
 
-                .container.contact-container,
-                .container.skills-container {
+                .container.contact-container {
                     .inner-container {
                         position: relative;
                         transform: translate(0 ,0);

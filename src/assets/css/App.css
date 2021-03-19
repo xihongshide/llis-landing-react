@@ -7572,10 +7572,8 @@ div#home {
           -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
           font-size: 1em;
-          -webkit-transform: translate(-50%, 280%);
-          -ms-transform: translate(-50%, 280%);
-          transform: translate(-50%, 280%);
-          top: 65%; }
+          top: 90%;
+          opacity: 0; }
       .about .about-cols .about-col .about-icon {
         position: relative;
         display: block;
@@ -7588,16 +7586,11 @@ div#home {
         -o-transition: all 1s ease;
         transition: all 1s ease; }
         .about .about-cols .about-col:hover button span, .about .about-cols .about-col:focus button span, .about .about-cols .about-col:active button span {
-          -webkit-transform: translate(-50%, 10%);
-          -ms-transform: translate(-50%, 10%);
-          transform: translate(-50%, 10%);
           opacity: 1;
           font-size: 3em;
-          -webkit-transition: opacity 1s ease-out, font-size 1s ease-out, -webkit-transform 1s ease-in-out;
-          transition: opacity 1s ease-out, font-size 1s ease-out, -webkit-transform 1s ease-in-out;
-          -o-transition: transform 1s ease-in-out, opacity 1s ease-out, font-size 1s ease-out;
-          transition: transform 1s ease-in-out, opacity 1s ease-out, font-size 1s ease-out;
-          transition: transform 1s ease-in-out, opacity 1s ease-out, font-size 1s ease-out, -webkit-transform 1s ease-in-out; }
+          -webkit-transition: all 1s ease-in-out;
+          -o-transition: all 1s ease-in-out;
+          transition: all 1s ease-in-out; }
       .about .about-cols .about-col:hover .about-icon, .about .about-cols .about-col:focus .about-icon, .about .about-cols .about-col:active .about-icon {
         pointer-events: none;
         opacity: 1;
@@ -8658,16 +8651,19 @@ div#home {
     opacity: 0; } }
   @media screen and (max-width: 767px) {
     .about .col-inner-container {
-      top: 46%; }
+      top: 47%; }
     .about .about-cols {
       width: 100%; }
       .about .about-cols .about-col {
         height: auto;
-        margin: 25px auto; }
+        margin: 25px auto;
+        padding: 10px 0; }
         .about .about-cols .about-col button {
-          opacity: 1 !important; }
+          opacity: 1 !important;
+          font-size: 1.2em; }
           .about .about-cols .about-col button span {
-            top: 0%;
+            opacity: 1;
+            top: 105%;
             pointer-events: none; } }
   @media screen and (max-width: 380px) {
     .about .about-cols .about-col {
@@ -9186,7 +9182,8 @@ div.content.skills .skills-hexagon-innner {
 div.content.skills .skills-sets-container {
   text-align: left;
   padding-top: 80px;
-  padding-left: 50px; }
+  padding-left: 50px;
+  overflow-x: hidden; }
   div.content.skills .skills-sets-container h1 {
     font-size: 3em;
     font-weight: 600;
@@ -9202,6 +9199,8 @@ div.content.skills .skills-sets-container {
     font-size: 1.1em; }
   div.content.skills .skills-sets-container .skill-experience span {
     font-size: 1em; }
+  div.content.skills .skills-sets-container > div {
+    overflow-x: hidden; }
 
 @media screen and (max-width: 767px) {
   div.content.skills {
@@ -9211,10 +9210,14 @@ div.content.skills .skills-sets-container {
       div.content.skills .skills-hexagon-innner .skill-hexagon button span svg {
         width: 35px;
         height: 35px; }
+    div.content.skills .skills-hexagon-container {
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content; }
     div.content.skills .skills-sets-container {
       padding: 20px 15px 0;
       text-align: center;
-      min-height: 200px; }
+      height: 300px; }
       div.content.skills .skills-sets-container h1 {
         font-size: 2.5em;
         height: 50px; } }
@@ -9482,11 +9485,8 @@ body {
     background: transparent; }
   @media screen and (max-width: 767px) {
     .app .content.contact, .app .content.skills {
-      height: 100%;
-      min-height: 750px; }
-      .app .content.contact .container.contact-container .inner-container,
-      .app .content.contact .container.skills-container .inner-container, .app .content.skills .container.contact-container .inner-container,
-      .app .content.skills .container.skills-container .inner-container {
+      height: 100vh; }
+      .app .content.contact .container.contact-container .inner-container, .app .content.skills .container.contact-container .inner-container {
         position: relative;
         -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);

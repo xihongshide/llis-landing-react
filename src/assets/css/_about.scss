@@ -54,8 +54,8 @@
                     display: block;
                     @include centerer;
                     font-size: 1em;
-                    transform: translate(-50%, 280%);
-                    top: 65%;
+                    top: 90%;
+                    opacity: 0;
                 }
             }
 
@@ -75,10 +75,9 @@
                     transition: all 1s ease;
 
                     span {
-                        transform: translate(-50%, 10%);
                         opacity: 1;
                         font-size: 3em;
-                        transition: transform 1s ease-in-out, opacity 1s ease-out, font-size 1s ease-out;
+                        transition: all 1s ease-in-out;
                     }
                 }
 
@@ -230,7 +229,7 @@
 
     @media screen and (max-width: $break-md) {
         .col-inner-container {
-            top: 46%;
+            top: 47%;
         }
         
         .about-cols {
@@ -239,10 +238,13 @@
             .about-col {
                 height: auto;
                 margin: 25px auto;
+                padding: 10px 0;
                 button {
                     opacity: 1 !important;
+                    font-size: 1.2em;
                     span {
-                        top: 0%;
+                        opacity: 1;
+                        top: 105%;
                         pointer-events: none;
                     }
                 }
