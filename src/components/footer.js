@@ -11,7 +11,7 @@ const FooterInfo = (props) => (
     <div>
         <SocialNetworkList />
         <button onClick={ props.toggleInfo }><FontAwesomeIcon icon={ faChevronDown } /></button>
-        <p><span>&copy; 2019</span> Made by LLI with <FontAwesomeIcon icon={ faHeart } /> and <FontAwesomeIcon icon={ faCoffee } /></p>
+        <p><span>&copy; 2021</span> Made by LLI with <FontAwesomeIcon icon={ faHeart } /> and <FontAwesomeIcon icon={ faCoffee } /></p>
     </div>
 );
 
