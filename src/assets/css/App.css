@@ -9296,6 +9296,18 @@ div.content.skills .skills-sets-container {
   50% {
     opacity: 0; } }
 
+div.content.wedding {
+  position: relative; }
+  div.content.wedding .wedding-wrap {
+    max-width: 1280px;
+    max-height: 720px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
 div.wechat-modal {
   background: transparent; }
   div.wechat-modal .modal-content,

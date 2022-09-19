@@ -9,6 +9,7 @@ import Skills from './skills.js';
 import Blog from './blog.js';
 import Contact from './contact.js';
 import ClockDina from './clockDina.js';
+import Wedding from './wedding.js';
 
 class Content extends Component {
     render() {
@@ -28,6 +29,9 @@ class Content extends Component {
                 </Route>
                 <Route path="/clock-dina">
                     <ClockDina />
+                </Route>
+                <Route path="/wedding">
+                    <Wedding />
                 </Route>
                 <Route path="/">
                     <Home />
