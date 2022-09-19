@@ -46,7 +46,7 @@
     "react-player": "^2.11.0",
     "react-recaptcha": "^2.3.10",
     "react-router-dom": "^5.1.1",
-    "react-scripts": "^3.3.0",
+    "react-scripts": "^5.0.1",
     "redux": "^4.0.4",
     "velocity-react": "^1.4.3",
     "velocity-transition-group": "^1.2.2"
