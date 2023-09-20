@@ -37,7 +37,6 @@
     "bootstrap": "^4.3.1",
     "emailjs": "^2.2.0",
     "emailjs-com": "^2.4.1",
-    "firebase": "^7.5.2",
     "jquery": "^3.4.1",
     "npm-watch": "^0.6.0",
     "react": "^16.9.0",
