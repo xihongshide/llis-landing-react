@@ -1,0 +1,58 @@
+@mixin input {
+    display: block;
+    width: 100%;
+    border: 2px solid $main-white;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: transparent;
+    color: $main-white;
+    opacity: 0.6;
+    transition: all 0.3s linear;
+}
+
+@mixin input-focus {
+    border: 2px solid $main-white;
+    font-weight: 500;
+    opacity: 1;
+}
+
+@mixin label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 0 2.5px 3px;
+    pointer-events: none;
+    color: $main-white;
+    background: transparent;
+    transition: all 0.3s linear;
+}
+
+@mixin label-focus {
+    position: absolute;
+    top: -0.6em;
+    font-size: 0.9em;
+    color: $main-white;
+    transform: translateY(-50%);
+    font-weight: 600;
+}
+
+@mixin has-error {
+    label,
+    input,
+    textarea {
+        color: $main-red !important;
+    }
+
+    input,
+    textarea {
+        border: 2px solid $main-red !important;
+    }
+
+    .error-message {
+        opacity: 1;
+        color: $main-red;
+    }
+}

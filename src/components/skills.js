@@ -3,19 +3,19 @@ import $ from "jquery";
 import Velocity from 'velocity-animate';
 import { VelocityTransitionGroup } from 'velocity-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaintBrush, faServer, faSkull, faChalkboardTeacher ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faPaintBrush, faServer, faSkull, faUtensils ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
 import { shuffle} from '../utility.js';
 
 const SkillConfig = [
     {
-        name: "Teaching",
-        icon: <FontAwesomeIcon icon={faChalkboardTeacher} />,
+        name: "Noodle Master",
+        icon: <FontAwesomeIcon icon={faUtensils} />,
         color: "#4FC08D",
         details: [
             {
-                name: "IELTS tutoring",
-                description: "5.5 Years of IELTS Test tutoring experience"
+                name: "Noodle Master",
+                description: "Hands on experience on making all kinds of noddles"
             },
         ],
     },
@@ -26,7 +26,7 @@ const SkillConfig = [
         details: [
             {
                 name: "JavaScript",
-                description: "Jquery, React, Typescript, ES6"
+                description: "Jquery, React, Typescript, ES6, Alpine"
             }
         ]
     },
@@ -59,7 +59,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Tools",
-                description: "Git, Webpack, Bitbucket, npm, JetBrains IDE, Bitbucket, Postman, Firebase, JIRA, Basecamp"
+                description: "Git, Webpack, Bitbucket, npm, JetBrains IDE, Bitbucket, Firebase, JIRA, AWS"
             }
         ],
     },
@@ -89,7 +89,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Experiences",
-                description: "PHP/Zend, MySQL, NodeJs/Express, Python/Django, RESTful API"
+                description: "PHP/Zend, MySQL, Node, Python/Django, RESTful API"
             }
         ],
     },
@@ -159,7 +159,7 @@ class SkillsDetails extends Component {
                         (skillSet.details.map((value, index) => {
                             return(
                                 <div className="skill-experience" key={index}>
-                                    <b>{value.name}:</b>&nbsp;&nbsp;
+                                    {/*<b>{value.name}:</b>&nbsp;&nbsp;*/}
                                     <span>{value.description}</span>
                                 </div>
                             );

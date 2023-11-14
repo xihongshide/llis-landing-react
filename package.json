@@ -4,13 +4,11 @@
   "description": "lli's Personal webpage",
   "private": true,
   "main": "src/index.js",
-  "homepage": "https://llislanding.firebaseapp.com",
+  "homepage": "madlli.com",
   "scripts": {
-    "watch": "watch 'npm run deploy' ./src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy": "npm run build",
     "eject": "react-scripts eject"
   },
   "repository": {
@@ -29,10 +27,10 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-brands-svg-icons": "^5.11.2",
-    "@fortawesome/free-regular-svg-icons": "^5.11.2",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.5",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "blast-text": "^2.0.0",
     "bootstrap": "^4.3.1",
     "emailjs": "^2.2.0",

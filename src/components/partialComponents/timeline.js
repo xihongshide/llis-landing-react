@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMapMarker, faPlane} from "@fortawesome/free-solid-svg-icons";
+import {faMapMarker, faPlane, faCloudRain, faSnowflake} from "@fortawesome/free-solid-svg-icons";
 
 const tagColor = ["#9c76a2", "#e1b16a", "#ffc300", "#444c5c", "#ce5a57", "#bcbcbc", "#ff8243"];
 const timelineData = [
@@ -47,7 +47,7 @@ const timelineData = [
     },
     {
         id: "4",
-        text: 'Left my beloved homecountry and moved to Ottawa, Canada',
+        text: 'Left my beloved home country and moved to Ottawa, Canada',
         location: <span>China<FontAwesomeIcon className="icon-plane" icon={faPlane} /> <FontAwesomeIcon icon={faMapMarker} /> Ottawa, Canada</span>,
         title: 'Big Move',
         category: {
@@ -78,7 +78,7 @@ const timelineData = [
     },
     {
         id: "7",
-        text: 'Became a Launchfirer working in the Dev team ',
+        text: 'Became a Launchfirer working in the Dev team',
         location: "Launchfire Interactive Inc., Ottawa, Canada",
         title: 'Web Developer',
         category: {
@@ -88,14 +88,34 @@ const timelineData = [
     },
     {
         id: "8",
+        text: 'LemonadeLXP',
+        location: "LemonadeLXP, Ottawa, Canada",
+        title: 'Web Developer',
+        category: {
+            tag: '01 Jan, 2023',
+            color: tagColor[5]
+        },
+    },
+    {
+        id: "9",
+        text: <FontAwesomeIcon icon={faCloudRain} />,
+        location: <span>Ottawa, Canada<FontAwesomeIcon className="icon-plane" icon={faPlane} /> <FontAwesomeIcon icon={faMapMarker} /> Raincouver, Canada</span>,
+        title: 'West Coast Move',
+        category: {
+            tag: 'Jun, 2020',
+            color: tagColor[2]
+        },
+    },
+    {
+        id: "10",
         text: 'Future is clouded and uncertain :-)',
         location: "Earth",
         title: 'To be continued...',
         category: {
             tag: 'Future',
-            color: tagColor[5]
+            color: tagColor[6]
         },
-    }
+    },
 ];
 
 const ScrollIndicator = (props) => <div className="scroll-indicator">{props.children}</div>;

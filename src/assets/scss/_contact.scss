@@ -268,72 +268,6 @@
             }
         }
 
-        p.error-message {
-            color: $main-red;
-            margin: 10px 0 0;
-        }
-
-        @mixin input {
-            display: block;
-            width: 100%;
-            border: 2px solid $main-white;
-            border-radius: 3px;
-            outline: none;
-            padding: 5px;
-            font-size: 1rem;
-            font-family: inherit;
-            background: transparent;
-            color: $main-white;
-            opacity: 0.7;
-            transition: all 0.3s linear;
-        }
-
-        @mixin input-focus {
-            border: 2.5px solid $main-white;
-            font-weight: 500;
-            opacity: 1;
-        }
-
-        @mixin label {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            padding: 0 2.5px;
-            pointer-events: none;
-            transition: 150ms ease;
-            color: $main-white;
-            background: transparent;
-            transition: all 0.3s linear;
-        }
-
-        @mixin label-focus {
-            position: absolute;
-            top: -0.6em;
-            font-size: 0.9em;
-            font-weight: 500;
-            color: $main-white;
-            font-weight: bold;
-            transform: translateY(-50%);
-            font-weight: 600;
-        }
-
-        @mixin has-error {
-            label,
-            input,
-            textarea {
-                color: $main-red !important;
-            }
-
-            input,
-            textarea {
-                border: 2px solid $main-red !important;
-            }
-
-            p {
-                color: $main-red;
-            }
-        }
-
         .text-input {
             position: relative;
             margin-bottom: 2em;
@@ -341,12 +275,15 @@
             label {
                 @include label;
             }
+
             label.label-focus {
                 @include label-focus;
             }
+
             input {
                 @include input;
             }
+
             input.input-focus {
                 @include input-focus;
             }
@@ -380,6 +317,11 @@
             &.has-error {
                 @include has-error;
             }
+        }
+
+        .error-message {
+            opacity: 0;
+            min-height: 1rem;
         }
     }
 

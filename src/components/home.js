@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import Velocity from 'velocity-animate';
 
 import { randomArrElement, velocityTransitions} from '../utility.js';
-
 class Home extends Component {
     constructor(props){
         super(props);
@@ -28,15 +27,15 @@ class Home extends Component {
 
     //animate home
     handleSelect(selectedIndex, e) {
-        let $carouselIteam = $($("#home .carousel-caption")[selectedIndex]);
+        let $carouselItems = $($("#home .carousel-caption")[selectedIndex]);
         let titleTransition = randomArrElement(velocityTransitions) + "In";
-        let $homeBtn = $carouselIteam.find(".home_btn");
+        let $homeBtn = $carouselItems.find(".home_btn");
 
-        $carouselIteam.find("h3 span").css("opacity","0").each(function(i){
+        $carouselItems.find("h3 span").css("opacity","0").each(function(i){
             Velocity($(this), titleTransition, { display: "inline-block", duration: 500, delay: 300+i*200});
         });
 
-        $carouselIteam.find("p span").css("opacity","0").each(function(i){
+        $carouselItems.find("p span").css("opacity","0").each(function(i){
             Velocity($(this), "transition.shrinkIn", { display: "inline-block", duration: 300, delay: 300+i*50});
         });
 
@@ -95,7 +94,7 @@ class Home extends Component {
                             <Carousel.Item>
                                <Carousel.Caption className="home-contact">
                                    <div className="home-text-container">
-                                       <h3>Tired of exploring?</h3>
+                                       <h3>Done exploring?</h3>
                                        <p>Contact me if you need anything. </p>
                                        <div className="home-btn home_btn velocity-animate">
                                            <NavLink to="/contact" activeClassName="selected" className="game">

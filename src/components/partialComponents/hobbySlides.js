@@ -46,6 +46,7 @@ class HobbyContent extends React.Component {
     componentDidMount(){
         let delay = Number(this.props.content.id) * 300 + 200;
         Velocity(this.refs.slideAni, {opacity: 1,  skewX: "-11deg", translateY: 0}, {duration: 600, delay: delay});
+
         setTimeout(() => {
             $(".about-hobby-container").css("pointer-events", "auto");
         }, 2000);
@@ -98,11 +99,7 @@ class HobbySlides extends Component {
             Velocity($(siblings).find('.quote-name'), 'transition.slideDownBigOut', { opacity: 0, duration: 300, delay: 0});
         }
 
-        Velocity(
-            $(siblings),
-        {
-            width: '15%',
-        }, {
+        Velocity($(siblings), {width: '15%'}, {
             duration: 500,
             easing: 'liner',
             complete: ()=> {
@@ -111,11 +108,7 @@ class HobbySlides extends Component {
             },
         });
 
-        Velocity(
-            $(hoverElement),
-        {
-            width: '55%',
-        }, {
+        Velocity($(hoverElement), {width: '55%'}, {
             duration: 500,
             easing: 'liner',
             complete: ()=>{

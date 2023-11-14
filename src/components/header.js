@@ -63,9 +63,9 @@ class Header extends Component {
                                     <li>
                                         <span>/</span><NavLink to="/contact" activeClassName="selected" className="contact" onClick={this.closeNavbar}>Contact</NavLink>
                                     </li>
-                                    <li>
-                                        <span>/</span><NavLink to="/blog" activeClassName="selected" className="blog" onClick={this.closeNavbar}>Blog</NavLink>
-                                    </li>
+                                    {/*<li>*/}
+                                    {/*    <span>/</span><NavLink to="/blog" activeClassName="selected" className="blog" onClick={this.closeNavbar}>Blog</NavLink>*/}
+                                    {/*</li>*/}
                                 </ul>
                             </div>
                         </Nav>

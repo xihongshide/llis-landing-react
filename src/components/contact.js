@@ -93,7 +93,7 @@ const TextInput = props => (
             onFocus={props.onFocus}
             onBlur={props.onBlur}
         />
-        {props.errorMessage? <p>{props.errorMessage}</p>:""}
+        <p className="error-message">{props.errorMessage ? props.errorMessage : ""}</p>
     </div>
 );
 

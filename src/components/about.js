@@ -34,7 +34,7 @@ class AboutUnexpand extends Component {
                    <div className="about-hobby about-cols" ref="ani1">
                        <AboutHobby name="hobby">
                            <AniHeart onClick={this.props.expandHandler} />
-                           <button onClick={this.props.expandHandler} data-id="1"><span>Love</span></button>
+                           <button onClick={this.props.expandHandler} data-id="1"><span>Passion</span></button>
                        </AboutHobby>
                    </div>
                    <div className="about-work about-cols" ref="ani2">
@@ -67,7 +67,6 @@ class AboutExpand extends Component {
     }
 
     render() {
-
         const panels = [
            <AboutHobbyExpand />,
            <AboutWorkExpand />,

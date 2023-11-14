@@ -184,7 +184,6 @@
     }
 
     //panel expanded style
-
     .expanded-container {
         height: 100%;
     }
@@ -207,10 +206,6 @@
         }
     }
 
-    @import './partial/_timeline.scss';
-    @import './partial/_work.scss';
-    @import './partial/_hobbySlides.scss';
-
     @keyframes pulsate {
         0% {
             transform: scale(0.1, 0.1);
@@ -231,7 +226,7 @@
         .col-inner-container {
             top: 47%;
         }
-        
+
         .about-cols {
             width: 100%;
 

@@ -68,7 +68,7 @@ div.content.skills{
 		        margin-right: 2%;
 
 				button:hover {
-					background:   linear-gradient(
+					background: linear-gradient(
 				      rgba(102, 89, 92, 0.3),
 				      rgba(102, 89, 92, 0.3),
     	  			),url("/images/avatar.jpg") no-repeat center;
@@ -93,13 +93,8 @@ div.content.skills{
 				height: 100%;
 				text-align: center;
 				overflow: hidden;
-				-webkit-transform: skewY(-30deg) rotate(60deg);
-				-moz-transform: skewY(-30deg) rotate(60deg);
-				-ms-transform: skewY(-30deg) rotate(60deg);
-				-o-transform: skewY(-30deg) rotate(60deg);
 				transform: skewY(-30deg) rotate(60deg);
 				cursor: pointer;
-				overflow: hidden;
 				background: $main-yellow;
 				transition: background 300ms linear;
 
@@ -122,7 +117,7 @@ div.content.skills{
 				}
 
 				&:hover {
-					background: $main-blue;
+					background: rgba(218, 165, 32, 0.6);
 
 					span {
 						svg {

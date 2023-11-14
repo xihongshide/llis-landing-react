@@ -8,7 +8,6 @@ import About from './about.js';
 import Skills from './skills.js';
 import Blog from './blog.js';
 import Contact from './contact.js';
-import ClockDina from './clockDina.js';
 import Wedding from './wedding.js';
 
 class Content extends Component {
@@ -26,9 +25,6 @@ class Content extends Component {
                 </Route>
                 <Route path="/blog">
                     <Blog />
-                </Route>
-                <Route path="/clock-dina">
-                    <ClockDina />
                 </Route>
                 <Route path="/wedding">
                     <Wedding />
