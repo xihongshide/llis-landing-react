@@ -15,7 +15,7 @@ const SkillConfig = [
         details: [
             {
                 name: "Noodle Master",
-                description: "Hands on experience on making all kinds of noddles"
+                description: "Hands on experience on making all kinds of noodles"
             },
         ],
     },
