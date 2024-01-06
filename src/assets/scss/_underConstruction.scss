@@ -1,11 +1,11 @@
-.blog-inner-container {
+.construction-inner-container {
     text-align: left;
     max-width: 480px;
     width: 100%;
     margin: 0 auto;
     min-height: 400px;
 
-    #blog-header {
+    #construction-header {
         margin-top: 50px;
     }
 
@@ -20,7 +20,7 @@
     .propstr-color {color: #28A27C}
     .normal-color {color: $main-white}
 
-    #blog_coming {
+    #coming_soon {
         p {
             &:nth-of-type(2),
             &:nth-of-type(3) {
@@ -62,11 +62,11 @@
     }
 
     @media screen and (max-width: 550px) {
-        #blog-header {
+        #construction-header {
             padding: 0 20px;
         }
 
-        #blog_coming {
+        #coming_soon {
             padding: 0 20px;
 
             p {

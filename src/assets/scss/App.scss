@@ -9,7 +9,7 @@
 @import '_about.scss';
 @import '_contact.scss';
 @import '_skills.scss';
-@import '_blog.scss';
+@import '_underConstruction.scss';
 @import '_wedding.scss';
 
 @import 'partial/_wechatModal.scss';
@@ -106,7 +106,7 @@ body {
                 }
             }
 
-            &.blog-container {
+            &.const-container {
                 .inner-container {
                     min-height: 400px;
                 }
@@ -176,7 +176,7 @@ body {
                     }
                 }
 
-                &.blog-container .inner-container {
+                &.construction-container .inner-container {
                     top: 46%;
                 }
             }

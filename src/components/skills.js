@@ -5,7 +5,7 @@ import { VelocityTransitionGroup } from 'velocity-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaintBrush, faServer, faSkull, faUtensils ,faToolbox, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { faJsSquare } from '@fortawesome/free-brands-svg-icons';
-import { shuffle} from '../utility.js';
+import { shuffle } from '../utility.js';
 
 const SkillConfig = [
     {

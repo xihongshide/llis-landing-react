@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import $ from "jquery";
 import Velocity from 'velocity-animate';
 
-class Blog extends Component {
+class UnderConstruction extends Component {
     componentDidMount(){
-        $("#blog_coming p").blast({ delimiter: 'letter' });
+        $("#coming_soon p").blast({ delimiter: 'letter' });
         Velocity($("#blog-header"), "transition.slideLeftBigIn", {opacity: 1, duration: 200, delay: 800});
-        $("#blog_coming p").find("span").each((i, ele) => {
+        $("#coming_soon p").find("span").each((i, ele) => {
             let str = $(ele).html();
             let e = $(ele);
 
@@ -19,17 +19,16 @@ class Blog extends Component {
 
     render() {
         return (
-            <div className="content blog">
-                <div className="container blog-container">
-                   <div className="inner-container blog-inner-container">
-                       <p id="blog-header" className="velocity-animate">
+            <div className="content construction">
+                <div className="container construction-header">
+                   <div className="inner-container construction-inner-container">
+                       <p id="construction-header" className="velocity-animate">
                           <b className="declare-color">const</b>&nbsp;
-                          <b className="class-color">Blog</b>
                           &nbsp;&#61;&nbsp;(props)&nbsp;
                           <b className="declare-color">&#61;></b>
                           &nbsp;(
                        </p>
-                       <div id="blog_coming">
+                       <div id="coming_soon">
                            <p>
                                <b className="tag-color">&lt;div</b> &nbsp;
                                <b className="prop-color">className</b>&#61;
@@ -59,4 +58,4 @@ class Blog extends Component {
     }
 }
 
-export default Blog;
+export default UnderConstruction;

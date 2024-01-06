@@ -22,7 +22,7 @@ $colors: $main-dark $main-green $main-blue $main-yellow $main-red;
 $rainbowColors: $main-yellow $main-grey $main-blue $main-red $main-dark $main-red $main-blue $main-grey $main-yellow;
 $fourColors: $main-yellow $main-green $main-blue $main-red;
 $sevenColors: $main-yellow $main-green $main-grey $main-red $main-purple $main-yellow-light $main-overlay;
-$pages: "home" "about" "skills" "contact" "blog";
+$pages: "home" "about" "skills" "contact" "construction";
 
 //Themes For Every Route
 $theme-colors: (
@@ -31,7 +31,7 @@ $theme-colors: (
         'about': $main-green,
         'skills': $main-blue,
         'contact': $main-yellow,
-        'blog': $main-red,
+        'construction': $main-red,
     ),
 
     'text': (
@@ -39,7 +39,7 @@ $theme-colors: (
         'about': $main-white,
         'skills': $main-white,
         'contact': $main-white,
-        'blog': $main-white,
+        'construction': $main-white,
     ),
 );
 
