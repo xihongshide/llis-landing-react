@@ -10,7 +10,7 @@ const SocialNetworkList = () => (
             <a href="https://github.com/xihongshide" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faGithub } /></a>
         </li>
         <li>
-            <a href="www.linkedin.com/in/madlli" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faLinkedinIn } /></a>
+            <a href="https://www.linkedin.com/in/madlli" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faLinkedinIn } /></a>
         </li>
         <li>
             <a href="https://www.instagram.com/l.liiiiii/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={ faInstagram } /></a>
